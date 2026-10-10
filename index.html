@@ -137,10 +137,21 @@
       .product-image{height:210px}
     }
 
+  
+    .topbar{isolation:isolate;overflow:hidden;background:rgba(21,21,18,.34);backdrop-filter:blur(5px)}
+    .topbar-video{position:absolute;z-index:-2;inset:-9px;width:calc(100% + 18px);height:calc(100% + 18px);object-fit:cover;object-position:center 44%;filter:blur(8px) brightness(.54) saturate(1.35);opacity:.92;pointer-events:none}
+    .topbar:after{position:absolute;z-index:-1;inset:0;content:"";background:linear-gradient(90deg,rgba(15,14,12,.56),rgba(15,14,12,.22) 58%,rgba(15,14,12,.46))}
+    .topbar>*:not(.topbar-video){position:relative;z-index:1}
+    .catalog-open .topbar{background:#151512;backdrop-filter:none}
+    .catalog-open .topbar-video,.catalog-open .topbar:after{display:none}
+    .home-hero h1 em{color:#ff4d00;text-shadow:0 0 12px rgba(255,77,0,.68),0 0 34px rgba(255,77,0,.42)}
+    @media(max-width:650px){.topbar-video{object-position:62% 45%;filter:blur(7px) brightness(.5) saturate(1.35)}}
+
   </style>
 </head>
 <body>
   <header class="topbar">
+    <video class="topbar-video" aria-hidden="true" autoplay muted loop playsinline preload="none" poster="/hero-family.webp"><source src="https://videos.pexels.com/video-files/5501226/5501226-hd_1920_1080_24fps.mp4" type="video/mp4"></video>
     <a class="brand" href="#inicio" data-open-home aria-label="Reform — início"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-logo.png" alt="Reform."></a>
     <nav class="top-actions" id="mainNav" aria-label="Navegação principal"><a href="#inicio" data-nav-home>Início</a><a href="#beneficios" data-nav-home>Vantagens</a><a href="#inspiracao" data-nav-home>Inspiração</a><a href="#produtos" data-open-catalog>Produtos</a><a href="#contato" data-nav-home>Contato</a></nav>
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir filtros" aria-expanded="false">☰</button>
@@ -152,7 +163,7 @@
       <div class="home-hero-shade"></div>
       <div class="home-hero-copy">
         <p class="hero-kicker">Tintas e soluções para pintar</p>
-        <h1 id="hero-title">Sua casa,<br>mais cor,<br><em>mais vida.</em></h1>
+        <h1 id="hero-title">Mais cor.<br><em>Mais vida.</em></h1>
         <p class="home-hero-lede">Uma nova cor muda o ambiente. A Reform ajuda você a encontrar a tinta certa e curtir cada etapa da transformação.</p>
         <div class="hero-actions"><button class="hero-cta" data-open-catalog>Encontre sua tinta <span aria-hidden="true">↗</span></button><a class="hero-quiet" href="#contato">Converse com a Reform</a></div>
       </div>
