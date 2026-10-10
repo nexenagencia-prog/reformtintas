@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151512">
+  <meta name="description" content="Tintas, seladores e soluções para pintura na Reform. Encontre o produto certo para sua obra.">
+  <title>Tintas | Reform — Sua obra. Do seu jeito.</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#151512;--paper:#f2f0e9;--white:#fbfaf6;--muted:#77766e;--line:rgba(21,21,18,.13);--orange:#f26b32;--orange-dark:#db5721;--max:1440px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}img{display:block;max-width:100%}
+    .topbar{height:76px;padding:0 max(4vw,24px);display:flex;align-items:center;justify-content:space-between;background:var(--ink);color:white}.brand{width:132px}.brand img{width:100%;max-height:43px;object-fit:contain;object-position:left center}.top-actions{display:flex;align-items:center;gap:26px;font-size:11px}.top-actions a{opacity:.78}.top-actions a:hover{opacity:1;color:#ff9a68}.menu-toggle{display:none;border:0;background:none;color:white;font-size:24px}
+    .page{max-width:var(--max);margin:auto;padding:0 36px 70px}.crumb{padding:23px 0 18px;color:#858278;font-size:10px}.crumb a:hover{color:var(--orange)}.crumb span{margin:0 8px;color:#bbb7ac}
+    .intro{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 370px;align-items:end;gap:36px;padding:14px 0 28px;border-bottom:1px solid var(--line)}.eyebrow{margin:0 0 9px;color:#9a6a4b;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.intro h1{margin:0;font-family:Manrope,sans-serif;font-size:clamp(34px,4.8vw,56px);font-weight:500;letter-spacing:-.06em;line-height:1.02}.intro h1 em{font-style:normal;color:var(--orange)}.intro-copy{margin:0 0 5px;color:#727168;font-size:12px;line-height:1.7}.hero-strip{display:grid;grid-template-columns:1.2fr .8fr;gap:15px;margin:23px 0 28px}.hero-photo{position:relative;min-height:190px;overflow:hidden;border-radius:12px;background:#4c443c}.hero-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center 48%;filter:brightness(.73)}.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,15,13,.78),rgba(15,15,13,.04) 95%)}.hero-photo-copy{position:absolute;z-index:1;left:30px;top:50%;transform:translateY(-50%);max-width:440px;color:white}.hero-photo-copy small{display:block;margin-bottom:9px;color:#ffc09d;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}.hero-photo-copy h2{margin:0;font-family:Manrope,sans-serif;font-size:clamp(24px,3.1vw,38px);font-weight:500;letter-spacing:-.045em;line-height:1.1}.hero-photo-copy p{margin:10px 0 0;color:rgba(255,255,255,.78);font-size:11px}.quick-card{display:flex;align-items:center;gap:19px;padding:20px;border:1px solid rgba(21,21,18,.07);border-radius:12px;background:var(--white)}.quick-card img{width:105px;height:145px;flex:none;border-radius:8px;object-fit:cover}.quick-card small{color:#a86542;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.quick-card h3{margin:8px 0;font-family:Manrope,sans-serif;font-size:20px;font-weight:500;letter-spacing:-.04em;line-height:1.18}.quick-card p{margin:0;color:var(--muted);font-size:10px;line-height:1.55}
+    .catalog-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin:0 0 18px}.catalog-heading h2{margin:0;font-family:Manrope,sans-serif;font-size:29px;font-weight:500;letter-spacing:-.05em}.catalog-heading p{margin:5px 0 0;color:#77766e;font-size:11px}.filters-mobile{display:none}.layout{display:grid;grid-template-columns:230px minmax(0,1fr);align-items:start;gap:26px}.sidebar{position:sticky;top:15px;padding:18px 17px;background:var(--white);border:1px solid rgba(21,21,18,.07);border-radius:12px}.side-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:14px;border-bottom:1px solid var(--line)}.side-head h3{margin:0;font-size:13px;font-weight:700}.clear-btn{padding:0;border:0;background:none;color:#9a5e3a;font-size:10px;text-decoration:underline}.filter-group{padding:15px 0;border-bottom:1px solid var(--line)}.filter-group:last-child{padding-bottom:3px;border:0}.filter-group h4{margin:0 0 10px;font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}.check-row{display:flex;align-items:center;gap:8px;margin:9px 0;color:#636259;font-size:10px}.check-row input{accent-color:var(--orange)}.check-row small{margin-left:auto;color:#a19e94}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:15px}.results{color:#747168;font-size:10px}.toolbar-right{display:flex;align-items:center;gap:8px}.search{width:min(270px,34vw);height:38px;padding:0 11px;border:1px solid var(--line);border-radius:7px;background:var(--white);outline:none;font-size:10px}.search:focus,.sort:focus{border-color:var(--orange)}.sort{height:38px;max-width:170px;padding:0 10px;border:1px solid var(--line);border-radius:7px;background:var(--white);font-size:10px}.product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.product-card{min-width:0;overflow:hidden;border:1px solid rgba(21,21,18,.08);border-radius:10px;background:var(--white);transition:transform .2s,box-shadow .2s}.product-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(21,21,18,.09)}.product-image{position:relative;display:grid;place-items:center;height:190px;padding:17px;background:#eeece4}.product-image img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}.badge{position:absolute;top:11px;left:11px;padding:6px 8px;border-radius:4px;background:rgba(21,21,18,.86);color:#fff;font-size:8px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}.product-body{padding:14px 14px 13px}.product-brand{color:#a46847;font-size:8px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}.product-name{min-height:39px;margin:7px 0 12px;font-size:12px;font-weight:600;line-height:1.45}.product-meta{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:13px}.tag{padding:5px 7px;border:1px solid rgba(21,21,18,.11);border-radius:99px;color:#6e6b61;font-size:8px}.product-link{display:flex;align-items:center;justify-content:space-between;width:100%;padding:10px 11px;border:0;border-radius:5px;background:var(--ink);color:white;font-size:9px;font-weight:700;letter-spacing:.02em;transition:background .2s}.product-link:hover{background:var(--orange)}.product-link span{font-size:15px}.empty{grid-column:1/-1;padding:45px 20px;border:1px dashed var(--line);border-radius:10px;color:#777;text-align:center;font-size:13px}.contact{display:flex;align-items:center;justify-content:space-between;gap:22px;margin-top:48px;padding:28px 30px;border-radius:12px;background:var(--ink);color:white}.contact h2{margin:0 0 5px;font-family:Manrope,sans-serif;font-size:23px;font-weight:500;letter-spacing:-.04em}.contact p{margin:0;color:rgba(255,255,255,.68);font-size:11px}.contact a{display:inline-flex;align-items:center;gap:15px;padding:13px 16px;border-radius:5px;background:var(--orange);color:white;font-size:10px;font-weight:700}.contact a:hover{background:var(--orange-dark)}footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:23px max(4vw,24px);background:#0e0e0d;color:rgba(255,255,255,.6);font-size:9px}.footer-brand{width:112px}.footer-brand img{width:100%;max-height:36px;object-fit:contain;object-position:left center}
+    @media(max-width:900px){.page{padding:0 24px 55px}.intro{grid-template-columns:1fr 290px}.layout{grid-template-columns:205px minmax(0,1fr);gap:18px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.product-image{height:180px}.quick-card{gap:13px;padding:14px}.quick-card img{width:82px;height:120px}}
+    @media(max-width:650px){.topbar{height:67px;padding:0 19px}.brand{width:117px}.top-actions{display:none}.menu-toggle{display:block}.page{padding:0 16px 40px}.crumb{padding:17px 0 13px}.intro{display:block;padding:10px 0 18px}.intro h1{font-size:39px}.intro-copy{margin-top:12px}.hero-strip{grid-template-columns:1fr;margin:16px 0 25px;gap:9px}.hero-photo{min-height:225px}.hero-photo-copy{left:20px;right:18px}.hero-photo-copy h2{font-size:31px}.quick-card{min-height:112px}.quick-card img{width:73px;height:91px}.quick-card h3{font-size:17px}.catalog-heading{align-items:start;margin-bottom:14px}.catalog-heading h2{font-size:25px}.catalog-heading p{max-width:230px;line-height:1.5}.filters-mobile{display:flex;align-items:center;justify-content:space-between;width:100%;margin-bottom:10px;padding:11px 12px;border:1px solid var(--line);border-radius:7px;background:var(--white);font-size:10px;font-weight:700}.layout{display:block}.sidebar{display:none;position:static;margin-bottom:13px}.sidebar.is-open{display:block}.toolbar{display:block}.results{margin-bottom:10px}.toolbar-right{display:grid;grid-template-columns:1fr 145px}.search{width:100%;max-width:none}.sort{width:100%}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.product-image{height:148px;padding:12px}.product-body{padding:11px 10px}.product-name{font-size:10px;min-height:44px}.product-meta{gap:4px}.tag{font-size:7px;padding:4px 6px}.product-link{padding:9px;font-size:8px}.badge{font-size:7px}.contact{display:block;margin-top:30px;padding:22px 19px}.contact h2{font-size:21px}.contact a{margin-top:16px}footer{padding:20px;align-items:flex-start;flex-direction:column}}
+    @media(max-width:360px){.product-grid{grid-template-columns:1fr}.product-image{height:180px}.product-name{min-height:0}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Reform — início"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-logo.png" alt="Reform."></a>
+    <nav class="top-actions" aria-label="Navegação principal">
+      <a href="#produtos">Tintas</a><a href="#produtos">Cores</a><a href="#produtos">Preparação</a><a href="#contato">A loja</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir filtros" aria-expanded="false">☰</button>
+  </header>
+  <main class="page" id="inicio">
+    <div class="crumb"><a href="#inicio">Início</a><span>›</span><b>Tintas</b></div>
+    <section class="intro">
+      <div><p class="eyebrow">A seleção Reform</p><h1>Tintas para transformar.<br><em>Do seu jeito.</em></h1></div>
+      <p class="intro-copy">Encontre tintas, esmaltes e produtos de preparação para cada etapa da pintura. Use os filtros para chegar ao produto ideal para sua obra.</p>
+    </section>
+    <section class="hero-strip" aria-label="Destaques da Reform">
+      <div class="hero-photo">
+        <img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/loja-fachada-expandida.webp" alt="Fachada da loja Reform">
+        <div class="hero-photo-copy"><small>Tintas, seladores e acessórios</small><h2>A cor certa começa<br>com a escolha certa.</h2><p>Conte com a Reform para preparar e renovar seus ambientes.</p></div>
+      </div>
+      <div class="quick-card"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/paint-terracotta.webp" alt="Detalhe de produto para pintura da Reform"><div><small>Preparação é tudo</small><h3>Um bom acabamento começa antes da tinta.</h3><p>Conheça seladores, fundos e soluções para preparar cada superfície.</p></div></div>
+    </section>
+    <section id="produtos">
+      <div class="catalog-heading"><div><p class="eyebrow">Catálogo Reform</p><h2>Nossa linha de tintas</h2><p>Produtos para paredes, pisos, metais e madeira.</p></div></div>
+      <button class="filters-mobile" id="filtersToggle" aria-expanded="false">☷ &nbsp; Filtrar produtos <span>＋</span></button>
+      <div class="layout">
+        <aside class="sidebar" id="sidebar" aria-label="Filtros de produtos">
+          <div class="side-head"><h3>Filtros</h3><button class="clear-btn" id="clearFilters">Limpar</button></div>
+          <div class="filter-group"><h4>Ambiente</h4>
+            <label class="check-row"><input type="checkbox" data-filter="ambiente" value="interno"> Interno</label>
+            <label class="check-row"><input type="checkbox" data-filter="ambiente" value="externo"> Externo</label>
+          </div>
+          <div class="filter-group"><h4>Superfície</h4>
+            <label class="check-row"><input type="checkbox" data-filter="superficie" value="parede"> Paredes</label>
+            <label class="check-row"><input type="checkbox" data-filter="superficie" value="piso"> Pisos</label>
+            <label class="check-row"><input type="checkbox" data-filter="superficie" value="metal"> Metais e madeira</label>
+          </div>
+          <div class="filter-group"><h4>Acabamento</h4>
+            <label class="check-row"><input type="checkbox" data-filter="acabamento" value="fosco"> Fosco</label>
+            <label class="check-row"><input type="checkbox" data-filter="acabamento" value="brilhante"> Brilhante</label>
+          </div>
+          <div class="filter-group"><h4>Etapa</h4>
+            <label class="check-row"><input type="checkbox" data-filter="etapa" value="pintura"> Pintura</label>
+            <label class="check-row"><input type="checkbox" data-filter="etapa" value="preparacao"> Preparação</label>
+            <label class="check-row"><input type="checkbox" data-filter="etapa" value="protecao"> Proteção</label>
+          </div>
+        </aside>
+        <div class="content">
+          <div class="toolbar"><div class="results" id="results" aria-live="polite"></div><div class="toolbar-right"><input class="search" id="search" type="search" placeholder="Buscar tinta ou produto" aria-label="Buscar produtos"><select class="sort" id="sort" aria-label="Ordenar produtos"><option value="relevance">Ordenar: destaque</option><option value="az">Nome: A a Z</option><option value="za">Nome: Z a A</option></select></div></div>
+          <div class="product-grid" id="productGrid"></div>
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contato"><div><h2>Vamos encontrar a tinta certa?</h2><p>Fale com a equipe Reform e consulte opções para a sua pintura.</p></div><a href="https://wa.me/?text=Olá!%20Quero%20consultar%20tintas%20na%20Reform." target="_blank" rel="noreferrer">Fale com a Reform <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer><a class="footer-brand" href="#inicio"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-logo.png" alt="Reform."></a><span>Tintas, seladores e acessórios para sua obra.</span><span>© <span id="year"></span> Reform.</span></footer>
+  <script>
+    const asset = 'https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/';
+    const products = [
+      {name:'Tinta Acrílica Branco Fosco 16 L',brand:'Solcolor',surface:['parede'],ambience:['interno','externo'],finish:['fosco'],stage:['pintura'],image:'https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/e/b/eb96aa24_1880601_1.jpg',label:'Paredes'},
+      {name:'Tinta Acrílica Ducryl Standard Branco 18 L',brand:'Renner',surface:['parede'],ambience:['interno'],finish:['fosco'],stage:['pintura'],image:'https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/2/0/20f2b821_195584_1.jpg',label:'Acrílica'},
+      {name:'Tinta Novopiso Premium Cinza Fosco 18 L',brand:'Hydronorth',surface:['piso'],ambience:['interno','externo'],finish:['fosco'],stage:['pintura','protecao'],image:'https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/2/3/23ec3acb_1969740_1.jpg',label:'Pisos'},
+      {name:'Tinta Impermeabilizante Emborrachada 18 L',brand:'Hydronorth',surface:['parede'],ambience:['externo'],finish:['fosco'],stage:['pintura','protecao'],image:'https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/8/8/88c61fc8_2084176_1_1.jpg',label:'Proteção'},
+      {name:'Selador Acrílico Branco 18 L',brand:'Solcolor',surface:['parede'],ambience:['interno','externo'],finish:[],stage:['preparacao'],image:'https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/9/0/90334f16_1880588_1_1.jpg',label:'Preparação'},
+      {name:'Selador Acrílico 16 L',brand:'Renner',surface:['parede'],ambience:['interno','externo'],finish:[],stage:['preparacao'],image:'https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/4/d/4dc09cdd_2123783_1_1.jpg',label:'Preparação'},
+      {name:'Esmalte Dulit Standard Branco Brilhante 3,6 L',brand:'Renner',surface:['metal'],ambience:['interno','externo'],finish:['brilhante'],stage:['pintura','protecao'],image:'https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/c/2/c2b8f3b7_1480610_1.jpg',label:'Esmalte'},
+      {name:'Tinta Grafite Cinza Fosco 3,6 L',brand:'Coral',surface:['metal'],ambience:['interno','externo'],finish:['fosco'],stage:['pintura','protecao'],image:'https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/9/3/93033fc6_2206301_1.jpg',label:'Metais'}
+    ];
+    const grid=document.querySelector('#productGrid'), search=document.querySelector('#search'), result=document.querySelector('#results'), sort=document.querySelector('#sort');
+    const title=(s)=>s.charAt(0).toUpperCase()+s.slice(1);
+    function selected(key){return [...document.querySelectorAll(`[data-filter="${key}"]:checked`)].map(i=>i.value)}
+    function render(){let list=products.filter(p=>{
+      const q=search.value.trim().toLowerCase();
+      const text=(p.name+' '+p.brand+' '+p.label).toLowerCase();
+      return (!q||text.includes(q))&&['ambiente','superficie','acabamento','etapa'].every(key=>{const chosen=selected(key),vals=key==='ambiente'?p.ambience:key==='superficie'?p.surface:key==='acabamento'?p.finish:p.stage;return !chosen.length||chosen.some(v=>vals.includes(v))});
+    });
+    if(sort.value==='az')list.sort((a,b)=>a.name.localeCompare(b.name,'pt-BR'));if(sort.value==='za')list.sort((a,b)=>b.name.localeCompare(a.name,'pt-BR'));
+    result.textContent=`${list.length} ${list.length===1?'produto encontrado':'produtos encontrados'}`;
+    grid.innerHTML=list.length?list.map((p,i)=>`<article class="product-card"><div class="product-image"><span class="badge">${p.label}</span><img loading="lazy" src="${p.image}" alt="${p.name}" onerror="this.src='https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/paint-terracotta.webp'"></div><div class="product-body"><div class="product-brand">${p.brand}</div><h3 class="product-name">${p.name}</h3><div class="product-meta">${p.surface.map(x=>`<span class="tag">${x==='metal'?'Metais e madeira':title(x)}</span>`).join('')}<span class="tag">${p.stage.includes('preparacao')?'Preparação':'Acabamento'}</span></div><a class="product-link" target="_blank" rel="noreferrer" href="https://wa.me/?text=${encodeURIComponent('Olá! Quero consultar disponibilidade e preço de '+p.name+' da '+p.brand+' na Reform.')}">Consultar disponibilidade <span aria-hidden="true">↗</span></a></div></article>`).join(''):'<div class="empty">Nenhum produto encontrado com esses filtros. Ajuste a busca ou limpe os filtros.</div>';
+    }
+    document.querySelectorAll('[data-filter]').forEach(el=>el.addEventListener('change',render));search.addEventListener('input',render);sort.addEventListener('change',render);
+    document.querySelector('#clearFilters').addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(el=>el.checked=false);search.value='';sort.value='relevance';render()});
+    const sidebar=document.querySelector('#sidebar'), filterBtn=document.querySelector('#filtersToggle');
+    filterBtn.addEventListener('click',()=>{const open=sidebar.classList.toggle('is-open');filterBtn.setAttribute('aria-expanded',String(open));filterBtn.lastElementChild.textContent=open?'−':'＋'});
+    const menuToggle=document.querySelector('#menuToggle');menuToggle.addEventListener('click',()=>{document.querySelector('#produtos').scrollIntoView({behavior:'smooth'});sidebar.classList.add('is-open');filterBtn.setAttribute('aria-expanded','true')});
+    document.querySelector('#year').textContent=new Date().getFullYear();render();
+  </script>
+</body>
+</html>
