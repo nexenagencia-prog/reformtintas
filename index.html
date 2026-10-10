@@ -91,11 +91,57 @@
       .product-name{font-size:9px;min-height:40px}
     }
 
+  
+    .topbar{position:absolute;top:0;left:0;right:0;z-index:20;height:84px;padding:0 max(calc((100vw - 1280px)/2),6vw);background:linear-gradient(180deg,rgba(21,21,18,.78),rgba(21,21,18,0));}
+    .brand{flex:none}
+    .catalog-open .topbar{background:#151512}
+    .catalog-open .page{padding-top:92px}
+    .home-hero{height:min(94svh,900px);min-height:760px;margin-top:0}
+    .home-hero-image{object-position:center 55%}
+    .home-hero-copy{left:max(calc((100% - 1280px)/2),6vw);top:15%}
+    .hero-photo-cards{left:auto;right:max(calc((100% - 1280px)/2),6vw);bottom:5%;width:min(690px,54vw);max-width:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+    .hero-photo-card{min-width:0}
+    .hero-installment{position:absolute;right:max(calc((100% - 1280px)/2),6vw);bottom:calc(5% + 75px);color:white;font-size:14px;font-weight:600;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+    .hero-installment strong{color:#ff9869;font-size:17px}
+    .product-image{height:220px;padding:0;background:#fff;overflow:hidden}
+    .product-image img{transform:scale(1.22);transform-origin:center}
+    .product-body{background:#fff}
+    @media(max-width:1000px){
+      .topbar{height:76px;padding:0 6vw}
+      .hero-photo-cards{right:6%;width:56vw}
+      .hero-installment{right:6%;bottom:calc(5% + 72px)}
+      .hero-photo-card{padding:10px}
+      .hero-photo-card strong{font-size:10px}
+      .hero-photo-card small{font-size:7px}
+      .product-image{height:205px}
+    }
+    @media(max-width:650px){
+      .topbar{position:absolute;height:67px;padding:0 7%;background:linear-gradient(180deg,rgba(21,21,18,.8),rgba(21,21,18,0))}
+      .catalog-open .topbar{height:67px;padding:0 19px}
+      .catalog-open .page{padding-top:80px}
+      .home-hero{height:auto;min-height:760px;margin-top:0}
+      .home-hero-image{object-position:69% center}
+      .home-hero-copy{left:7%;top:12%;right:7%}
+      .hero-photo-cards{left:auto;right:5%;bottom:5%;width:min(57%,230px);grid-template-columns:1fr;gap:6px}
+      .hero-photo-card{padding:8px 10px;grid-template-columns:20px 1fr}
+      .hero-photo-card small{display:none}
+      .hero-photo-card strong{font-size:9px}
+      .hero-installment{right:5%;bottom:calc(5% + 121px);max-width:230px;text-align:right;font-size:10px}
+      .hero-installment strong{font-size:12px}
+      .product-image{height:160px;padding:0}
+      .product-image img{transform:scale(1.18)}
+    }
+    @media(max-width:380px){
+      .hero-photo-cards{width:58%}
+      .product-grid{grid-template-columns:1fr}
+      .product-image{height:210px}
+    }
+
   </style>
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#inicio" aria-label="Reform — início"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-logo.png" alt="Reform."></a>
+    <a class="brand" href="#inicio" data-open-home aria-label="Reform — início"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-logo.png" alt="Reform."></a>
     <nav class="top-actions" id="mainNav" aria-label="Navegação principal"><a href="#inicio" data-nav-home>Início</a><a href="#beneficios" data-nav-home>Vantagens</a><a href="#inspiracao" data-nav-home>Inspiração</a><a href="#produtos" data-open-catalog>Produtos</a><a href="#contato" data-nav-home>Contato</a></nav>
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir filtros" aria-expanded="false">☰</button>
   </header>
@@ -115,7 +161,7 @@
         <div class="hero-photo-card"><span>02</span><strong>Secagem rápida</strong><small>Sua casa pronta mais cedo</small></div>
         <div class="hero-photo-card hero-card-accent"><span>03</span><strong>Fácil de passar</strong><small>Acabamento bonito, do seu jeito</small></div>
       </div>
-      
+      <div class="hero-installment">Parcele em até <strong>12x no cartão</strong></div>
     </section>
 
     <section class="home-section color-section" id="beneficios">
@@ -193,11 +239,11 @@
       grid.innerHTML=list.length?list.map(p=>`<article class="product-card"><div class="product-image"><img loading="lazy" src="${p.image}" alt="${p.name}" onerror="this.src='https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/paint-terracotta.webp'"></div><div class="product-body"><div class="product-ident"><div class="product-brand">${p.brand}</div><span class="product-label">${p.label}</span></div><h3 class="product-name">${p.name}</h3><div class="product-meta">${p.surface.map(x=>`<span class="tag">${x==='metal'?'Metais e madeira':title(x)}</span>`).join('')}<span class="tag">${p.stage.includes('preparacao')?'Preparação':'Acabamento'}</span></div><a class="product-link" target="_blank" rel="noreferrer" href="https://wa.me/?text=${encodeURIComponent('Olá! Quero consultar disponibilidade e preço de '+p.name+' da '+p.brand+' na Reform.')}">Consultar disponibilidade <span aria-hidden="true">↗</span></a></div></article>`).join(''):'<div class="empty">Nenhum produto encontrado com esses filtros. Ajuste a busca ou limpe os filtros.</div>';
     }
     const home=document.querySelector('#homeView'),catalog=document.querySelector('#catalogView'),nav=document.querySelector('#mainNav');
-    function openCatalog(category=''){home.hidden=true;catalog.hidden=false;nav.classList.remove('is-open');history.replaceState(null,'','#produtos');window.scrollTo({top:0,behavior:'smooth'});if(category)applyCategory(category);else render();}
-    function openHome(target=''){catalog.hidden=true;home.hidden=false;nav.classList.remove('is-open');history.replaceState(null,'',target?'#'+target:location.pathname);if(target)setTimeout(()=>document.getElementById(target)?.scrollIntoView({behavior:'smooth'}),40);else window.scrollTo({top:0,behavior:'smooth'});}
+    function openCatalog(category=''){document.body.classList.add('catalog-open');home.hidden=true;catalog.hidden=false;nav.classList.remove('is-open');history.replaceState(null,'','#produtos');window.scrollTo({top:0,behavior:'smooth'});if(category)applyCategory(category);else render();}
+    function openHome(target=''){document.body.classList.remove('catalog-open');catalog.hidden=true;home.hidden=false;nav.classList.remove('is-open');history.replaceState(null,'',target?'#'+target:location.pathname);if(target)setTimeout(()=>document.getElementById(target)?.scrollIntoView({behavior:'smooth'}),40);else window.scrollTo({top:0,behavior:'smooth'});}
     function applyCategory(category){document.querySelectorAll('[data-filter]').forEach(el=>el.checked=false);search.value='';if(category==='externo'){document.querySelector('[data-filter="ambiente"][value="externo"]').checked=true;}else if(category==='preparacao'){document.querySelector('[data-filter="etapa"][value="preparacao"]').checked=true;}else{const box=document.querySelector(`[data-filter="superficie"][value="${category}"]`);if(box)box.checked=true;}render();document.querySelector('#produtos').scrollIntoView({behavior:'smooth'});}
     document.querySelectorAll('[data-open-catalog]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openCatalog()}));
-    document.querySelectorAll('[data-open-home]').forEach(el=>el.addEventListener('click',()=>openHome()));
+    document.querySelectorAll('[data-open-home]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openHome()}));
     document.querySelectorAll('[data-nav-home]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openHome(el.getAttribute('href').slice(1))}));
     document.querySelectorAll('[data-category]').forEach(el=>el.addEventListener('click',()=>openCatalog(el.dataset.category)));
     document.querySelectorAll('[data-filter]').forEach(el=>el.addEventListener('change',render));search.addEventListener('input',render);sort.addEventListener('change',render);
