@@ -38,7 +38,6 @@ const painterSupabase = window.supabase?.createClient(
 );
 const shopTabs = [...document.querySelectorAll('.shop-tab')];
 const shopEmpty = document.querySelector('.shop-empty');
-const productSearch = document.querySelector('#product-search');
 const productCount = document.querySelector('#product-count');
 const cart = new Map();
 const cartPanel = document.querySelector('.shop-cart');
