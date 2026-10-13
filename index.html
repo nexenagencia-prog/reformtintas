@@ -1,368 +1,241 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#151512">
-  <meta name="description" content="Tintas, seladores e soluções para pintura na Reform. Encontre o produto certo para sua obra.">
-  <title>Tintas | Reform — Sua obra. Do seu jeito.</title>
-  <link rel="icon" href="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{--ink:#151512;--paper:#f2f0e9;--white:#fbfaf6;--muted:#77766e;--line:rgba(21,21,18,.13);--orange:#f26b32;--orange-dark:#db5721;--red:#e64438;--max:1440px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}img{display:block;max-width:100%}
-    .topbar{height:76px;padding:0 max(4vw,24px);display:flex;align-items:center;justify-content:space-between;background:var(--ink);color:white}.brand{width:132px}.brand img{width:100%;max-height:43px;object-fit:contain;object-position:left center}.top-actions{display:flex;align-items:center;gap:26px;font-size:11px}.top-actions a{opacity:.78}.top-actions a:hover{opacity:1;color:#ff9a68}.menu-toggle{display:none;border:0;background:none;color:white;font-size:24px}
-    .page{max-width:var(--max);margin:auto;padding:0 36px 70px}.crumb{padding:23px 0 18px;color:#858278;font-size:10px}.crumb a:hover{color:var(--orange)}.crumb span{margin:0 8px;color:#bbb7ac}
-    .intro{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 370px;align-items:end;gap:36px;padding:14px 0 28px;border-bottom:1px solid var(--line)}.eyebrow{margin:0 0 9px;color:#9a6a4b;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.intro h1{margin:0;font-family:Manrope,sans-serif;font-size:clamp(34px,4.8vw,56px);font-weight:500;letter-spacing:-.06em;line-height:1.02}.intro h1 em{font-style:normal;color:var(--orange)}.intro-copy{margin:0 0 5px;color:#727168;font-size:12px;line-height:1.7}.hero-strip{display:grid;grid-template-columns:1.2fr .8fr;gap:15px;margin:23px 0 28px}.hero-photo{position:relative;min-height:190px;overflow:hidden;border-radius:12px;background:#4c443c}.hero-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center 48%;filter:brightness(.73)}.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,15,13,.78),rgba(15,15,13,.04) 95%)}.hero-photo-copy{position:absolute;z-index:1;left:30px;top:50%;transform:translateY(-50%);max-width:440px;color:white}.hero-photo-copy small{display:block;margin-bottom:9px;color:#ffc09d;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}.hero-photo-copy h2{margin:0;font-family:Manrope,sans-serif;font-size:clamp(24px,3.1vw,38px);font-weight:500;letter-spacing:-.045em;line-height:1.1}.hero-photo-copy p{margin:10px 0 0;color:rgba(255,255,255,.78);font-size:11px}.quick-card{display:flex;align-items:center;gap:19px;padding:20px;border:1px solid rgba(21,21,18,.07);border-radius:12px;background:var(--white)}.quick-card img{width:105px;height:145px;flex:none;border-radius:8px;object-fit:cover}.quick-card small{color:#a86542;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.quick-card h3{margin:8px 0;font-family:Manrope,sans-serif;font-size:20px;font-weight:500;letter-spacing:-.04em;line-height:1.18}.quick-card p{margin:0;color:var(--muted);font-size:10px;line-height:1.55}
-    .catalog-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin:0 0 18px}.catalog-heading h2{margin:0;font-family:Manrope,sans-serif;font-size:29px;font-weight:500;letter-spacing:-.05em}.catalog-heading p{margin:5px 0 0;color:#77766e;font-size:11px}.filters-mobile{display:none}.layout{display:grid;grid-template-columns:230px minmax(0,1fr);align-items:start;gap:26px}.sidebar{position:sticky;top:15px;padding:18px 17px;background:var(--white);border:1px solid rgba(21,21,18,.07);border-radius:12px}.side-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:14px;border-bottom:1px solid var(--line)}.side-head h3{margin:0;font-size:13px;font-weight:700}.clear-btn{padding:0;border:0;background:none;color:#9a5e3a;font-size:10px;text-decoration:underline}.filter-group{padding:15px 0;border-bottom:1px solid var(--line)}.filter-group:last-child{padding-bottom:3px;border:0}.filter-group h4{margin:0 0 10px;font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}.check-row{display:flex;align-items:center;gap:8px;margin:9px 0;color:#636259;font-size:10px}.check-row input{accent-color:var(--orange)}.check-row small{margin-left:auto;color:#a19e94}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:15px}.results{color:#747168;font-size:10px}.toolbar-right{display:flex;align-items:center;gap:8px}.search{width:min(270px,34vw);height:38px;padding:0 11px;border:1px solid var(--line);border-radius:7px;background:var(--white);outline:none;font-size:10px}.search:focus,.sort:focus{border-color:var(--orange)}.sort{height:38px;max-width:170px;padding:0 10px;border:1px solid var(--line);border-radius:7px;background:var(--white);font-size:10px}.product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.product-card{min-width:0;overflow:hidden;border:1px solid rgba(21,21,18,.08);border-radius:10px;background:var(--white);transition:transform .2s,box-shadow .2s}.product-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(21,21,18,.09)}.product-image{position:relative;display:grid;place-items:center;height:190px;padding:17px;background:#eeece4}.product-image img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}.badge{position:absolute;top:11px;left:11px;padding:6px 8px;border-radius:4px;background:rgba(21,21,18,.86);color:#fff;font-size:8px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}.product-body{padding:14px 14px 13px}.product-brand{color:#a46847;font-size:8px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}.product-name{min-height:39px;margin:7px 0 12px;font-size:12px;font-weight:600;line-height:1.45}.product-meta{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:13px}.tag{padding:5px 7px;border:1px solid rgba(21,21,18,.11);border-radius:99px;color:#6e6b61;font-size:8px}.product-link{display:flex;align-items:center;justify-content:space-between;width:100%;padding:10px 11px;border:0;border-radius:5px;background:var(--ink);color:white;font-size:9px;font-weight:700;letter-spacing:.02em;transition:background .2s}.product-link:hover{background:var(--orange)}.product-link span{font-size:15px}.empty{grid-column:1/-1;padding:45px 20px;border:1px dashed var(--line);border-radius:10px;color:#777;text-align:center;font-size:13px}.contact{display:flex;align-items:center;justify-content:space-between;gap:22px;margin-top:48px;padding:28px 30px;border-radius:12px;background:var(--ink);color:white}.contact h2{margin:0 0 5px;font-family:Manrope,sans-serif;font-size:23px;font-weight:500;letter-spacing:-.04em}.contact p{margin:0;color:rgba(255,255,255,.68);font-size:11px}.contact a{display:inline-flex;align-items:center;gap:15px;padding:13px 16px;border-radius:5px;background:var(--orange);color:white;font-size:10px;font-weight:700}.contact a:hover{background:var(--orange-dark)}footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:23px max(4vw,24px);background:#0e0e0d;color:rgba(255,255,255,.6);font-size:9px}.footer-brand{width:112px}.footer-brand img{width:100%;max-height:36px;object-fit:contain;object-position:left center}
-    .hero{position:relative;isolation:isolate;display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:430px;margin:8px 0 28px;padding:48px 52px;overflow:hidden;border-radius:14px;background:var(--ink);color:#fff}
-    .hero:before{content:"";position:absolute;z-index:-1;width:470px;height:470px;right:-135px;top:-240px;border:58px solid rgba(230,68,56,.92);border-radius:50%}
-    .hero:after{content:"";position:absolute;z-index:-1;width:180px;height:180px;left:41%;bottom:-116px;border-radius:50%;background:var(--orange)}
-    .hero-copy{position:relative;z-index:2;max-width:510px}.hero-kicker{display:flex;align-items:center;gap:9px;margin:0 0 15px;color:#ffb38b;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.hero-kicker:before{content:"";width:24px;height:3px;background:var(--orange)}.hero h1{margin:0;font-family:Manrope,sans-serif;font-size:clamp(48px,6vw,76px);font-weight:600;letter-spacing:-.075em;line-height:.92}.hero h1 span{color:var(--orange)}.hero-lede{max-width:390px;margin:18px 0 22px;color:rgba(255,255,255,.76);font-size:13px;line-height:1.7}.hero-cta{display:inline-flex;align-items:center;gap:18px;padding:13px 16px;border-radius:5px;background:var(--orange);color:#fff;font-size:10px;font-weight:700}.hero-cta:hover{background:var(--red)}.hero-cta span{font-size:16px}.hero-note{display:inline-flex;align-items:center;gap:7px;margin-left:14px;color:rgba(255,255,255,.6);font-size:9px}.hero-note b{color:#ff6e5d;font-size:15px}
-    .hero-collage{position:relative;width:min(100%,500px);height:332px;margin:auto}.collage-photo{position:absolute;overflow:hidden;border:5px solid #f2f0e9;border-radius:10px;box-shadow:0 20px 35px rgba(0,0,0,.32)}.collage-photo img{width:100%;height:100%;object-fit:cover}.collage-main{z-index:1;inset:12px 60px 25px 38px;transform:rotate(-2deg)}.collage-main img{object-position:center 50%}.collage-shop{z-index:2;width:148px;height:112px;right:0;top:2px;transform:rotate(5deg)}.collage-shop img{object-position:center}.collage-tools{z-index:3;width:144px;height:118px;left:0;bottom:0;transform:rotate(-6deg)}.collage-tools img{object-position:center}.paint-sticker{position:absolute;z-index:4;right:12px;bottom:14px;display:grid;place-items:center;width:93px;height:93px;border:5px solid var(--ink);border-radius:50%;background:var(--orange);color:#fff;text-align:center;font-size:10px;font-weight:800;line-height:1.12;transform:rotate(8deg)}.paint-sticker span{display:block;font-size:21px}
-    .benefit-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:9px;margin:0 0 35px}.benefit-card{min-height:83px;padding:12px 11px;border:1px solid rgba(21,21,18,.08);border-radius:9px;background:var(--white);transition:transform .18s,border-color .18s,box-shadow .18s}.benefit-card:hover{transform:translateY(-2px);border-color:rgba(242,107,50,.5);box-shadow:0 8px 20px rgba(21,21,18,.07)}.benefit-icon{display:grid;place-items:center;width:24px;height:24px;margin-bottom:7px;border-radius:7px;background:#fff0e7;color:var(--orange-dark);font-size:13px;font-weight:800}.benefit-card:nth-child(3n) .benefit-icon{background:#ffebe9;color:var(--red)}.benefit-card strong{display:block;font-size:10px;line-height:1.25}.benefit-card small{display:block;margin-top:4px;color:#858278;font-size:8px;line-height:1.35}
-    .product-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.product-image{height:145px;padding:13px}.product-body{padding:11px 11px 10px}.product-name{min-height:34px;margin:6px 0 9px;font-size:10px;line-height:1.4}.product-meta{gap:4px;margin-bottom:10px}.tag{padding:4px 6px;font-size:7px}.product-link{padding:9px 10px;font-size:8px}.badge{top:8px;left:8px;padding:5px 7px;font-size:7px}
-    @media(max-width:1100px){.benefit-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media(max-width:900px){.page{padding:0 24px 55px}.hero{min-height:370px;padding:37px 30px}.hero-collage{height:285px}.collage-main{inset:15px 38px 24px 27px}.collage-shop{width:120px;height:95px}.collage-tools{width:118px;height:96px}.paint-sticker{width:78px;height:78px;font-size:9px}.paint-sticker span{font-size:18px}.layout{grid-template-columns:205px minmax(0,1fr);gap:18px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.product-image{height:150px}}
-    @media(max-width:650px){.topbar{height:67px;padding:0 19px}.brand{width:117px}.top-actions{display:none}.menu-toggle{display:block}.page{padding:0 16px 40px}.crumb{padding:17px 0 13px}.hero{display:flex;flex-direction:column;align-items:stretch;min-height:0;margin:4px 0 18px;padding:25px 19px 15px;border-radius:11px}.hero h1{font-size:54px}.hero-lede{margin:13px 0 15px;font-size:11px}.hero-cta{padding:11px 13px}.hero-note{margin-left:8px;font-size:8px}.hero-collage{width:100%;height:232px;margin:20px auto 0}.collage-main{inset:10px 47px 16px 26px}.collage-shop{width:103px;height:78px;right:1px;top:0;border-width:4px}.collage-tools{width:103px;height:82px;left:0;bottom:0;border-width:4px}.paint-sticker{right:0;bottom:7px;width:69px;height:69px;border-width:4px;font-size:8px}.paint-sticker span{font-size:16px}.hero:before{width:250px;height:250px;right:-118px;top:auto;bottom:118px;border-width:35px}.hero:after{width:105px;height:105px;left:auto;right:22px;bottom:-67px}.benefit-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-bottom:26px}.benefit-card{min-height:72px;padding:10px}.benefit-icon{float:left;margin:0 8px 0 0}.benefit-card strong{padding-top:1px;font-size:10px}.benefit-card small{padding-left:32px;margin-top:3px;font-size:8px}.catalog-heading{align-items:start;margin-bottom:14px}.catalog-heading h2{font-size:25px}.catalog-heading p{max-width:230px;line-height:1.5}.filters-mobile{display:flex;align-items:center;justify-content:space-between;width:100%;margin-bottom:10px;padding:11px 12px;border:1px solid var(--line);border-radius:7px;background:var(--white);font-size:10px;font-weight:700}.layout{display:block}.sidebar{display:none;position:static;margin-bottom:13px}.sidebar.is-open{display:block}.toolbar{display:block}.results{margin-bottom:10px}.toolbar-right{display:grid;grid-template-columns:1fr 145px}.search{width:100%;max-width:none}.sort{width:100%}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.product-image{height:126px;padding:10px}.product-body{padding:9px}.product-name{font-size:9px;min-height:40px}.product-meta{gap:3px;margin-bottom:8px}.tag{font-size:7px;padding:4px 5px}.product-link{padding:8px;font-size:7px}.badge{font-size:7px}.contact{display:block;margin-top:30px;padding:22px 19px}.contact h2{font-size:21px}.contact a{margin-top:16px}footer{padding:20px;align-items:flex-start;flex-direction:column}}
-    @media(max-width:360px){.product-grid{grid-template-columns:1fr}.product-image{height:180px}.product-name{min-height:0}}
-  
-    .home-view[hidden],.catalog-view[hidden]{display:none!important}.top-actions a[aria-current="page"]{color:#ff9a68;opacity:1}.home-hero{position:relative;isolation:isolate;min-height:700px;height:min(760px,72vw);margin:10px 0 70px;overflow:hidden;border-radius:18px;background:#362117;color:#fff;box-shadow:0 22px 55px rgba(38,24,13,.16)}.home-hero-image,.home-hero-shade{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 50%}.home-hero-shade{z-index:-1;background:linear-gradient(90deg,rgba(20,18,16,.84) 0%,rgba(20,18,16,.62) 32%,rgba(20,18,16,.13) 70%,rgba(20,18,16,.04) 100%),linear-gradient(0deg,rgba(20,18,16,.54),transparent 48%)}.home-hero-copy{position:absolute;top:12%;left:7%;max-width:495px}.home-hero .hero-kicker{margin-bottom:20px;color:#ffd0b4}.home-hero h1{font-size:clamp(54px,6.4vw,88px);font-weight:600;line-height:.93;letter-spacing:-.075em}.home-hero h1 em,.catalog-hero h1 em{color:#ff9564;font-style:normal}.home-hero-lede{max-width:405px;margin:22px 0;color:rgba(255,255,255,.87);font-size:15px;line-height:1.7}.hero-actions{display:flex;align-items:center;gap:18px}.hero-cta{border:0}.hero-quiet{font-size:11px;color:#fff;text-decoration:underline;text-underline-offset:4px}.hero-photo-cards{position:absolute;left:7%;bottom:6%;display:flex;gap:10px;max-width:70%}.hero-photo-card{display:grid;grid-template-columns:30px 1fr;column-gap:10px;min-width:176px;padding:12px 15px;border:1px solid rgba(255,255,255,.6);border-radius:10px;background:rgba(255,255,255,.88);color:#22211e;box-shadow:0 10px 25px rgba(0,0,0,.13);backdrop-filter:blur(10px)}.hero-photo-card>span{grid-row:span 2;align-self:center;color:var(--orange);font-size:11px;font-weight:800}.hero-photo-card strong{font-size:11px}.hero-photo-card small{margin-top:3px;color:#6f6d66;font-size:8px}.hero-card-accent{background:#f26b32;color:white;border-color:#f26b32}.hero-card-accent>span,.hero-card-accent small{color:rgba(255,255,255,.82)}.hero-stamp b{color:var(--orange);font-family:'DM Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}.home-section{margin:0 0 62px}.color-section{padding:36px 30px 32px;border-radius:16px;background:#fff}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:24px}.section-head h2,.faq-section h2{margin:0;font-family:Manrope,sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:500;letter-spacing:-.055em;line-height:1.08}.section-head>p{max-width:300px;margin:0 0 2px;color:#747168;font-size:11px;line-height:1.6}.category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.category-card{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:228px;padding:17px;border:0;border-radius:11px;text-align:left;overflow:hidden;color:#211d1a;transition:transform .2s,box-shadow .2s}.category-card:hover{transform:translateY(-4px);box-shadow:0 15px 25px rgba(21,21,18,.12)}.cat-wall{background:#f6d9c3}.cat-outdoor{background:#dde6df}.cat-floor{background:#e5ded0}.cat-metal{background:#f4d4d0}.category-art{position:absolute;inset:0 0 auto;height:130px;overflow:hidden}.category-art:before,.category-art:after{position:absolute;content:"";border-radius:50%}.category-art:before{width:130px;height:130px;right:8%;top:-43px;background:rgba(255,255,255,.42)}.category-art:after{width:70px;height:70px;right:24%;top:20px;border:13px solid rgba(255,255,255,.65)}.category-art i{position:absolute;bottom:-18px;width:34px;height:97px;border-radius:5px 5px 10px 10px;background:rgba(242,107,50,.89);transform:rotate(14deg)}.category-art i:nth-child(1){right:22%;height:84px;background:rgba(255,255,255,.92);transform:rotate(-14deg)}.category-art i:nth-child(2){right:35%;height:103px;background:rgba(230,68,56,.76);transform:rotate(4deg)}.category-art i:nth-child(3){right:8%;width:47px;height:72px;border-radius:50% 50% 8px 8px;background:rgba(30,29,25,.72);transform:rotate(20deg)}.category-copy{position:relative;z-index:1;margin-top:auto}.category-copy small{display:block;margin-bottom:6px;color:#71665d;font-size:9px}.category-copy strong{display:block;font-family:Manrope,sans-serif;font-size:17px;font-weight:600;letter-spacing:-.03em}.category-copy b{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:10px;border-top:1px solid rgba(21,21,18,.13);font-size:9px}.category-copy b span{font-size:14px;color:var(--orange-dark)}.benefit-band{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:7px;margin:0 0 68px;padding:18px;border-radius:14px;background:#201f1b;color:white}.benefit-band>div{min-width:0;padding:8px 10px;border-right:1px solid rgba(255,255,255,.13)}.benefit-band>div:last-child{border:0}.benefit-symbol{display:grid;place-items:center;width:25px;height:25px;margin-bottom:9px;border-radius:8px;background:#fff0e7;color:#d95220;font-size:13px;font-weight:800}.benefit-band>div:nth-child(3n) .benefit-symbol{background:#ffebe9;color:#df493d}.benefit-band strong{display:block;font-size:9px;line-height:1.25}.benefit-band small{display:block;margin-top:4px;color:rgba(255,255,255,.62);font-size:8px;line-height:1.35}.inspiration-panel{display:grid;grid-template-columns:1.05fr .95fr;min-height:365px;margin-bottom:68px;overflow:hidden;border-radius:16px;background:#e9e4dc}.inspiration-image{min-height:365px;overflow:hidden}.inspiration-image img{width:100%;height:100%;object-fit:cover;object-position:center 48%}.inspiration-copy{position:relative;display:flex;flex-direction:column;justify-content:center;padding:42px 45px}.inspiration-copy h2{max-width:440px;margin:0;font-family:Manrope,sans-serif;font-size:clamp(29px,3.4vw,43px);font-weight:500;letter-spacing:-.06em;line-height:1.08}.inspiration-copy>p:not(.eyebrow){max-width:390px;margin:15px 0 17px;color:#69665e;font-size:12px;line-height:1.7}.text-action,.guide-card button{padding:0;border:0;background:none;color:#b74b20;font-size:10px;font-weight:700;text-align:left}.text-action span,.guide-card button span{margin-left:8px;font-size:14px}.color-swatches{display:flex;align-items:center;gap:7px;margin-top:27px}.color-swatches i{width:25px;height:25px;border-radius:50%;border:2px solid rgba(255,255,255,.9)}.color-swatches i:nth-child(1){background:#d75d37}.color-swatches i:nth-child(2){background:#e8bc83}.color-swatches i:nth-child(3){background:#61756a}.color-swatches i:nth-child(4){background:#34312b}.color-swatches i:nth-child(5){background:#d9d2c5}.color-swatches span{margin-left:6px;color:#716d64;font-size:9px}.guide-section{margin-bottom:65px}.outline-action{padding:12px 14px;border:1px solid var(--line);border-radius:6px;background:transparent;color:#27251f;font-size:10px;font-weight:700}.outline-action span{margin-left:14px;color:var(--orange)}.guide-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.guide-card{position:relative;min-height:245px;padding:21px;border:1px solid rgba(21,21,18,.08);border-radius:12px;background:#fff}.guide-number{position:absolute;right:18px;top:16px;color:#a7a398;font-size:9px;font-weight:700}.guide-illustration{display:grid;place-items:center;width:54px;height:54px;margin-bottom:20px;border-radius:15px;font-size:25px}.guide-prep{background:#f8dfd1;color:#d55b2d}.guide-color{background:#e8e2f3;color:#7061a1}.guide-tools{background:#dfe9df;color:#55725a}.guide-card h3{margin:0 0 8px;font-family:Manrope,sans-serif;font-size:17px;font-weight:600;letter-spacing:-.03em}.guide-card p{max-width:310px;min-height:39px;margin:0 0 18px;color:#77746a;font-size:10px;line-height:1.6}.home-callout,.catalog-help{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;margin:0 0 64px;padding:29px 34px;overflow:hidden;border-radius:13px;background:#211f1b;color:white}.home-callout>div:not(.callout-orb),.catalog-help>div{position:relative;z-index:1}.home-callout .eyebrow,.catalog-help .eyebrow{color:#ffc09e}.home-callout h2,.catalog-help h2{margin:0;font-family:Manrope,sans-serif;font-size:clamp(23px,3vw,34px);font-weight:500;letter-spacing:-.05em}.home-callout p:not(.eyebrow),.catalog-help p:not(.eyebrow){margin:8px 0 0;color:rgba(255,255,255,.67);font-size:10px}.home-callout>a,.catalog-help>a{position:relative;z-index:1;flex:none;display:inline-flex;gap:18px;align-items:center;padding:14px 16px;border-radius:5px;background:var(--orange);color:white;font-size:10px;font-weight:700}.home-callout>a span,.catalog-help>a span{font-size:15px}.callout-orb{position:absolute;right:18%;top:-135px;width:270px;height:270px;border:34px solid rgba(230,68,56,.58);border-radius:50%}.faq-section{margin-bottom:58px}.faq-section h2{margin-bottom:20px}.faq-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.faq-grid details{padding:16px;border:1px solid rgba(21,21,18,.1);border-radius:9px;background:#fbfaf6}.faq-grid summary{font-size:11px;font-weight:700;cursor:pointer}.faq-grid details p{margin:12px 0 0;color:#757168;font-size:10px;line-height:1.6}.catalog-topline{display:flex;justify-content:space-between;align-items:center;margin:16px 0;color:#827f75;font-size:10px}.catalog-topline i{margin:0 8px;color:var(--orange);font-style:normal}.back-home{padding:0;border:0;background:none;color:#302e29;font-size:10px;font-weight:700}.catalog-hero{display:flex;justify-content:space-between;align-items:center;min-height:280px;margin:8px 0 15px;padding:36px 45px;overflow:hidden;border-radius:14px;background:#23211e;color:white}.catalog-hero h1{margin:0;font-family:Manrope,sans-serif;font-size:clamp(42px,5vw,66px);font-weight:500;line-height:.97;letter-spacing:-.07em}.catalog-hero>div:first-child>p:last-child{max-width:390px;color:rgba(255,255,255,.69);font-size:11px;line-height:1.6}.catalog-color-art{position:relative;display:grid;place-items:center;width:220px;height:220px;flex:none}.catalog-color-art i{position:absolute;width:150px;height:150px;border:28px solid #f26b32;border-radius:50%}.catalog-color-art i:nth-child(2){width:105px;height:105px;border-color:#e64438;transform:translate(27px,19px)}.catalog-color-art i:nth-child(3){width:56px;height:56px;border-color:#f2f0e9;transform:translate(-25px,-30px)}.catalog-color-art b{z-index:1;color:white;font-family:Manrope,sans-serif;font-size:19px;line-height:.92;text-align:center;transform:rotate(-10deg)}.catalog-benefits{display:flex;flex-wrap:wrap;justify-content:space-around;gap:8px;margin:0 0 30px;padding:14px 12px;border:1px solid rgba(21,21,18,.08);border-radius:9px;background:#fff}.catalog-benefits span{display:flex;align-items:center;gap:7px;padding:4px 9px;color:var(--orange-dark);font-size:12px}.catalog-benefits b{color:#37352f;font-size:9px}.catalog-shortcuts{margin-bottom:34px}.catalog-shortcuts h2{margin:0;font-family:Manrope,sans-serif;font-size:27px;font-weight:500;letter-spacing:-.05em}.shortcut-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.shortcut-row button{padding:11px 13px;border:1px solid rgba(21,21,18,.11);border-radius:6px;background:#fff;font-size:9px;font-weight:700}.shortcut-row button:hover{border-color:var(--orange);color:#b74b20}.shortcut-row span{margin-left:13px;color:var(--orange)}.catalog-view .catalog-heading{margin-bottom:18px}.catalog-view .contact{margin-top:35px}.catalog-help{margin:42px 0 20px}.catalog-help>div{max-width:520px}.catalog-help h2{font-size:27px}.catalog-help p:not(.eyebrow){font-size:10px}
-    @media(max-width:1000px){.category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.benefit-band{grid-template-columns:repeat(4,minmax(0,1fr))}.benefit-band>div:nth-child(4){border-right:0}.hero-photo-cards{max-width:86%}.hero-photo-card{min-width:150px}.catalog-benefits{justify-content:flex-start}.catalog-benefits span{width:24%}}
-    @media(max-width:650px){.topbar{position:relative;z-index:10}.top-actions{position:absolute;top:67px;left:0;right:0;display:none;flex-direction:column;align-items:stretch;gap:0;padding:8px 18px 13px;background:#151512}.top-actions.is-open{display:flex}.top-actions a{padding:12px 4px;border-bottom:1px solid rgba(255,255,255,.1);font-size:12px}.home-hero{height:auto;min-height:715px;margin:6px 0 39px;border-radius:12px}.home-hero-image{object-position:69% center}.home-hero-shade{background:linear-gradient(180deg,rgba(18,17,16,.73) 0%,rgba(18,17,16,.28) 43%,rgba(18,17,16,.63) 100%),linear-gradient(90deg,rgba(18,17,16,.35),transparent)}.home-hero-copy{top:8%;left:7%;right:7%;max-width:430px}.home-hero h1{font-size:58px}.home-hero-lede{max-width:360px;margin:16px 0;font-size:11px}.home-hero .hero-kicker{margin-bottom:15px;font-size:8px}.hero-actions{gap:11px}.hero-cta{font-size:9px}.hero-quiet{font-size:8px}.hero-photo-cards{left:6%;right:6%;bottom:5%;max-width:none;display:grid;grid-template-columns:1fr 1fr;gap:7px}.hero-photo-card{min-width:0;padding:9px 10px;grid-template-columns:23px 1fr}.hero-photo-card strong{font-size:9px}.hero-photo-card small{font-size:7px}.hero-photo-card>span{font-size:9px}.hero-card-accent{grid-column:1/-1}.hero-stamp{top:auto;right:6%;bottom:31%;padding:10px 12px;font-size:13px}.hero-stamp b{font-size:7px}.home-section{margin-bottom:39px}.color-section{padding:24px 16px 17px}.section-head{display:block;margin-bottom:17px}.section-head h2,.faq-section h2{font-size:30px}.section-head>p{margin-top:9px;font-size:10px}.category-grid{gap:8px}.category-card{min-height:185px;padding:12px}.category-art{height:105px}.category-art i{height:68px}.category-art i:nth-child(2){height:75px}.category-copy small{font-size:8px}.category-copy strong{font-size:14px}.category-copy b{margin-top:11px;padding-top:8px;font-size:8px}.benefit-band{grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin-bottom:42px;padding:12px}.benefit-band>div{padding:10px 8px;border-right:0;border-bottom:1px solid rgba(255,255,255,.1)}.benefit-band>div:nth-last-child(-n+1){grid-column:1/-1;border-bottom:0}.benefit-band>div:nth-child(2n){border-left:1px solid rgba(255,255,255,.1)}.benefit-band>div:last-child{border-left:0}.benefit-band strong{font-size:9px}.inspiration-panel{grid-template-columns:1fr;margin-bottom:42px}.inspiration-image{min-height:250px;height:250px}.inspiration-copy{padding:25px 20px}.inspiration-copy h2{font-size:31px}.inspiration-copy>p:not(.eyebrow){font-size:10px}.guide-section{margin-bottom:40px}.guide-section .section-head{display:flex;align-items:start;flex-direction:column;gap:13px}.outline-action{padding:10px 12px}.guide-grid{grid-template-columns:1fr;gap:8px}.guide-card{min-height:0;padding:15px}.guide-illustration{width:42px;height:42px;margin-bottom:13px;font-size:20px}.guide-card h3{font-size:15px}.guide-card p{min-height:0;margin-bottom:12px}.home-callout,.catalog-help{align-items:flex-start;flex-direction:column;margin-bottom:38px;padding:22px 18px}.home-callout h2,.catalog-help h2{font-size:24px}.home-callout>a,.catalog-help>a{padding:12px 13px}.callout-orb{right:-22%;top:-88px;width:190px;height:190px;border-width:25px}.faq-section{margin-bottom:38px}.faq-grid{grid-template-columns:1fr}.faq-grid details{padding:14px}.catalog-topline{margin:14px 0}.catalog-hero{min-height:250px;margin-top:5px;padding:25px 19px}.catalog-hero h1{font-size:41px}.catalog-hero>div:first-child>p:last-child{max-width:260px;font-size:10px}.catalog-color-art{width:100px;height:130px;margin-right:-15px;transform:scale(.75)}.catalog-benefits{gap:2px;padding:9px}.catalog-benefits span{width:48%;gap:5px;padding:6px;font-size:10px}.catalog-benefits b{font-size:8px}.catalog-shortcuts h2{font-size:23px}.shortcut-row{gap:6px}.shortcut-row button{padding:9px;font-size:8px}.catalog-view .catalog-heading h2{font-size:25px}.catalog-help{margin-top:30px}}
-    
-  
-    body{overflow-x:hidden}
-    .home-hero{width:100vw;height:min(88svh,860px);min-height:650px;margin:0 0 70px calc(50% - 50vw);border-radius:0;box-shadow:none}
-    .home-hero-copy{left:max(calc((100% - 1280px)/2),6vw);top:15%}
-    .hero-photo-cards{left:max(calc((100% - 1280px)/2),6vw);bottom:7%}
-    .home-hero-image{object-position:center 48%}
-    .category-card{isolation:isolate;background:#25221e;color:#fff}
-    .category-card:after{position:absolute;z-index:-1;inset:0;content:"";background:linear-gradient(180deg,rgba(15,14,12,0) 26%,rgba(15,14,12,.12) 47%,rgba(15,14,12,.84) 100%)}
-    .category-art{position:absolute;z-index:-2;inset:0;height:100%;overflow:hidden}
-    .category-art:before,.category-art:after,.category-art i{display:none}
-    .category-art img{width:100%;height:100%;object-fit:cover;transition:transform .45s}
-    .category-card:hover .category-art img{transform:scale(1.04)}
-    .category-copy{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:15px 17px 14px}
-    .category-copy small{color:rgba(255,255,255,.78)}
-    .category-copy b{border-top-color:rgba(255,255,255,.35);color:#fff}
-    .benefit-band>div{display:grid;grid-template-columns:19px minmax(0,1fr);grid-template-rows:auto auto;align-content:center;gap:0 9px}
-    .benefit-symbol{grid-column:1;grid-row:1/span 2;width:19px;height:19px;margin:0;font-size:10px}
-    .benefit-band strong{grid-column:2;font-size:11px;line-height:1.25}
-    .benefit-band small{grid-column:2;margin-top:4px;font-size:9px}
-    .catalog-hero{position:relative;isolation:isolate;overflow:hidden;background:#211f1b}
-    .catalog-hero-image{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
-    .catalog-hero:after{position:absolute;z-index:-1;inset:0;content:"";background:linear-gradient(90deg,rgba(20,18,16,.85),rgba(20,18,16,.55) 45%,rgba(20,18,16,.1))}
-    .catalog-hero>div:first-child{position:relative;z-index:1}
-    .catalog-hero .eyebrow{color:#ffd0b4}
-    .catalog-hero>div:first-child>p:last-child{color:rgba(255,255,255,.82)}
-    .product-card{background:#fff;border-color:rgba(21,21,18,.1)}
-    .product-image{display:flex;align-items:center;justify-content:center;height:176px;padding:14px;background:linear-gradient(145deg,#f8f5ef,#ebe7df)}
-    .product-image .badge{display:none}
-    .product-image img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
-    .product-body{padding:12px 13px 13px}
-    .product-ident{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px}
-    .product-brand{margin:0}
-    .product-label{flex:none;padding:4px 7px;border-radius:99px;background:#fff0e7;color:#b64c20;font-size:7px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-    .product-name{min-height:42px;margin:0 0 9px;font-size:11px;line-height:1.4}
-    .product-meta{min-height:23px;margin-bottom:11px}
-    @media(max-width:1000px){.home-hero{min-height:620px}.home-hero-copy{left:6%}.hero-photo-cards{left:6%;max-width:88%}.benefit-band>div{padding:10px 8px}.benefit-band strong{font-size:10px}}
-    @media(max-width:650px){
-      .home-hero{width:100vw;height:auto;min-height:715px;margin:0 0 39px calc(50% - 50vw);border-radius:0}
-      .home-hero-image{object-position:69% center}
-      .home-hero-copy{left:7%;top:8%;right:7%}
-      .hero-photo-cards{left:6%;right:6%;bottom:5%;max-width:none}
-      .category-card{min-height:185px}
-      .category-copy{padding:12px}
-      .category-copy strong{font-size:14px}
-      .category-copy b{font-size:8px}
-      .benefit-band>div{grid-template-columns:17px minmax(0,1fr);gap:0 7px;padding:10px 8px}
-      .benefit-symbol{width:17px;height:17px;font-size:9px}
-      .benefit-band strong{font-size:10px}
-      .benefit-band small{font-size:8px}
-      .catalog-hero{min-height:250px;padding:25px 19px}
-      .catalog-hero-image{object-position:63% center}
-      .catalog-hero:after{background:linear-gradient(90deg,rgba(20,18,16,.8),rgba(20,18,16,.4) 66%,rgba(20,18,16,.15))}
-      .product-image{height:128px;padding:10px}
-      .product-body{padding:9px}
-      .product-label{padding:3px 5px;font-size:6px}
-      .product-name{font-size:9px;min-height:40px}
-    }
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#151512" />
+    <meta name="description" content="Madeira e metal, seladores e acessórios para pintura. Encontre tudo para renovar sua casa com a Reform." />
+    <title>Tintas | Reform — Sua obra. Do seu jeito.</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="site-home" id="site-home">
+    <header class="site-header" id="topo">
+      <a class="brand" href="#topo" aria-label="Reforme, início"><span class="brand-logo"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-logo.png" alt="" /><span class="brand-logo-dot" aria-hidden="true"></span></span></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
+      <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+        <a href="#comprar">Produtos</a>
+        <a href="#pintores" data-open-painters>Acesso para pintores</a>
+        <a href="#colecoes">Categorias</a>
+        <a href="#catalogo" data-open-materials>Catálogo</a>
+        <a href="#loja">A loja</a>
+        <a href="#solucoes">Soluções</a>
+        <a class="nav-cta" href="#contato">Fale com um atendente <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
 
-  
-    .topbar{position:absolute;top:0;left:0;right:0;z-index:20;height:84px;padding:0 max(calc((100vw - 1280px)/2),6vw);background:linear-gradient(180deg,rgba(21,21,18,.78),rgba(21,21,18,0));}
-    .brand{flex:none}
-    .catalog-open .topbar{background:#151512}
-    .catalog-open .page{padding-top:92px}
-    .home-hero{height:min(94svh,900px);min-height:760px;margin-top:0}
-    .home-hero-image{object-position:center 55%}
-    .home-hero-copy{left:max(calc((100% - 1280px)/2),6vw);top:15%}
-    .hero-photo-cards{left:auto;right:max(calc((100% - 1280px)/2),6vw);bottom:5%;width:min(690px,54vw);max-width:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
-    .hero-photo-card{min-width:0}
-    .hero-installment{position:absolute;right:max(calc((100% - 1280px)/2),6vw);bottom:calc(5% + 75px);color:white;font-size:14px;font-weight:600;text-shadow:0 2px 12px rgba(0,0,0,.55)}
-    .hero-installment strong{color:#ff9869;font-size:17px}
-    .product-image{height:220px;padding:0;background:#fff;overflow:hidden}
-    .product-image img{transform:scale(1.22);transform-origin:center}
-    .product-body{background:#fff}
-    @media(max-width:1000px){
-      .topbar{height:76px;padding:0 6vw}
-      .hero-photo-cards{right:6%;width:56vw}
-      .hero-installment{right:6%;bottom:calc(5% + 72px)}
-      .hero-photo-card{padding:10px}
-      .hero-photo-card strong{font-size:10px}
-      .hero-photo-card small{font-size:7px}
-      .product-image{height:205px}
-    }
-    @media(max-width:650px){
-      .topbar{position:absolute;height:67px;padding:0 7%;background:linear-gradient(180deg,rgba(21,21,18,.8),rgba(21,21,18,0))}
-      .catalog-open .topbar{height:67px;padding:0 19px}
-      .catalog-open .page{padding-top:80px}
-      .home-hero{height:auto;min-height:760px;margin-top:0}
-      .home-hero-image{object-position:69% center}
-      .home-hero-copy{left:7%;top:12%;right:7%}
-      .hero-photo-cards{left:auto;right:5%;bottom:5%;width:min(57%,230px);grid-template-columns:1fr;gap:6px}
-      .hero-photo-card{padding:8px 10px;grid-template-columns:20px 1fr}
-      .hero-photo-card small{display:none}
-      .hero-photo-card strong{font-size:9px}
-      .hero-installment{right:5%;bottom:calc(5% + 121px);max-width:230px;text-align:right;font-size:10px}
-      .hero-installment strong{font-size:12px}
-      .product-image{height:160px;padding:0}
-      .product-image img{transform:scale(1.18)}
-    }
-    @media(max-width:380px){
-      .hero-photo-cards{width:58%}
-      .product-grid{grid-template-columns:1fr}
-      .product-image{height:210px}
-    }
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-image" aria-hidden="true"></div>
+        <div class="hero-store-photo" aria-hidden="true"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-grain" aria-hidden="true"></div>
+        <div class="hero-content">
+          <div class="hero-title-group">
+            <p class="eyebrow"><span class="eyebrow-line"></span>Tintas, seladores e soluções para pintura</p>
+            <h1 id="hero-title">Sua obra.<br /><em>Do seu jeito.</em></h1>
+          </div>
+          <div class="hero-details-group">
+            <p class="hero-copy">Tudo o que você precisa para pintar e renovar sua casa, você encontra aqui.</p>
+            <div class="hero-actions">
+              <a class="button button-orange" href="#comprar">Explore as tintas <span aria-hidden="true">↗</span></a>
+              <a class="text-link text-link-light" href="#loja">Conheça a Reforme <span aria-hidden="true">↓</span></a>
+            </div>
+          </div>
+        </div>
+        <p class="hero-installment">Parcele suas compras<br /><strong>em até 12 vezes no cartão.</strong></p>
+        <div class="hero-side-note"><span>01</span><span class="side-rule"></span><span>PINTAR<br />É TRANSFORMAR</span></div>
+        <div class="hero-material-cards" aria-label="Tintas e soluções em destaque">
+          <a class="hero-material-card hero-offer-card" href="#catalogo" data-open-materials data-product-filter="tintas"><img src="https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/e/b/eb96aa24_1880601_1.jpg" alt="" /><span><small>DESTAQUE · TINTAS</small><strong>Tinta Acrílica 16L Branco Fosco Solcolor</strong><em>R$ 129,90</em></span><b aria-hidden="true">↗</b></a>
+          <a class="hero-material-card hero-offer-card" href="#catalogo" data-open-materials data-product-filter="tintas"><img src="https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/2/3/23ec3acb_1969740_1.jpg" alt="" /><span><small>DESTAQUE · PISOS</small><strong>Tinta Novopiso Premium 18L Cinza Fosco Hydronorth</strong><em>R$ 249,90</em></span><b aria-hidden="true">↗</b></a>
+          <a class="hero-material-card hero-offer-card" href="#catalogo" data-open-materials data-product-filter="tintas"><img src="https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/8/8/88c61fc8_2084176_1_1.jpg" alt="" /><span><small>DESTAQUE · PROTEÇÃO</small><strong>Tinta Impermeabilizante 18l Emborrachada Elefante Hydronorth</strong><em>R$ 418,41</em></span><b aria-hidden="true">↗</b></a>
+        </div>
+        
+        <div class="hero-photo-caption"><span>REFORM.</span><span>MATERIAIS PARA CONSTRUIR E REFORMAR</span></div>
+      </section>
 
-  
-    .topbar{isolation:isolate;overflow:hidden;background:rgba(21,21,18,.34);backdrop-filter:blur(5px)}
-    .topbar-video{position:absolute;z-index:-2;inset:-9px;width:calc(100% + 18px);height:calc(100% + 18px);object-fit:cover;object-position:center 44%;filter:blur(8px) brightness(.54) saturate(1.35);opacity:.92;pointer-events:none}
-    .topbar:after{position:absolute;z-index:-1;inset:0;content:"";background:linear-gradient(90deg,rgba(15,14,12,.56),rgba(15,14,12,.22) 58%,rgba(15,14,12,.46))}
-    .topbar>*:not(.topbar-video){position:relative;z-index:1}
-    .catalog-open .topbar{background:#151512;backdrop-filter:none}
-    .catalog-open .topbar-video,.catalog-open .topbar:after{display:none}
-    .home-hero h1 em{color:#ff4d00;text-shadow:0 0 12px rgba(255,77,0,.68),0 0 34px rgba(255,77,0,.42)}
-    @media(max-width:650px){.topbar-video{object-position:62% 45%;filter:blur(7px) brightness(.5) saturate(1.35)}}
+      <section class="shop-section section-pad" id="comprar" aria-labelledby="shop-title">
+        <div class="shop-heading reveal">
+          <div>
+            <div class="section-kicker"><span>02 / DESTAQUES DA REFORM</span><span class="kicker-rule"></span></div>
+            <h2 id="shop-title">Escolhas certas<br />para a sua <em>pintura.</em></h2>
+          </div>
+          <p>Uma seleção de tintas, seladores e acessórios para cada etapa da sua pintura.</p>
+        </div>
+        <div class="product-grid promo-grid" id="promotion-grid" aria-label="Seis tintas e soluções em destaque"></div>
+        <div class="shop-more-wrap"><a class="button button-dark" href="#catalogo" data-open-materials>Ver catálogo completo <span aria-hidden="true">↗</span></a></div>
+      </section>
 
-  
-    .home-hero h1 em{color:#ff4b00;text-shadow:none}
-    .hero-installment{font-size:20px}
-    .hero-installment strong{font-size:24px}
-    @media(min-width:651px){
-      .home-hero{height:min(106svh,1000px);min-height:840px;margin-bottom:0}
-      .home-hero-image{height:calc(100% + 90px);transform:translateY(36px);object-position:center top}
-    }
-    @media(max-width:1000px) and (min-width:651px){
-      .hero-installment{font-size:18px}
-      .hero-installment strong{font-size:21px}
-    }
-    @media(max-width:650px){
-      .hero-installment{font-size:11px}
-      .hero-installment strong{font-size:13px}
-    }
+      <section class="collection-feature section-pad" id="colecoes" aria-labelledby="collection-title">
+        <div class="collection-heading reveal">
+          <div><div class="section-kicker"><span>03 / EXPLORE POR SUPERFÍCIE</span><span class="kicker-rule"></span></div><h2 id="collection-title">Encontre o próximo<br /><em>passo da sua pintura.</em></h2></div>
+          <p>Escolha a superfície e encontre os produtos certos para preparar, pintar e proteger.</p>
+        </div>
+        <div class="collection-grid">
+          <a class="collection-card reveal" href="#catalogo" data-open-materials data-product-filter="tintas"><img class="collection-photo" src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/tiles-floor.webp" alt="Revestimento de porcelanato em ambiente claro" loading="lazy" /><span class="collection-copy"><small>01 / PAREDES INTERNAS</small><strong>Paredes internas</strong><span class="collection-action"><b aria-hidden="true">↗</b></span></span></a>
+          <a class="collection-card reveal" href="#catalogo" data-open-materials data-product-filter="tintas"><img class="collection-photo" src="https://balaroti.fbitsstatic.net/img/p/cimento-votoran-todas-as-obras-50kg-154494/341017.jpg?h=704&v=202509011440&w=704" alt="Saco original de cimento Votoran Todas as Obras, 50 kg" loading="lazy" /><span class="collection-copy"><small>02 / PAREDES EXTERNAS</small><strong>Paredes externas</strong><span class="collection-action"><b aria-hidden="true">↗</b></span></span></a>
+          <a class="collection-card reveal" href="#catalogo" data-open-materials data-product-filter="tintas"><img class="collection-photo" src="https://imgprd.martinsatacado.com.br/catalogoimg/117396/01_117396_01.jpg?v=050920245334%3Bims%3D1000x" alt="Pisos organizadas em painel" loading="lazy" /><span class="collection-copy"><small>03 / PISOS</small><strong>Ferramentas</strong><span class="collection-action"><b aria-hidden="true">↗</b></span></span></a>
+          <a class="collection-card reveal" href="#catalogo" data-open-materials data-product-filter="tintas"><img class="collection-photo" src="https://images.tcdn.com.br/img/img_prod/1028926/tinta_coralar_fosca_18lt_coral_16865_1_e46f5eb192fb5bf60649a295b2e4ad3b.jpg" alt="Lata original de tinta Coral Coralar Fosca, 18 litros" loading="lazy" /><span class="collection-copy"><small>04 / MADEIRA E METAL</small><strong>Tintas</strong><span class="collection-action"><b aria-hidden="true">↗</b></span></span></a>
+          <a class="collection-card reveal" href="#catalogo" data-open-materials data-product-filter="tintas"><img class="collection-photo" src="https://casadexco.fbitsstatic.net/img/p/kit-vaso-sanitario-completo-com-caixa-acoplada-branco-lk-total-clean-deca-158147/344668-1.jpg?h=700&v=202604271748&w=700" alt="Louça sanitária branca moderna" loading="lazy" /><span class="collection-copy"><small>05 / PREPARAÇÃO</small><strong>Seladores e massas</strong><span class="collection-action"><b aria-hidden="true">↗</b></span></span></a>
+          <a class="collection-card reveal" href="#catalogo" data-open-materials data-product-filter="tintas"><img class="collection-photo" src="https://lojaacal.vtexassets.com/arquivos/ids/179707-800-auto?aspect=true&height=auto&v=638943394311630000&width=800" alt="Ducha moderna para banheiro" loading="lazy" /><span class="collection-copy"><small>06 / ACESSÓRIOS</small><strong>Acessórios de pintura</strong><span class="collection-action"><b aria-hidden="true">↗</b></span></span></a>
+        </div>
+      </section>
 
-  
-    @media(min-width:651px){
-      .hero-photo-cards{bottom:13%}
-      .hero-installment{bottom:calc(13% + 75px)}
-    }
+      <section class="card-promo" aria-labelledby="card-promo-title">
+        <img class="card-promo-photo" src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/card-holder.webp" alt="Cliente segurando um cartão durante uma reforma" loading="lazy" />
+        <div class="card-promo-shade"></div>
+        <div class="card-promo-copy reveal">
+          <p class="eyebrow"><span class="eyebrow-line"></span>Mais cor para transformar</p>
+          <h2 id="card-promo-title">Faça seu<br />Cartão Reform.</h2>
+          <p>Pinte agora e parcele suas compras em até <strong>12 vezes fixas.</strong></p>
+          <a class="button button-orange" href="#contato">Quero saber mais <span aria-hidden="true">↗</span></a>
+          <small>Consulte condições com a equipe.</small>
+        </div>
+        <div class="promo-card-mark" aria-hidden="true"><span class="brand-logo"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-logo.png" alt="" /><span class="brand-logo-dot"></span></span><span>REFORM / CARTÃO</span></div>
+      </section>
 
-  
-    .painters-view[hidden]{display:none!important}
-    .painters-topline{display:flex;justify-content:space-between;align-items:center;margin:16px 0;color:#827f75;font-size:10px}
-    .painters-hero{position:relative;isolation:isolate;min-height:270px;margin:8px 0 20px;padding:36px 42px;overflow:hidden;border-radius:14px;background:#211f1b;color:white}
-    .painters-hero:after{position:absolute;z-index:-1;content:"";width:290px;height:290px;right:-75px;top:-110px;border:38px solid rgba(230,68,56,.72);border-radius:50%}
-    .painters-hero .eyebrow{color:#ffc09e}
-    .painters-hero h1{max-width:740px;margin:0;font-family:Manrope,sans-serif;font-size:clamp(38px,5.4vw,66px);font-weight:500;line-height:.98;letter-spacing:-.07em}
-    .painters-hero h1 em{color:#ff9564;font-style:normal}
-    .painters-hero p:last-child{max-width:600px;color:rgba(255,255,255,.72);font-size:12px;line-height:1.7}
-    .painter-benefits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 20px}
-    .painter-benefits article{padding:17px;border:1px solid rgba(21,21,18,.08);border-radius:10px;background:#fbfaf6}
-    .painter-benefits strong{display:block;font-family:Manrope,sans-serif;font-size:14px}
-    .painter-benefits p{margin:6px 0 0;color:#77746a;font-size:10px;line-height:1.55}
-    .painter-form-card{max-width:860px;margin:0 auto 40px;padding:28px;border:1px solid rgba(21,21,18,.09);border-radius:13px;background:#fff}
-    .painter-form-card h2{margin:0;font-family:Manrope,sans-serif;font-size:28px;font-weight:500;letter-spacing:-.05em}
-    .painter-form-intro{margin:7px 0 22px;color:#77746a;font-size:11px;line-height:1.6}
-    .painter-form{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-    .painter-field{display:grid;gap:7px}
-    .painter-field--wide{grid-column:1/-1}
-    .painter-field label{font-size:10px;font-weight:700}
-    .painter-field input,.painter-field select{width:100%;height:45px;padding:0 12px;border:1px solid rgba(21,21,18,.16);border-radius:6px;background:#fbfaf6;color:var(--ink);font-size:11px;outline:none}
-    .painter-field input:focus,.painter-field select:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(242,107,50,.12)}
-    .painter-consent{display:flex;align-items:flex-start;gap:9px;color:#77746a;font-size:9px;line-height:1.55}
-    .painter-consent input{margin:2px 0 0;accent-color:var(--orange)}
-    .painter-submit{grid-column:1/-1;display:flex;justify-content:center;align-items:center;gap:12px;min-height:47px;border:0;border-radius:5px;background:var(--orange);color:white;font-size:11px;font-weight:700}
-    .painter-submit:hover{background:var(--orange-dark)}
-    .painter-submit span{font-size:15px}
-    .painter-note{grid-column:1/-1;margin:0;padding:12px 13px;border-radius:6px;background:#f6f3eb;color:#69665e;font-size:9px;line-height:1.6}
-    .painters-open .page{padding-top:100px}
-    .painters-open .topbar{background:rgba(21,21,18,.94);backdrop-filter:blur(8px)}
-    @media(max-width:650px){
-      .painters-open .page{padding-top:82px}
-      .painters-topline{margin:14px 0}
-      .painters-hero{min-height:0;margin:5px 0 14px;padding:27px 20px;border-radius:11px}
-      .painters-hero h1{font-size:42px}
-      .painters-hero p:last-child{font-size:10px}
-      .painter-benefits{grid-template-columns:1fr;gap:7px;margin-bottom:14px}
-      .painter-benefits article{padding:13px}
-      .painter-form-card{padding:20px 16px;margin-bottom:30px}
-      .painter-form-card h2{font-size:24px}
-      .painter-form{grid-template-columns:1fr;gap:12px}
-      .painter-field--wide,.painter-consent,.painter-submit,.painter-note{grid-column:1}
-    }
+      <section class="intro section-pad" id="materiais">
+        <div class="section-kicker reveal"><span>04 / TINTAS PARA CADA ETAPA</span><span class="kicker-rule"></span></div>
+        <div class="intro-heading reveal">
+          <h2>Encontre o que<br />sua pintura <em>pede.</em></h2>
+          <p>Da preparação ao acabamento, encontre tintas, seladores e acessórios para o resultado que você imaginou.</p>
+        </div>
+        <div class="category-grid">
+          <a class="category-card category-large reveal" href="#contato" aria-label="Consultar tintas e acabamentos">
+            <img class="category-photo" src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/paint-terracotta.webp" alt="Lata original de tinta Coral Coralar Fosca, 18 litros" loading="lazy" />
+            <span class="category-number">01 / TINTAS</span>
+            <span class="category-content"><span class="category-label">TINTAS PARA PAREDES</span><strong>Cor para dar vida<br />ao ambiente.</strong><span class="category-action">Explorar categoria <span class="category-arrow" aria-hidden="true">↗</span></span></span>
+          </a>
+          <a class="category-card category-tools reveal" href="#contato" aria-label="Consultar ferramentas">
+            <img class="category-photo" src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/tools-pegboard-light.webp" alt="Alicate Tramontina Master em embalagem original" loading="lazy" />
+            <span class="category-number">02 / ACESSÓRIOS</span>
+            <span class="category-content"><span class="category-label">FERRAMENTAS</span><strong>Tudo para pintar<br />com capricho.</strong><span class="category-action">Explorar categoria <span class="category-arrow" aria-hidden="true">↗</span></span></span>
+          </a>
+          <a class="category-card category-cement reveal" href="#contato" aria-label="Consultar cimento e argamassa">
+            <img class="category-photo" src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/cement-stack.webp" alt="Saco original de cimento Votoran Todas as Obras, 50 kg" loading="lazy" />
+            <span class="category-brand">VOTORAN</span>
+            <span class="category-number">03 / ESTRUTURA</span>
+            <span class="category-content"><span class="category-label">CIMENTO & ARGAMASSA</span><strong>Uma base<br />bem feita.</strong><span class="category-action">Explorar categoria <span class="category-arrow" aria-hidden="true">↗</span></span></span>
+          </a>
+          <a class="category-card category-finishes reveal" href="#contato" aria-label="Consultar pisos e revestimentos">
+            <img class="category-photo" src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/tiles-floor.webp" alt="Piso de porcelanato em ambiente iluminado" loading="lazy" />
+            <span class="category-number">04 / ACABAMENTO</span>
+            <span class="category-content"><span class="category-label">PISOS & REVESTIMENTOS</span><strong>O detalhe que<br />faz tudo.</strong><span class="category-action">Explorar categoria <span class="category-arrow" aria-hidden="true">↗</span></span></span>
+          </a>
+        </div>
+        <p class="catalog-note"><span class="catalog-dot"></span>Tem mais por aqui. Fale com a equipe sobre o que sua obra precisa.</p>
+      </section>
 
-  </style>
-</head>
-<body>
-  <header class="topbar">
-    <video class="topbar-video" aria-hidden="true" autoplay muted loop playsinline preload="none" poster="/hero-family.webp"><source src="https://videos.pexels.com/video-files/5501226/5501226-hd_1920_1080_24fps.mp4" type="video/mp4"></video>
-    <a class="brand" href="#inicio" data-open-home aria-label="Reform — início"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-logo.png" alt="Reform."></a>
-    <nav class="top-actions" id="mainNav" aria-label="Navegação principal"><a href="#inicio" data-nav-home>Início</a><a href="#pintores" data-open-painters>Acesso para pintores</a><a href="#inspiracao" data-nav-home>Inspiração</a><a href="#produtos" data-open-catalog>Produtos</a><a href="#contato" data-nav-home>Contato</a></nav>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir filtros" aria-expanded="false">☰</button>
-  </header>
-  <main class="page" id="inicio">
-  <section class="home-view" id="homeView">
-    <section class="home-hero" aria-labelledby="hero-title">
-      <img class="home-hero-image" src="/hero-reform-team.webp" alt="Equipe Reform com acessórios para pintura em uma loja de tintas">
-      <div class="home-hero-shade"></div>
-      <div class="home-hero-copy">
-        <p class="hero-kicker">Tintas e soluções para pintar</p>
-        <h1 id="hero-title">Mais cor.<br><em>Mais vida.</em></h1>
-        <p class="home-hero-lede">Dê novas cores às paredes, renove seus ambientes e veja sua casa ganhar vida. Na Reform, você encontra a tinta certa para colocar seu projeto em movimento.</p>
-        <div class="hero-actions"><button class="hero-cta" data-open-catalog>Encontre sua tinta <span aria-hidden="true">↗</span></button><a class="hero-quiet" href="#contato">Converse com a Reform</a></div>
-      </div>
-      <div class="hero-photo-cards" aria-label="Vantagens para sua pintura">
-        <div class="hero-photo-card"><span>01</span><strong>Sem cheiro</strong><small>Mais conforto para pintar</small></div>
-        <div class="hero-photo-card"><span>02</span><strong>Secagem rápida</strong><small>Sua casa pronta mais cedo</small></div>
-        <div class="hero-photo-card hero-card-accent"><span>03</span><strong>Fácil de passar</strong><small>Acabamento bonito, do seu jeito</small></div>
-      </div>
-      <div class="hero-installment">Parcele em até <strong>12x no cartão</strong></div>
-    </section>
+      <section class="store section-pad" id="loja">
+        <div class="store-image reveal"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/loja-interior.webp" alt="Interior da loja Reforme, com ferramentas, materiais e madeiras organizados" loading="lazy" /><span class="image-tag">POR DENTRO DA REFORME <span>↗</span></span></div>
+        <div class="store-copy reveal">
+          <div class="section-kicker"><span>05 / MAIS PERTO DA SUA OBRA</span><span class="kicker-rule"></span></div>
+          <p class="eyebrow">Uma loja feita para construir</p>
+          <h2>Mais do que<br />material.<br /><em>Um bom começo.</em></h2>
+          <p>Tintas, seladores e acessórios reunidos para ajudar você a preparar e renovar seus ambientes.</p>
+          <a class="button button-dark" href="#solucoes">Veja como podemos ajudar <span aria-hidden="true">↗</span></a>
+          <div class="store-stamp"><span class="stamp-dot"></span><span>IDEIAS QUE<br />GANHAM FORMA</span></div>
+        </div>
+      </section>
 
-    <section class="home-section color-section" id="beneficios">
-      <div class="section-head"><div><p class="eyebrow">Escolha com confiança</p><h2>Uma tinta para cada ideia.</h2></div><p>Encontre a solução para o seu espaço, da parede interna à área externa.</p></div>
-      <div class="category-grid">
-        <button class="category-card cat-wall" data-category="parede"><span class="category-art"><img loading="lazy" src="/cat-walls.webp" alt=""></span><span class="category-copy"><small>Conforto todo dia</small><strong>Paredes internas</strong><b>Ver tintas <span>↗</span></b></span></button>
-        <button class="category-card cat-outdoor" data-category="externo"><span class="category-art"><img loading="lazy" src="/cat-exterior.webp" alt=""></span><span class="category-copy"><small>Proteção e cor</small><strong>Paredes externas</strong><b>Ver tintas <span>↗</span></b></span></button>
-        <button class="category-card cat-floor" data-category="piso"><span class="category-art"><img loading="lazy" src="/cat-floor.webp" alt=""></span><span class="category-copy"><small>Renove cada detalhe</small><strong>Pisos</strong><b>Ver tintas <span>↗</span></b></span></button>
-        <button class="category-card cat-metal" data-category="metal"><span class="category-art"><img loading="lazy" src="/cat-enamel.webp" alt=""></span><span class="category-copy"><small>Madeira e metal</small><strong>Esmaltes e proteção</strong><b>Ver produtos <span>↗</span></b></span></button>
-      </div>
-    </section>
+      <section class="solutions section-pad" id="solucoes">
+        <div class="solutions-top">
+          <div class="section-kicker reveal"><span>06 / DO PLANO À REALIZAÇÃO</span><span class="kicker-rule"></span></div>
+          <div class="solutions-title reveal"><h2>Reformar fica<br /><em>mais leve assim.</em></h2><p>Orientação simples para escolher os produtos certos e chegar a um acabamento bonito.</p></div>
+        </div>
+        <div class="solution-grid">
+          <article class="solution-card reveal"><span class="solution-index">A / 01</span><div class="solution-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 24 24 10l16 14M13 21v17h22V21M20 38V27h8v11"/></svg></div><h3>Prepare bem</h3><p>Prepare a superfície para uma pintura uniforme e duradoura.</p><span class="solution-line"></span></article>
+          <article class="solution-card reveal"><span class="solution-index">B / 02</span><div class="solution-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 12h24v24H12zM17 19h14M17 24h14M17 29h9"/><path d="m29 32 3 3 6-7"/></svg></div><h3>Escolha a tinta</h3><p>Considere a superfície, o ambiente e o acabamento que você quer.</p><span class="solution-line"></span></article>
+          <article class="solution-card reveal"><span class="solution-index">C / 03</span><div class="solution-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 31h30l-4-13H13L9 31Zm4 0v5h22v-5M16 18v-5h16v5M18 36v3m12-3v3"/></svg></div><h3>Finalize com cuidado</h3><p>Use as ferramentas e acessórios certos para deixar o resultado do seu jeito.</p><span class="solution-line"></span></article>
+        </div>
+      </section>
 
-    <section class="benefit-band" aria-label="Benefícios de pintura">
-      <div><span class="benefit-symbol">◌</span><strong>Sem cheiro</strong><small>Mais conforto</small></div><div><span class="benefit-symbol">★</span><strong>Super premium</strong><small>Acabamento especial</small></div><div><span class="benefit-symbol">↗</span><strong>Secagem rápida</strong><small>Menos espera</small></div><div><span class="benefit-symbol">✓</span><strong>Fácil de passar</strong><small>Aplicação tranquila</small></div><div><span class="benefit-symbol">☀</span><strong>Sol e chuva</strong><small>Para área externa</small></div><div><span class="benefit-symbol">●</span><strong>Pronto para uso</strong><small>Mais praticidade</small></div><div><span class="benefit-symbol">✳</span><strong>Especiais</strong><small>Para cada projeto</small></div>
-    </section>
+      <section class="facade" aria-label="Fachada da loja Reforme">
+        <img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/loja-fachada-expandida.webp" alt="Fachada completa da loja Reforme, com céu e área pavimentada ao redor" loading="lazy" />
+        <div class="facade-overlay"></div>
+        <div class="facade-copy reveal"><p class="eyebrow">REFORM / TINTAS E SOLUÇÕES</p><h2>O próximo passo<br />da sua obra <em>começa aqui.</em></h2><a class="button button-orange" href="#contato">Vamos conversar <span aria-hidden="true">↗</span></a></div>
+        <span class="facade-index">07 / REFORME</span>
+      </section>
 
-    <section class="inspiration-panel" id="inspiracao">
-      <div class="inspiration-image"><img loading="lazy" src="https://images.pexels.com/photos/5798981/pexels-photo-5798981.jpeg?auto=compress&cs=tinysrgb&w=1300" alt="Família renovando a casa com pintura"></div>
-      <div class="inspiration-copy"><p class="eyebrow">Inspiração Reform</p><h2>O melhor da pintura é imaginar o que vem depois.</h2><p>Um quarto mais leve, uma fachada cheia de presença ou aquele detalhe que muda tudo. Escolha a superfície e descubra o caminho.</p><button class="text-action" data-open-catalog>Descobrir produtos <span>↗</span></button><div class="color-swatches" aria-label="Paleta de inspiração"><i></i><i></i><i></i><i></i><i></i><span>Cores para começar</span></div></div>
-    </section>
+      <section class="contact section-pad" id="contato">
+        <div class="contact-inner reveal">
+          <div class="contact-mark" role="img" aria-label="Reforme"><span class="brand-logo"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-logo.png" alt="" /><span class="brand-logo-dot" aria-hidden="true"></span></span></div>
+          <p class="eyebrow">A sua ideia já tem endereço</p>
+          <h2>Sua próxima obra<br /><em>começa bem aqui.</em></h2>
+          <p>Encontre tintas, seladores e acessórios de qualidade, com orientação para escolher a melhor opção para seu espaço.</p>
+          <a class="button button-orange" href="https://api.whatsapp.com/send?text=Ol%C3%A1%2C%20Reforme!%20Quero%20conversar%20sobre%20materiais%20para%20minha%20obra." target="_blank" rel="noopener noreferrer">Vamos tirar sua obra do papel <span aria-hidden="true">↗</span></a>
+          <span class="contact-note">MATERIAIS PARA CONSTRUIR E REFORMAR</span>
+        </div>
+      </section>
+    </main>
 
-    <section class="home-section guide-section" id="dicas">
-      <div class="section-head"><div><p class="eyebrow">Pintura sem complicação</p><h2>Do primeiro passo ao acabamento.</h2></div><button class="outline-action" data-open-catalog>Ver linha de tintas <span>↗</span></button></div>
-      <div class="guide-grid">
-        <article class="guide-card"><span class="guide-number">01</span><div class="guide-illustration guide-prep">✳</div><h3>Prepare a superfície</h3><p>Uma base bem preparada ajuda a pintura a ficar uniforme e bonita.</p><button data-open-catalog>Ver preparação <span>↗</span></button></article>
-        <article class="guide-card"><span class="guide-number">02</span><div class="guide-illustration guide-color">◒</div><h3>Escolha o acabamento</h3><p>Fosco, acetinado ou brilhante: pense no ambiente e no resultado que você quer.</p><button data-open-catalog>Explorar acabamentos <span>↗</span></button></article>
-        <article class="guide-card"><span class="guide-number">03</span><div class="guide-illustration guide-tools">▱</div><h3>Tenha tudo à mão</h3><p>Tinta, selador e acessórios para deixar o trabalho mais prático.</p><button data-open-catalog>Encontrar produtos <span>↗</span></button></article>
-      </div>
-    </section>
-
-    <section class="home-callout" id="contato"><div class="callout-orb"></div><div><p class="eyebrow">Sua próxima cor começa aqui</p><h2>Conta pra gente o que você quer pintar.</h2><p>A equipe Reform ajuda você a encontrar opções para o seu projeto.</p></div><a href="https://wa.me/?text=Olá!%20Quero%20uma%20ajuda%20para%20escolher%20tintas%20na%20Reform." target="_blank" rel="noreferrer">Falar com a Reform <span>↗</span></a></section>
-    <section class="faq-section"><p class="eyebrow">Dúvidas rápidas</p><h2>Antes de abrir a lata.</h2><div class="faq-grid"><details><summary>Como escolho a tinta certa?</summary><p>Comece pela superfície e pelo ambiente. Depois escolha o acabamento e confira as orientações da embalagem.</p></details><details><summary>Preciso preparar a parede?</summary><p>Na maioria dos projetos, a preparação ajuda a melhorar a aderência e o resultado. O produto correto depende das condições da superfície.</p></details><details><summary>Quanto tempo leva para secar?</summary><p>O tempo varia conforme o produto, a temperatura, a umidade e a ventilação. Consulte sempre as instruções do fabricante.</p></details></div></section>
-  </section>
-
-  <section class="catalog-view" id="catalogView" hidden>
-    <div class="catalog-topline"><button class="back-home" data-open-home>← <span>Voltar ao início</span></button><span>Reform. <i>/</i> Produtos</span></div>
-    <section class="catalog-hero"><img class="catalog-hero-image" src="/catalog-photo.webp" alt="Tintas, pincéis e rolos para o seu projeto"><div><p class="eyebrow">Catálogo Reform</p><h1>Encontre a tinta<br><em>do seu projeto.</em></h1><p>Explore por ambiente, superfície e acabamento. A equipe Reform ajuda você a escolher.</p></div></section>
-    <div class="catalog-benefits"><span>◌ <b>Sem cheiro</b></span><span>★ <b>Super premium</b></span><span>↗ <b>Secagem rápida</b></span><span>✓ <b>Fácil de passar</b></span><span>☀ <b>Sol e chuva</b></span><span>● <b>Pronto para uso</b></span><span>✳ <b>Especiais</b></span></div>
-    <section class="catalog-shortcuts"><div><p class="eyebrow">Por onde começar?</p><h2>Escolha uma categoria</h2></div><div class="shortcut-row"><button data-category="parede">Paredes internas <span>↗</span></button><button data-category="externo">Paredes externas <span>↗</span></button><button data-category="piso">Pisos <span>↗</span></button><button data-category="metal">Madeiras e metais <span>↗</span></button><button data-category="preparacao">Preparação <span>↗</span></button></div></section>
-    <section id="produtos">
-      <div class="catalog-heading"><div><p class="eyebrow">Linha Reform</p><h2>Nossas tintas e soluções</h2><p>Produtos para paredes, pisos, metais e madeira.</p></div></div>
-      <button class="filters-mobile" id="filtersToggle" aria-expanded="false">☷ &nbsp; Filtrar produtos <span>＋</span></button>
-      <div class="layout">
-        <aside class="sidebar" id="sidebar" aria-label="Filtros de produtos">
-          <div class="side-head"><h3>Filtros</h3><button class="clear-btn" id="clearFilters">Limpar</button></div>
-          <div class="filter-group"><h4>Ambiente</h4><label class="check-row"><input type="checkbox" data-filter="ambiente" value="interno"> Interno</label><label class="check-row"><input type="checkbox" data-filter="ambiente" value="externo"> Externo</label></div>
-          <div class="filter-group"><h4>Superfície</h4><label class="check-row"><input type="checkbox" data-filter="superficie" value="parede"> Paredes</label><label class="check-row"><input type="checkbox" data-filter="superficie" value="piso"> Pisos</label><label class="check-row"><input type="checkbox" data-filter="superficie" value="metal"> Metais e madeira</label></div>
-          <div class="filter-group"><h4>Acabamento</h4><label class="check-row"><input type="checkbox" data-filter="acabamento" value="fosco"> Fosco</label><label class="check-row"><input type="checkbox" data-filter="acabamento" value="brilhante"> Brilhante</label></div>
-          <div class="filter-group"><h4>Etapa</h4><label class="check-row"><input type="checkbox" data-filter="etapa" value="pintura"> Pintura</label><label class="check-row"><input type="checkbox" data-filter="etapa" value="preparacao"> Preparação</label><label class="check-row"><input type="checkbox" data-filter="etapa" value="protecao"> Proteção</label></div>
-        </aside>
-        <div class="content"><div class="toolbar"><div class="results" id="results" aria-live="polite"></div><div class="toolbar-right"><input class="search" id="search" type="search" placeholder="Buscar tinta ou produto" aria-label="Buscar produtos"><select class="sort" id="sort" aria-label="Ordenar produtos"><option value="relevance">Ordenar: destaque</option><option value="az">Nome: A a Z</option><option value="za">Nome: Z a A</option></select></div></div><div class="product-grid" id="productGrid"></div></div>
-      </div>
-    </section>
-    <section class="catalog-help"><div><p class="eyebrow">Precisa de uma mão?</p><h2>Vamos escolher juntos.</h2><p>Conte à equipe o que você vai pintar e encontre uma opção para o seu projeto.</p></div><a href="https://wa.me/?text=Olá!%20Preciso%20de%20ajuda%20para%20escolher%20tinta%20na%20Reform." target="_blank" rel="noreferrer">Pedir ajuda <span>↗</span></a></section>
-  </section>
-
-  <section class="painters-view" id="paintersView" hidden>
-    <div class="painters-topline"><button class="back-home" data-open-home>← <span>Voltar ao início</span></button><span>Reform. <i>/</i> Acesso para pintores</span></div>
-    <section class="painters-hero">
-      <p class="eyebrow">Programa profissional Reform</p>
-      <h1>Seu trabalho merece <em>mais vantagens.</em></h1>
-      <p>Cadastre-se como pintor profissional para solicitar condições especiais em tintas, seladores e acessórios. A equipe Reform entra em contato para confirmar seu cadastro e explicar os descontos disponíveis.</p>
-    </section>
-    <div class="painter-benefits" aria-label="Vantagens para pintores">
-      <article><strong>Condições especiais</strong><p>Solicite descontos em tintas e soluções para o seu trabalho.</p></article>
-      <article><strong>Mais opções para sua rotina</strong><p>Consulte condições também para seladores e acessórios.</p></article>
-      <article><strong>Atendimento da equipe</strong><p>Depois do envio, a Reform confirma os próximos passos pelo WhatsApp.</p></article>
+    <footer class="site-footer"><a class="footer-brand" href="#topo" aria-label="Reforme"><span class="brand-logo"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-logo.png" alt="" /><span class="brand-logo-dot" aria-hidden="true"></span></span></a><span>Construir. Reformar. Transformar.</span><a class="back-top" href="#topo">Voltar ao início ↑</a><small>© <span id="year"></span> Reforme. Todos os direitos reservados.</small></footer>
     </div>
-    <section class="painter-form-card" aria-labelledby="painter-form-title">
-      <h2 id="painter-form-title">Faça seu cadastro</h2>
-      <p class="painter-form-intro">Preencha seus dados profissionais. O WhatsApp abrirá com a mensagem pronta; escolha o contato da Reform e toque em enviar para encaminhar sua solicitação.</p>
-      <form class="painter-form" id="painterForm">
-        <div class="painter-field"><label for="painterName">Nome completo</label><input id="painterName" name="Nome" autocomplete="name" required placeholder="Como podemos chamar você?"></div>
-        <div class="painter-field"><label for="painterPhone">Seu WhatsApp</label><input id="painterPhone" name="WhatsApp" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(00) 00000-0000"></div>
-        <div class="painter-field"><label for="painterCity">Cidade</label><input id="painterCity" name="Cidade" autocomplete="address-level2" required placeholder="Sua cidade"></div>
-        <div class="painter-field"><label for="painterExperience">Área de atuação</label><select id="painterExperience" name="Atuação" required><option value="" selected disabled>Selecione uma opção</option><option>Pintura residencial</option><option>Pintura comercial</option><option>Pintura interna e externa</option><option>Outra atuação profissional</option></select></div>
-        <div class="painter-field painter-field--wide"><label for="painterInstagram">Instagram profissional <span style="font-weight:400;color:#77746a">(opcional)</span></label><input id="painterInstagram" name="Instagram" placeholder="@seu.perfil"></div>
-        <label class="painter-consent painter-field--wide"><input type="checkbox" id="painterConsent" required><span>Autorizo a Reform a usar estes dados para analisar meu cadastro e entrar em contato sobre o programa para pintores.</span></label>
-        <p class="painter-note">O cadastro é uma solicitação, não ativa o desconto automaticamente. A equipe Reform confirmará a aprovação e as condições disponíveis. Seus dados só serão enviados quando você encaminhar a mensagem no WhatsApp.</p>
-        <button class="painter-submit" type="submit">Continuar pelo WhatsApp <span aria-hidden="true">↗</span></button>
-      </form>
-    </section>
-  </section>
 
-</main>
-  <footer><a class="footer-brand" href="#inicio"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-logo.png" alt="Reform."></a><span>Tintas, seladores e acessórios para sua obra.</span><span>© <span id="year"></span> Reform.</span></footer>
-  <script>
-    const products=[
-      {name:'Tinta Acrílica Branco Fosco 16 L',brand:'Solcolor',surface:['parede'],ambience:['interno','externo'],finish:['fosco'],stage:['pintura'],image:'https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/e/b/eb96aa24_1880601_1.jpg',label:'Paredes'},
-      {name:'Tinta Acrílica Ducryl Standard Branco 18 L',brand:'Renner',surface:['parede'],ambience:['interno'],finish:['fosco'],stage:['pintura'],image:'https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/2/0/20f2b821_195584_1.jpg',label:'Acrílica'},
-      {name:'Tinta Novopiso Premium Cinza Fosco 18 L',brand:'Hydronorth',surface:['piso'],ambience:['interno','externo'],finish:['fosco'],stage:['pintura','protecao'],image:'https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/2/3/23ec3acb_1969740_1.jpg',label:'Pisos'},
-      {name:'Tinta Impermeabilizante Emborrachada 18 L',brand:'Hydronorth',surface:['parede'],ambience:['externo'],finish:['fosco'],stage:['pintura','protecao'],image:'https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/8/8/88c61fc8_2084176_1_1.jpg',label:'Proteção'},
-      {name:'Selador Acrílico Branco 18 L',brand:'Solcolor',surface:['parede'],ambience:['interno','externo'],finish:[],stage:['preparacao'],image:'https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/9/0/90334f16_1880588_1_1.jpg',label:'Preparação'},
-      {name:'Selador Acrílico 16 L',brand:'Renner',surface:['parede'],ambience:['interno','externo'],finish:[],stage:['preparacao'],image:'https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/4/d/4dc09cdd_2123783_1_1.jpg',label:'Preparação'},
-      {name:'Esmalte Dulit Standard Branco Brilhante 3,6 L',brand:'Renner',surface:['metal'],ambience:['interno','externo'],finish:['brilhante'],stage:['pintura','protecao'],image:'https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/c/2/c2b8f3b7_1480610_1.jpg',label:'Esmalte'},
-      {name:'Tinta Grafite Cinza Fosco 3,6 L',brand:'Coral',surface:['metal'],ambience:['interno','externo'],finish:['fosco'],stage:['pintura','protecao'],image:'https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/9/3/93033fc6_2206301_1.jpg',label:'Metais'}
-    ];
-    const grid=document.querySelector('#productGrid'),search=document.querySelector('#search'),result=document.querySelector('#results'),sort=document.querySelector('#sort');
-    const title=s=>s.charAt(0).toUpperCase()+s.slice(1);
-    function selected(key){return [...document.querySelectorAll(`[data-filter="${key}"]:checked`)].map(i=>i.value)}
-    function render(){if(!grid)return;let list=products.filter(p=>{const q=search.value.trim().toLowerCase(),text=(p.name+' '+p.brand+' '+p.label).toLowerCase();return(!q||text.includes(q))&&['ambiente','superficie','acabamento','etapa'].every(key=>{const chosen=selected(key),vals=key==='ambiente'?p.ambience:key==='superficie'?p.surface:key==='acabamento'?p.finish:p.stage;return!chosen.length||chosen.some(v=>vals.includes(v))})});
-      if(sort.value==='az')list.sort((a,b)=>a.name.localeCompare(b.name,'pt-BR'));if(sort.value==='za')list.sort((a,b)=>b.name.localeCompare(a.name,'pt-BR'));
-      result.textContent=`${list.length} ${list.length===1?'produto encontrado':'produtos encontrados'}`;
-      grid.innerHTML=list.length?list.map(p=>`<article class="product-card"><div class="product-image"><img loading="lazy" src="${p.image}" alt="${p.name}" onerror="this.src='https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/paint-terracotta.webp'"></div><div class="product-body"><div class="product-ident"><div class="product-brand">${p.brand}</div><span class="product-label">${p.label}</span></div><h3 class="product-name">${p.name}</h3><div class="product-meta">${p.surface.map(x=>`<span class="tag">${x==='metal'?'Metais e madeira':title(x)}</span>`).join('')}<span class="tag">${p.stage.includes('preparacao')?'Preparação':'Acabamento'}</span></div><a class="product-link" target="_blank" rel="noreferrer" href="https://wa.me/?text=${encodeURIComponent('Olá! Quero consultar disponibilidade e preço de '+p.name+' da '+p.brand+' na Reform.')}">Consultar disponibilidade <span aria-hidden="true">↗</span></a></div></article>`).join(''):'<div class="empty">Nenhum produto encontrado com esses filtros. Ajuste a busca ou limpe os filtros.</div>';
-    }
-    const home=document.querySelector('#homeView'),catalog=document.querySelector('#catalogView'),painters=document.querySelector('#paintersView'),nav=document.querySelector('#mainNav');
-    function openCatalog(category=''){document.body.classList.remove('painters-open');document.body.classList.add('catalog-open');home.hidden=true;catalog.hidden=false;painters.hidden=true;nav.classList.remove('is-open');history.replaceState(null,'','#produtos');window.scrollTo({top:0,behavior:'smooth'});if(category)applyCategory(category);else render();}
-    function openPainters(){document.body.classList.remove('catalog-open');document.body.classList.add('painters-open');home.hidden=true;catalog.hidden=true;painters.hidden=false;nav.classList.remove('is-open');history.replaceState(null,'','#pintores');window.scrollTo({top:0,behavior:'smooth'});}
-    function openHome(target=''){document.body.classList.remove('catalog-open','painters-open');catalog.hidden=true;painters.hidden=true;home.hidden=false;nav.classList.remove('is-open');history.replaceState(null,'',target?'#'+target:location.pathname);if(target)setTimeout(()=>document.getElementById(target)?.scrollIntoView({behavior:'smooth'}),40);else window.scrollTo({top:0,behavior:'smooth'});}
-    function applyCategory(category){document.querySelectorAll('[data-filter]').forEach(el=>el.checked=false);search.value='';if(category==='externo'){document.querySelector('[data-filter="ambiente"][value="externo"]').checked=true;}else if(category==='preparacao'){document.querySelector('[data-filter="etapa"][value="preparacao"]').checked=true;}else{const box=document.querySelector(`[data-filter="superficie"][value="${category}"]`);if(box)box.checked=true;}render();document.querySelector('#produtos').scrollIntoView({behavior:'smooth'});}
-    document.querySelectorAll('[data-open-catalog]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openCatalog()}));
-    document.querySelectorAll('[data-open-home]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openHome()}));
-    document.querySelectorAll('[data-open-painters]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openPainters()}));
-    document.querySelectorAll('[data-nav-home]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openHome(el.getAttribute('href').slice(1))}));
-    document.querySelectorAll('[data-category]').forEach(el=>el.addEventListener('click',()=>openCatalog(el.dataset.category)));
-    document.querySelectorAll('[data-filter]').forEach(el=>el.addEventListener('change',render));search.addEventListener('input',render);sort.addEventListener('change',render);
-    document.querySelector('#clearFilters').addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(el=>el.checked=false);search.value='';sort.value='relevance';render()});
-    const sidebar=document.querySelector('#sidebar'),filterBtn=document.querySelector('#filtersToggle');filterBtn.addEventListener('click',()=>{const open=sidebar.classList.toggle('is-open');filterBtn.setAttribute('aria-expanded',String(open));filterBtn.lastElementChild.textContent=open?'−':'＋'});
-    const menuToggle=document.querySelector('#menuToggle');menuToggle.addEventListener('click',()=>{const open=nav.classList.toggle('is-open');menuToggle.setAttribute('aria-expanded',String(open));menuToggle.textContent=open?'×':'☰'});
-    const painterForm=document.querySelector('#painterForm');
-    painterForm.addEventListener('submit',e=>{e.preventDefault();if(!painterForm.reportValidity())return;const fields=new FormData(painterForm);const message=['Olá! Quero solicitar meu cadastro no programa de pintores da Reform.','',...['Nome','WhatsApp','Cidade','Atuação','Instagram'].filter(k=>fields.get(k)).map(k=>k+': '+fields.get(k))].join('\n');window.open('https://wa.me/?text='+encodeURIComponent(message),'_blank','noopener,noreferrer');});
-    document.querySelector('#year').textContent=new Date().getFullYear();render();
-    if(location.hash==='#pintores')openPainters();else if(location.hash==='#produtos')openCatalog();
-  </script>
-</body>
+    <section class="painters-view" id="pintores" hidden>
+      <div class="materials-view-topbar">
+        <button class="materials-back" type="button" data-close-painters><span aria-hidden="true">←</span> Voltar ao site</button>
+        <a class="materials-view-brand" href="#topo" data-close-painters aria-label="Reform, início"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-logo.png" alt="" /><span>REFORM.</span></a>
+        <span class="materials-view-label">PROGRAMA PROFISSIONAL</span>
+      </div>
+      <div class="materials-view-heading painters-heading">
+        <div><p class="section-kicker"><span>ACESSO PARA PINTORES</span><span class="kicker-rule"></span></p><h1>Seu trabalho.<br /><em>Mais vantagens.</em></h1></div>
+        <p>Cadastre-se para solicitar condições especiais em tintas, seladores e acessórios. A equipe Reform confirma seu cadastro e explica os descontos disponíveis.</p>
+      </div>
+      <section class="painters-panel">
+        <div class="painters-panel-copy"><p class="eyebrow"><span class="eyebrow-line"></span>Programa profissional Reform</p><h2>Mais vantagens para quem transforma ambientes.</h2><p>Conte um pouco sobre seu trabalho para a equipe apresentar as condições disponíveis para pintores.</p></div>
+        <form id="painter-form" class="painters-form">
+          <div class="painter-field"><label for="painter-name">Nome completo</label><input id="painter-name" name="Nome" autocomplete="name" required placeholder="Seu nome"></div>
+          <div class="painter-field"><label for="painter-whatsapp">WhatsApp</label><input id="painter-whatsapp" name="WhatsApp" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(00) 00000-0000"></div>
+          <div class="painter-field"><label for="painter-city">Cidade</label><input id="painter-city" name="Cidade" autocomplete="address-level2" required placeholder="Sua cidade"></div>
+          <div class="painter-field"><label for="painter-specialty">Área de atuação</label><select id="painter-specialty" name="Atuação" required><option value="" selected disabled>Selecione uma opção</option><option>Pintura residencial</option><option>Pintura comercial</option><option>Pintura interna e externa</option><option>Outra atuação profissional</option></select></div>
+          <div class="painter-field painter-field-wide"><label for="painter-instagram">Instagram profissional <span>(opcional)</span></label><input id="painter-instagram" name="Instagram" placeholder="@seu.perfil"></div>
+          <label class="painter-consent painter-field-wide"><input type="checkbox" required><span>Autorizo a Reform a usar estes dados para analisar meu cadastro e entrar em contato sobre o programa para pintores.</span></label>
+          <p class="painter-note painter-field-wide">O cadastro é uma solicitação; os descontos serão confirmados pela equipe Reform. Ao continuar, o WhatsApp abre com a mensagem pronta. Escolha o contato da Reform e envie para encaminhar seus dados.</p>
+          <button class="button button-orange painter-submit" type="submit">Continuar pelo WhatsApp <span aria-hidden="true">↗</span></button>
+        </form>
+      </section>
+    </section>
+
+    <section class="materials-view" id="catalogo" aria-labelledby="materials-title" hidden>
+      <div class="materials-view-topbar">
+        <button class="materials-back" type="button" data-close-materials><span aria-hidden="true">←</span> Voltar ao site</button>
+        <a class="materials-view-brand" href="#topo" aria-label="Reforme, voltar ao início"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-logo.png" alt="" /><span>REFORM.</span></a>
+        <span class="materials-view-label">CATÁLOGO DE TINTAS</span>
+      </div>
+      <div class="materials-view-heading">
+        <div><p class="section-kicker"><span>TINTAS PARA CADA ETAPA</span><span class="kicker-rule"></span></p><h1 id="materials-title">Tudo para a<br /><em>sua pintura.</em></h1></div>
+        <p>Busque por tinta, marca ou medida na seleção de tintas, seladores e acessórios.</p>
+      </div>
+<div class="shop-catalog">
+          <aside class="shop-sidebar" aria-label="Lista de tintas e soluções">
+            <p class="shop-sidebar-title">Produtos</p>
+            <div class="shop-tabs" role="tablist" aria-label="Categorias de produtos">
+              <button class="shop-tab is-active" id="tab-todos" type="button" role="tab" aria-selected="true" aria-controls="product-grid" data-product-filter="tintas">Todos <span>50</span></button>
+              <button class="shop-tab" id="tab-tintas" type="button" role="tab" aria-selected="false" aria-controls="product-grid" data-product-filter="tintas">Tintas, seladores e acessórios <span>50</span></button>
+            </div>
+            <p class="shop-sidebar-note">1 categoria<br />50 produtos selecionados</p>
+          </aside>
+          <div class="shop-main">
+            <div class="shop-tools">
+              <label class="shop-search"><span class="sr-only">Buscar tinta, selador ou acessório</span><input id="product-search" type="search" placeholder="Buscar produto, marca ou medida" autocomplete="off" /><span aria-hidden="true">⌕</span></label>
+              <span class="shop-result-count" id="product-count">210 produtos</span>
+            </div>
+            <div class="product-grid" id="product-grid" role="tabpanel" aria-live="polite"></div>
+          </div>
+        </div>
+        <p class="shop-empty" hidden>Nenhum produto nesta seleção. Tente outro termo ou <a href="#contato">fale com a equipe</a>.</p>
+        <div class="shop-cart" id="lista-de-compras" hidden aria-live="polite">
+          <div><strong class="cart-count">0 produtos na lista</strong><span class="cart-total">Subtotal estimado: R$ 0,00</span></div>
+          <a class="button button-dark cart-whatsapp" href="#contato">Continuar pelo WhatsApp <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="shop-footnote">Produtos, imagens e preços de referência da Reforme. Valores e disponibilidade podem mudar conforme a região e o estoque. Consulte as condições atualizadas com a equipe Reforme.</p>
+      
+    </section>
+    <script src="/script.js"></script>
+  </body>
 </html>
