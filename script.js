@@ -20,6 +20,19 @@ const siteHome = document.querySelector('#site-home');
 const materialsView = document.querySelector('#catalogo');
 const paintersView = document.querySelector('#pintores');
 const painterShopView = document.querySelector('#loja-pintor');
+const painterMemberArea = document.querySelector('#painter-member-area');
+const painterShopLayout = document.querySelector('.painter-shop-layout');
+const painterMemberGrid = document.querySelector('#painter-member-grid');
+const painterMemberSearch = document.querySelector('#painter-member-search');
+const painterLoginForm = document.querySelector('#painter-login-form');
+const painterLoginStatus = document.querySelector('#painter-login-status');
+const painterLoginButton = painterLoginForm?.querySelector('button[type="submit"]');
+const painterPasswordField = document.querySelector('#painter-login-password');
+const painterSupabase = window.supabase?.createClient(
+  'https://wichmcppgerbpxbpinwn.supabase.co',
+  'sb_publishable_A8JjZnMWbncG__dt5rqRMA_PP5yb2Fl',
+  {auth:{autoRefreshToken:true,persistSession:true,detectSessionInUrl:true}}
+);
 const shopTabs = [...document.querySelectorAll('.shop-tab')];
 const shopEmpty = document.querySelector('.shop-empty');
 const productSearch = document.querySelector('#product-search');
@@ -237,9 +250,95 @@ painterForm?.addEventListener('submit', (event) => {
   window.open('https://wa.me/?text=' + encodeURIComponent(message), '_blank', 'noopener,noreferrer');
 });
 
-document.querySelector('#painter-login-form')?.addEventListener('submit', (event) => {
+let painterProductsPromise;
+let painterMemberProducts = [];
+function renderPainterMemberProducts() {
+  if (!painterMemberGrid) return;
+  const query = (painterMemberSearch?.value || '').trim().toLocaleLowerCase('pt-BR');
+  const visible = painterMemberProducts.filter((item) => !query || item.name.toLocaleLowerCase('pt-BR').includes(query));
+  painterMemberGrid.replaceChildren(...visible.map((item) => {
+    const card = makeElement('article', 'painter-member-card');
+    const photo = makeElement('div', 'painter-member-photo');
+    const image = document.createElement('img');
+    image.src = item.image;
+    image.alt = item.name;
+    image.loading = 'lazy';
+    image.decoding = 'async';
+    photo.append(image);
+    card.append(photo);
+    card.append(makeElement('p', 'painter-member-tag', 'CONDIÇÃO ESPECIAL PARA PINTOR'));
+    card.append(makeElement('h3', '', item.name));
+    card.append(makeElement('p', 'painter-member-price', 'Consulte seu preço especial'));
+    const quote = makeElement('a', 'painter-member-quote', 'Consultar condição ↗');
+    quote.href = 'https://wa.me/?text=' + encodeURIComponent('Olá, Reforme! Sou pintor cadastrado e quero consultar minha condição especial para ' + item.name + '.');
+    quote.target = '_blank';
+    quote.rel = 'noopener noreferrer';
+    card.append(quote);
+    return card;
+  }));
+  painterMemberGrid.dataset.empty = visible.length ? 'false' : 'true';
+}
+function loadPainterMemberProducts() {
+  if (!painterProductsPromise) {
+    painterProductsPromise = fetch('/products.json').then((response) => {
+      if (!response.ok) throw new Error('Catálogo indisponível');
+      return response.json();
+    });
+  }
+  return painterProductsPromise.then((items) => {
+    painterMemberProducts = items;
+    renderPainterMemberProducts();
+  }).catch(() => {
+    if (painterMemberGrid) painterMemberGrid.textContent = 'Não foi possível carregar os produtos. Atualize a página para tentar novamente.';
+  });
+}
+function showPainterMember(user) {
+  if (painterShopLayout) painterShopLayout.hidden = true;
+  if (painterMemberArea) painterMemberArea.hidden = false;
+  const title = document.querySelector('#painter-member-title');
+  if (title) title.textContent = user?.email ? 'Olá, pintor.' : 'Sua loja profissional.';
+  loadPainterMemberProducts();
+}
+function showPainterLogin() {
+  if (painterShopLayout) painterShopLayout.hidden = false;
+  if (painterMemberArea) painterMemberArea.hidden = true;
+}
+
+painterLoginForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
-  const status = document.querySelector('#painter-login-status');
   if (!event.currentTarget.reportValidity()) return;
-  if (status) status.textContent = 'O acesso por e-mail e senha ainda está sendo conectado. Fale com a equipe para ativar seu cadastro com segurança.';
+  if (!painterSupabase) {
+    if (painterLoginStatus) painterLoginStatus.textContent = 'Não foi possível carregar o acesso agora. Atualize a página e tente novamente.';
+    return;
+  }
+  const email = document.querySelector('#painter-login-email')?.value.trim();
+  const password = painterPasswordField?.value;
+  if (painterLoginStatus) painterLoginStatus.textContent = 'Conferindo seu acesso…';
+  if (painterLoginButton) painterLoginButton.disabled = true;
+  try {
+    const {data,error} = await painterSupabase.auth.signInWithPassword({email,password});
+    if (error) throw error;
+    if (painterPasswordField) painterPasswordField.value = '';
+    showPainterMember(data.user);
+  } catch {
+    if (painterLoginStatus) painterLoginStatus.textContent = 'Não foi possível entrar. Confira o e-mail e a senha e tente novamente.';
+  } finally {
+    if (painterLoginButton) painterLoginButton.disabled = false;
+  }
 });
+
+painterMemberSearch?.addEventListener('input', renderPainterMemberProducts);
+document.querySelector('#painter-sign-out')?.addEventListener('click', async () => {
+  await painterSupabase?.auth.signOut();
+  showPainterLogin();
+  if (painterLoginStatus) painterLoginStatus.textContent = 'Você saiu da sua conta.';
+});
+if (painterSupabase) {
+  painterSupabase.auth.getSession().then(({data}) => {
+    if (data.session?.user) showPainterMember(data.session.user);
+  });
+  painterSupabase.auth.onAuthStateChange((_event,session) => {
+    if (session?.user) showPainterMember(session.user);
+    else showPainterLogin();
+  });
+}
