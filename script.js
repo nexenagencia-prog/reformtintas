@@ -19,6 +19,7 @@ const promotionGrid = document.querySelector('#promotion-grid');
 const siteHome = document.querySelector('#site-home');
 const materialsView = document.querySelector('#catalogo');
 const paintersView = document.querySelector('#pintores');
+const painterShopView = document.querySelector('#loja-pintor');
 const shopTabs = [...document.querySelectorAll('.shop-tab')];
 const shopEmpty = document.querySelector('.shop-empty');
 const productSearch = document.querySelector('#product-search');
@@ -37,9 +38,11 @@ function syncMaterialsView() {
   const hash = window.location.hash.toLowerCase();
   const isOpen = hash === '#catalogo';
   const isPainters = hash === '#pintores';
-  if (siteHome) siteHome.hidden = isOpen || isPainters;
+  const isPainterShop = hash === '#loja-pintor';
+  if (siteHome) siteHome.hidden = isOpen || isPainters || isPainterShop;
   if (materialsView) materialsView.hidden = !isOpen;
   if (paintersView) paintersView.hidden = !isPainters;
+  if (painterShopView) painterShopView.hidden = !isPainterShop;
   if (isOpen) {
     productCards.forEach((card) => card.classList.add('is-visible'));
     filterProducts();
@@ -153,6 +156,10 @@ document.addEventListener('click', (event) => {
   }
   const openPainters = event.target.closest('[data-open-painters]');
   if (openPainters) { event.preventDefault(); window.history.pushState({view:'pintores'}, '', '#pintores'); syncMaterialsView(); return; }
+  const openPainterShop = event.target.closest('[data-open-painter-shop]');
+  if (openPainterShop) { event.preventDefault(); window.history.pushState({view:'loja-pintor'}, '', '#loja-pintor'); syncMaterialsView(); return; }
+  const closePainterShop = event.target.closest('[data-close-painter-shop]');
+  if (closePainterShop) { event.preventDefault(); window.history.replaceState({view:'home'}, '', '#topo'); syncMaterialsView(); return; }
   const closePainters = event.target.closest('[data-close-painters]');
   if (closePainters) { event.preventDefault(); window.history.replaceState({view:'home'}, '', '#topo'); syncMaterialsView(); return; }
   const close = event.target.closest('[data-close-materials]');
@@ -228,4 +235,11 @@ painterForm?.addEventListener('submit', (event) => {
   const fields = new FormData(painterForm);
   const message = ['Olá! Quero solicitar meu cadastro no programa de pintores da Reform.', '', ...['Nome','WhatsApp','Cidade','Atuação','Instagram'].filter((key) => fields.get(key)).map((key) => key + ': ' + fields.get(key))].join('\n');
   window.open('https://wa.me/?text=' + encodeURIComponent(message), '_blank', 'noopener,noreferrer');
+});
+
+document.querySelector('#painter-login-form')?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const status = document.querySelector('#painter-login-status');
+  if (!event.currentTarget.reportValidity()) return;
+  if (status) status.textContent = 'O acesso por e-mail e senha ainda está sendo conectado. Fale com a equipe para ativar seu cadastro com segurança.';
 });
