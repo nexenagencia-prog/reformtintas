@@ -1187,7 +1187,7 @@ h1,h2,h3,p{margin-top:0}
 /* Hero: destaque maior no parcelamento e textos contidos nos cards */
 @media(min-width:641px){
  .hero-installment{
-  bottom:clamp(225px,27vh,280px)!important;
+  bottom:clamp(175px,20vh,220px)!important;
   font-size:clamp(23px,2.15vw,31px)!important;
   line-height:1.14!important;
   letter-spacing:-.04em!important;
