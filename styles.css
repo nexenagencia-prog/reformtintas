@@ -1149,3 +1149,13 @@ h1,h2,h3,p{margin-top:0}
  .painter-member-tag{font-size:6px}
  .painter-member-quote{font-size:7px}
 }
+
+/* Hero em tela cheia, com luz diagonal até os produtos */
+@media(min-width:641px){
+ .hero{height:100svh;min-height:100svh;max-height:none}
+ .hero-image{background-position:50% 38%!important}
+ .hero-installment{right:clamp(36px,5vw,72px);bottom:clamp(124px,15vh,170px);width:auto;max-width:250px;margin:0;padding:17px 20px!important;border:1px solid rgba(255,255,255,.22)!important;border-radius:12px!important;background:rgba(12,14,13,.48)!important;box-shadow:0 14px 44px rgba(0,0,0,.18)!important;backdrop-filter:blur(16px) saturate(1.1)!important;-webkit-backdrop-filter:blur(16px) saturate(1.1)!important;line-height:1.5;text-align:left}
+ .hero-overlay{background:linear-gradient(34deg,rgba(8,10,9,.62) 0%,rgba(8,10,9,.48) 42%,rgba(8,10,9,.27) 78%,rgba(8,10,9,.14) 100%),linear-gradient(90deg,rgba(10,11,10,.24) 0%,rgba(10,11,10,.08) 46%,rgba(10,11,10,0) 80%),linear-gradient(0deg,rgba(10,11,10,.2),transparent 48%)!important}
+}
+.painters-view .materials-view-topbar{margin-inline:calc(-1 * max(6vw,28px));padding-inline:max(6vw,28px)}
+@media(max-width:760px){.painters-view .materials-view-topbar{margin-inline:-20px;padding-inline:20px}}
