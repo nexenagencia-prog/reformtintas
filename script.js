@@ -100,9 +100,47 @@ function makeElement(tag, className, text) {
   if (text !== undefined) element.textContent = text;
   return element;
 }
-function renderProduct(item) {
+function renderProduct(item, detailed = false) {
   const card = makeElement('article', 'product-card reveal');
   card.dataset.category = item.category;
+  if (!detailed) {
+    const photo = makeElement('div', 'product-image');
+    const imageLink = makeElement('a', 'product-image-link');
+    const inquiryUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent('Olá, Reforme! Quero consultar o produto ' + item.name + ' por ' + money(item.price) + '.');
+    imageLink.href = inquiryUrl;
+    imageLink.target = '_blank';
+    imageLink.rel = 'noopener noreferrer';
+    imageLink.setAttribute('aria-label', 'Consultar ' + item.name + ' com a Reforme (abre em nova aba)');
+    const image = document.createElement('img');
+    image.src = item.image;
+    image.alt = item.name;
+    image.loading = 'lazy';
+    image.decoding = 'async';
+    imageLink.append(image);
+    photo.append(imageLink);
+    photo.append(makeElement('span', 'product-category', categoryNames[item.category] || 'MATERIAL'));
+    const visit = makeElement('a', 'product-visit', 'Consultar com a Reforme ↗');
+    visit.href = inquiryUrl;
+    visit.target = '_blank';
+    visit.rel = 'noopener noreferrer';
+    photo.append(visit);
+    const add = makeElement('button', 'product-add', 'Adicionar à lista ');
+    add.type = 'button';
+    add.setAttribute('aria-pressed', 'false');
+    add.dataset.product = item.name;
+    add.dataset.price = String(item.price / 100);
+    add.append(makeElement('span', '', '+'));
+    photo.append(add);
+    card.append(photo);
+    const info = makeElement('div', 'product-info');
+    info.append(makeElement('p', 'product-brand', 'REFORME / ' + (categoryNames[item.category] || 'MATERIAL')));
+    info.append(makeElement('h3', '', item.name));
+    const price = makeElement('div', 'product-price');
+    price.append(makeElement('strong', '', money(item.price)));
+    info.append(price);
+    card.append(info);
+    return card;
+  }
   const photo = makeElement('div', 'product-image');
   const imageLink = makeElement('a', 'product-image-link');
   const inquiryUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent('Olá, Reforme! Quero consultar o produto ' + item.name + ' por ' + money(item.price) + '.');
@@ -217,7 +255,7 @@ fetch('/products.json')
   })
   .then((items) => {
     if (!Array.isArray(items) || items.length !== 50) throw new Error('O catálogo precisa conter 50 produtos.');
-    productGrid.replaceChildren(...items.map(renderProduct));
+    productGrid.replaceChildren(...items.map((item) => renderProduct(item, true)));
     if (promotionGrid) {
       const promotions = items.filter((item) => item.category === 'tintas').slice(0, 6);
       promotionGrid.replaceChildren(...promotions.map(renderProduct));
