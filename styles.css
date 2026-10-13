@@ -1159,3 +1159,17 @@ h1,h2,h3,p{margin-top:0}
 }
 .painters-view .materials-view-topbar{margin-inline:calc(-1 * max(6vw,28px));padding-inline:max(6vw,28px)}
 @media(max-width:760px){.painters-view .materials-view-topbar{margin-inline:-20px;padding-inline:20px}}
+
+
+/* Hero: texto de parcelamento sem card, no alinhamento original */
+@media(min-width:641px){
+ .hero-installment{
+  position:absolute!important;z-index:5;right:max(5vw,28px)!important;bottom:157px!important;left:auto!important;
+  width:auto!important;max-width:none!important;margin:0!important;padding:0!important;
+  border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+  color:rgba(255,255,255,.9);font-size:clamp(13px,1.15vw,16px)!important;font-weight:500!important;
+  line-height:normal!important;letter-spacing:-.025em!important;text-align:right!important
+ }
+ .hero-installment strong{color:var(--orange);font-weight:700}
+}
