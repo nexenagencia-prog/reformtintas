@@ -990,3 +990,7 @@ h1,h2,h3,p{margin-top:0}
  .painters-form{grid-template-columns:1fr}
  .painter-reward{padding:17px}
 }
+
+.painters-view{background-attachment:fixed;background-position:88% center}
+.painter-reward{background:rgba(255,255,255,.38)}
+@media(max-width:760px){.painters-view{background-attachment:scroll;background-position:90% center}}
