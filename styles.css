@@ -937,3 +937,18 @@ h1,h2,h3,p{margin-top:0}
 .painter-note{margin:0;padding:13px;background:#f2f0e9;color:#696860;font-size:9px;line-height:1.6}
 .painter-submit{grid-column:1/-1;justify-content:center;width:100%;min-height:49px;border:0;cursor:pointer}
 @media(max-width:640px){.hero-image{background-position:64% center!important}.painters-view{padding:0 20px 60px}.painters-heading{padding-top:35px}.painters-panel{grid-template-columns:1fr;gap:25px;margin:8px -2px;padding:22px 17px}.painters-form{grid-template-columns:1fr;gap:12px}.painter-field-wide,.painter-submit{grid-column:1}}
+
+/* Pintura animada do logo principal */
+.site-header .brand-logo{isolation:isolate}
+.site-header .brand-paint{position:absolute;inset:0;display:block;overflow:hidden;pointer-events:none;opacity:0;z-index:1}
+.site-header .brand-paint img{display:block;width:100%;height:100%;object-fit:contain;filter:brightness(0) saturate(100%) invert(54%) sepia(88%) saturate(1390%) hue-rotate(337deg) brightness(102%) contrast(97%)}
+.site-header .brand-paint-white img{filter:brightness(0) invert(1)}
+.site-header .brand-brush-1{clip-path:polygon(0 0,100% 2%,97% 27%,0 24%);animation-delay:0s}
+.site-header .brand-brush-2{clip-path:polygon(0 23%,98% 26%,100% 51%,2% 48%);animation-delay:.07s}
+.site-header .brand-brush-3{clip-path:polygon(2% 47%,100% 50%,97% 76%,0 73%);animation-delay:.14s}
+.site-header .brand-brush-4{clip-path:polygon(0 72%,97% 75%,100% 100%,2% 98%);animation-delay:.21s}
+.site-header .brand-paint-orange{animation:brand-paint-orange 20s linear infinite}
+.site-header .brand-paint-white{animation:brand-paint-white 20s linear infinite}
+@keyframes brand-paint-orange{0%,51%{opacity:0}1.5%,49.5%{opacity:1}}
+@keyframes brand-paint-white{0%,49.5%,100%{opacity:0}51%,99.5%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.site-header .brand-paint{animation:none!important;opacity:0!important}}
