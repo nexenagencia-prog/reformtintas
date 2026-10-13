@@ -1221,3 +1221,12 @@ h1,h2,h3,p{margin-top:0}
   overflow-wrap:anywhere;line-height:1.15
  }
 }
+
+
+/* Recuperação segura de senha na Loja do Pintor */
+.painter-login-form[hidden],.painter-recovery-form[hidden],.painter-password-recovery[hidden]{display:none!important}
+.painter-password-recovery{
+ display:inline-flex;align-items:center;justify-content:center;min-height:38px;margin:12px 0 0;padding:0;
+ border:0;background:transparent;color:#ffad83;font:inherit;font-size:11px;text-decoration:underline;text-underline-offset:3px;cursor:pointer
+}
+.painter-password-recovery:disabled{opacity:.6;cursor:wait}
