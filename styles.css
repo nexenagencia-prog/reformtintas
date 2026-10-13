@@ -1072,3 +1072,16 @@ h1,h2,h3,p{margin-top:0}
  .painter-login-card{padding:23px 19px}
  .painter-shop-view:before{background:linear-gradient(180deg,rgba(12,13,12,.76),rgba(12,13,12,.90)),url('/hero-pintores-casa.webp') 78% center/cover no-repeat}
 }
+
+/* Acesso rápido à loja e marca em destaque na área do programa */
+.painters-view .materials-view-topbar{min-height:92px}
+.painters-view .materials-view-brand{justify-self:center}
+.painters-view .materials-view-brand img{width:78px;height:78px;object-fit:contain}
+.painters-shop-button{justify-self:end;display:inline-flex;align-items:center;gap:12px;padding:12px 15px;border:1px solid var(--orange);background:var(--orange);color:#fff;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;transition:background .2s,border-color .2s}
+.painters-shop-button:hover{background:var(--orange-dark);border-color:var(--orange-dark)}
+.painters-shop-button span{font-size:15px}
+@media(max-width:760px){
+ .painters-view .materials-view-topbar{grid-template-columns:1fr auto;min-height:72px}
+ .painters-view .materials-view-brand{display:none}
+ .painters-shop-button{padding:10px 11px;font-size:9px}
+}
