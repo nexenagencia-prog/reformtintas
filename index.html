@@ -170,13 +170,57 @@
       .hero-installment{bottom:calc(13% + 75px)}
     }
 
+  
+    .painters-view[hidden]{display:none!important}
+    .painters-topline{display:flex;justify-content:space-between;align-items:center;margin:16px 0;color:#827f75;font-size:10px}
+    .painters-hero{position:relative;isolation:isolate;min-height:270px;margin:8px 0 20px;padding:36px 42px;overflow:hidden;border-radius:14px;background:#211f1b;color:white}
+    .painters-hero:after{position:absolute;z-index:-1;content:"";width:290px;height:290px;right:-75px;top:-110px;border:38px solid rgba(230,68,56,.72);border-radius:50%}
+    .painters-hero .eyebrow{color:#ffc09e}
+    .painters-hero h1{max-width:740px;margin:0;font-family:Manrope,sans-serif;font-size:clamp(38px,5.4vw,66px);font-weight:500;line-height:.98;letter-spacing:-.07em}
+    .painters-hero h1 em{color:#ff9564;font-style:normal}
+    .painters-hero p:last-child{max-width:600px;color:rgba(255,255,255,.72);font-size:12px;line-height:1.7}
+    .painter-benefits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 20px}
+    .painter-benefits article{padding:17px;border:1px solid rgba(21,21,18,.08);border-radius:10px;background:#fbfaf6}
+    .painter-benefits strong{display:block;font-family:Manrope,sans-serif;font-size:14px}
+    .painter-benefits p{margin:6px 0 0;color:#77746a;font-size:10px;line-height:1.55}
+    .painter-form-card{max-width:860px;margin:0 auto 40px;padding:28px;border:1px solid rgba(21,21,18,.09);border-radius:13px;background:#fff}
+    .painter-form-card h2{margin:0;font-family:Manrope,sans-serif;font-size:28px;font-weight:500;letter-spacing:-.05em}
+    .painter-form-intro{margin:7px 0 22px;color:#77746a;font-size:11px;line-height:1.6}
+    .painter-form{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    .painter-field{display:grid;gap:7px}
+    .painter-field--wide{grid-column:1/-1}
+    .painter-field label{font-size:10px;font-weight:700}
+    .painter-field input,.painter-field select{width:100%;height:45px;padding:0 12px;border:1px solid rgba(21,21,18,.16);border-radius:6px;background:#fbfaf6;color:var(--ink);font-size:11px;outline:none}
+    .painter-field input:focus,.painter-field select:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(242,107,50,.12)}
+    .painter-consent{display:flex;align-items:flex-start;gap:9px;color:#77746a;font-size:9px;line-height:1.55}
+    .painter-consent input{margin:2px 0 0;accent-color:var(--orange)}
+    .painter-submit{grid-column:1/-1;display:flex;justify-content:center;align-items:center;gap:12px;min-height:47px;border:0;border-radius:5px;background:var(--orange);color:white;font-size:11px;font-weight:700}
+    .painter-submit:hover{background:var(--orange-dark)}
+    .painter-submit span{font-size:15px}
+    .painter-note{grid-column:1/-1;margin:0;padding:12px 13px;border-radius:6px;background:#f6f3eb;color:#69665e;font-size:9px;line-height:1.6}
+    .painters-open .page{padding-top:100px}
+    .painters-open .topbar{background:rgba(21,21,18,.94);backdrop-filter:blur(8px)}
+    @media(max-width:650px){
+      .painters-open .page{padding-top:82px}
+      .painters-topline{margin:14px 0}
+      .painters-hero{min-height:0;margin:5px 0 14px;padding:27px 20px;border-radius:11px}
+      .painters-hero h1{font-size:42px}
+      .painters-hero p:last-child{font-size:10px}
+      .painter-benefits{grid-template-columns:1fr;gap:7px;margin-bottom:14px}
+      .painter-benefits article{padding:13px}
+      .painter-form-card{padding:20px 16px;margin-bottom:30px}
+      .painter-form-card h2{font-size:24px}
+      .painter-form{grid-template-columns:1fr;gap:12px}
+      .painter-field--wide,.painter-consent,.painter-submit,.painter-note{grid-column:1}
+    }
+
   </style>
 </head>
 <body>
   <header class="topbar">
     <video class="topbar-video" aria-hidden="true" autoplay muted loop playsinline preload="none" poster="/hero-family.webp"><source src="https://videos.pexels.com/video-files/5501226/5501226-hd_1920_1080_24fps.mp4" type="video/mp4"></video>
     <a class="brand" href="#inicio" data-open-home aria-label="Reform — início"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-logo.png" alt="Reform."></a>
-    <nav class="top-actions" id="mainNav" aria-label="Navegação principal"><a href="#inicio" data-nav-home>Início</a><a href="#beneficios" data-nav-home>Vantagens</a><a href="#inspiracao" data-nav-home>Inspiração</a><a href="#produtos" data-open-catalog>Produtos</a><a href="#contato" data-nav-home>Contato</a></nav>
+    <nav class="top-actions" id="mainNav" aria-label="Navegação principal"><a href="#inicio" data-nav-home>Início</a><a href="#pintores" data-open-painters>Acesso para pintores</a><a href="#inspiracao" data-nav-home>Inspiração</a><a href="#produtos" data-open-catalog>Produtos</a><a href="#contato" data-nav-home>Contato</a></nav>
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir filtros" aria-expanded="false">☰</button>
   </header>
   <main class="page" id="inicio">
@@ -251,6 +295,35 @@
     </section>
     <section class="catalog-help"><div><p class="eyebrow">Precisa de uma mão?</p><h2>Vamos escolher juntos.</h2><p>Conte à equipe o que você vai pintar e encontre uma opção para o seu projeto.</p></div><a href="https://wa.me/?text=Olá!%20Preciso%20de%20ajuda%20para%20escolher%20tinta%20na%20Reform." target="_blank" rel="noreferrer">Pedir ajuda <span>↗</span></a></section>
   </section>
+
+  <section class="painters-view" id="paintersView" hidden>
+    <div class="painters-topline"><button class="back-home" data-open-home>← <span>Voltar ao início</span></button><span>Reform. <i>/</i> Acesso para pintores</span></div>
+    <section class="painters-hero">
+      <p class="eyebrow">Programa profissional Reform</p>
+      <h1>Seu trabalho merece <em>mais vantagens.</em></h1>
+      <p>Cadastre-se como pintor profissional para solicitar condições especiais em tintas, seladores e acessórios. A equipe Reform entra em contato para confirmar seu cadastro e explicar os descontos disponíveis.</p>
+    </section>
+    <div class="painter-benefits" aria-label="Vantagens para pintores">
+      <article><strong>Condições especiais</strong><p>Solicite descontos em tintas e soluções para o seu trabalho.</p></article>
+      <article><strong>Mais opções para sua rotina</strong><p>Consulte condições também para seladores e acessórios.</p></article>
+      <article><strong>Atendimento da equipe</strong><p>Depois do envio, a Reform confirma os próximos passos pelo WhatsApp.</p></article>
+    </div>
+    <section class="painter-form-card" aria-labelledby="painter-form-title">
+      <h2 id="painter-form-title">Faça seu cadastro</h2>
+      <p class="painter-form-intro">Preencha seus dados profissionais. O WhatsApp abrirá com a mensagem pronta; escolha o contato da Reform e toque em enviar para encaminhar sua solicitação.</p>
+      <form class="painter-form" id="painterForm">
+        <div class="painter-field"><label for="painterName">Nome completo</label><input id="painterName" name="Nome" autocomplete="name" required placeholder="Como podemos chamar você?"></div>
+        <div class="painter-field"><label for="painterPhone">Seu WhatsApp</label><input id="painterPhone" name="WhatsApp" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(00) 00000-0000"></div>
+        <div class="painter-field"><label for="painterCity">Cidade</label><input id="painterCity" name="Cidade" autocomplete="address-level2" required placeholder="Sua cidade"></div>
+        <div class="painter-field"><label for="painterExperience">Área de atuação</label><select id="painterExperience" name="Atuação" required><option value="" selected disabled>Selecione uma opção</option><option>Pintura residencial</option><option>Pintura comercial</option><option>Pintura interna e externa</option><option>Outra atuação profissional</option></select></div>
+        <div class="painter-field painter-field--wide"><label for="painterInstagram">Instagram profissional <span style="font-weight:400;color:#77746a">(opcional)</span></label><input id="painterInstagram" name="Instagram" placeholder="@seu.perfil"></div>
+        <label class="painter-consent painter-field--wide"><input type="checkbox" id="painterConsent" required><span>Autorizo a Reform a usar estes dados para analisar meu cadastro e entrar em contato sobre o programa para pintores.</span></label>
+        <p class="painter-note">O cadastro é uma solicitação, não ativa o desconto automaticamente. A equipe Reform confirmará a aprovação e as condições disponíveis. Seus dados só serão enviados quando você encaminhar a mensagem no WhatsApp.</p>
+        <button class="painter-submit" type="submit">Continuar pelo WhatsApp <span aria-hidden="true">↗</span></button>
+      </form>
+    </section>
+  </section>
+
 </main>
   <footer><a class="footer-brand" href="#inicio"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-logo.png" alt="Reform."></a><span>Tintas, seladores e acessórios para sua obra.</span><span>© <span id="year"></span> Reform.</span></footer>
   <script>
@@ -272,20 +345,24 @@
       result.textContent=`${list.length} ${list.length===1?'produto encontrado':'produtos encontrados'}`;
       grid.innerHTML=list.length?list.map(p=>`<article class="product-card"><div class="product-image"><img loading="lazy" src="${p.image}" alt="${p.name}" onerror="this.src='https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/paint-terracotta.webp'"></div><div class="product-body"><div class="product-ident"><div class="product-brand">${p.brand}</div><span class="product-label">${p.label}</span></div><h3 class="product-name">${p.name}</h3><div class="product-meta">${p.surface.map(x=>`<span class="tag">${x==='metal'?'Metais e madeira':title(x)}</span>`).join('')}<span class="tag">${p.stage.includes('preparacao')?'Preparação':'Acabamento'}</span></div><a class="product-link" target="_blank" rel="noreferrer" href="https://wa.me/?text=${encodeURIComponent('Olá! Quero consultar disponibilidade e preço de '+p.name+' da '+p.brand+' na Reform.')}">Consultar disponibilidade <span aria-hidden="true">↗</span></a></div></article>`).join(''):'<div class="empty">Nenhum produto encontrado com esses filtros. Ajuste a busca ou limpe os filtros.</div>';
     }
-    const home=document.querySelector('#homeView'),catalog=document.querySelector('#catalogView'),nav=document.querySelector('#mainNav');
-    function openCatalog(category=''){document.body.classList.add('catalog-open');home.hidden=true;catalog.hidden=false;nav.classList.remove('is-open');history.replaceState(null,'','#produtos');window.scrollTo({top:0,behavior:'smooth'});if(category)applyCategory(category);else render();}
-    function openHome(target=''){document.body.classList.remove('catalog-open');catalog.hidden=true;home.hidden=false;nav.classList.remove('is-open');history.replaceState(null,'',target?'#'+target:location.pathname);if(target)setTimeout(()=>document.getElementById(target)?.scrollIntoView({behavior:'smooth'}),40);else window.scrollTo({top:0,behavior:'smooth'});}
+    const home=document.querySelector('#homeView'),catalog=document.querySelector('#catalogView'),painters=document.querySelector('#paintersView'),nav=document.querySelector('#mainNav');
+    function openCatalog(category=''){document.body.classList.remove('painters-open');document.body.classList.add('catalog-open');home.hidden=true;catalog.hidden=false;painters.hidden=true;nav.classList.remove('is-open');history.replaceState(null,'','#produtos');window.scrollTo({top:0,behavior:'smooth'});if(category)applyCategory(category);else render();}
+    function openPainters(){document.body.classList.remove('catalog-open');document.body.classList.add('painters-open');home.hidden=true;catalog.hidden=true;painters.hidden=false;nav.classList.remove('is-open');history.replaceState(null,'','#pintores');window.scrollTo({top:0,behavior:'smooth'});}
+    function openHome(target=''){document.body.classList.remove('catalog-open','painters-open');catalog.hidden=true;painters.hidden=true;home.hidden=false;nav.classList.remove('is-open');history.replaceState(null,'',target?'#'+target:location.pathname);if(target)setTimeout(()=>document.getElementById(target)?.scrollIntoView({behavior:'smooth'}),40);else window.scrollTo({top:0,behavior:'smooth'});}
     function applyCategory(category){document.querySelectorAll('[data-filter]').forEach(el=>el.checked=false);search.value='';if(category==='externo'){document.querySelector('[data-filter="ambiente"][value="externo"]').checked=true;}else if(category==='preparacao'){document.querySelector('[data-filter="etapa"][value="preparacao"]').checked=true;}else{const box=document.querySelector(`[data-filter="superficie"][value="${category}"]`);if(box)box.checked=true;}render();document.querySelector('#produtos').scrollIntoView({behavior:'smooth'});}
     document.querySelectorAll('[data-open-catalog]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openCatalog()}));
     document.querySelectorAll('[data-open-home]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openHome()}));
+    document.querySelectorAll('[data-open-painters]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openPainters()}));
     document.querySelectorAll('[data-nav-home]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openHome(el.getAttribute('href').slice(1))}));
     document.querySelectorAll('[data-category]').forEach(el=>el.addEventListener('click',()=>openCatalog(el.dataset.category)));
     document.querySelectorAll('[data-filter]').forEach(el=>el.addEventListener('change',render));search.addEventListener('input',render);sort.addEventListener('change',render);
     document.querySelector('#clearFilters').addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(el=>el.checked=false);search.value='';sort.value='relevance';render()});
     const sidebar=document.querySelector('#sidebar'),filterBtn=document.querySelector('#filtersToggle');filterBtn.addEventListener('click',()=>{const open=sidebar.classList.toggle('is-open');filterBtn.setAttribute('aria-expanded',String(open));filterBtn.lastElementChild.textContent=open?'−':'＋'});
     const menuToggle=document.querySelector('#menuToggle');menuToggle.addEventListener('click',()=>{const open=nav.classList.toggle('is-open');menuToggle.setAttribute('aria-expanded',String(open));menuToggle.textContent=open?'×':'☰'});
+    const painterForm=document.querySelector('#painterForm');
+    painterForm.addEventListener('submit',e=>{e.preventDefault();if(!painterForm.reportValidity())return;const fields=new FormData(painterForm);const message=['Olá! Quero solicitar meu cadastro no programa de pintores da Reform.','',...['Nome','WhatsApp','Cidade','Atuação','Instagram'].filter(k=>fields.get(k)).map(k=>k+': '+fields.get(k))].join('\n');window.open('https://wa.me/?text='+encodeURIComponent(message),'_blank','noopener,noreferrer');});
     document.querySelector('#year').textContent=new Date().getFullYear();render();
-    if(location.hash==='#produtos')openCatalog();
+    if(location.hash==='#pintores')openPainters();else if(location.hash==='#produtos')openCatalog();
   </script>
 </body>
 </html>
