@@ -964,3 +964,29 @@ h1,h2,h3,p{margin-top:0}
  .painters-form{grid-template-columns:1fr;gap:12px}
  .painter-reward{margin:18px 0;padding:15px}
 }
+
+
+/* Centraliza a experiência para pintores e usa a nova foto */
+.painters-view{background:linear-gradient(180deg,rgba(7,8,7,.48),rgba(7,8,7,.62)),url('/hero-pintores-casa.webp') center/cover no-repeat}
+.painters-heading{display:flex;flex-direction:column;align-items:center;gap:17px;text-align:center}
+.painters-heading>div{width:100%}
+.painters-heading h1{font-family:Manrope,sans-serif;font-size:clamp(48px,6vw,74px);font-weight:400;line-height:.98;letter-spacing:-.065em;text-align:center}
+.painters-heading h1 em{font-family:Manrope,sans-serif;font-style:normal;font-weight:400}
+.painters-view .materials-view-heading>p{max-width:650px;margin:0 auto;text-align:center}
+.painters-panel{display:flex;flex-direction:column;align-items:center;gap:26px;max-width:850px;margin:24px auto 0;padding:clamp(26px,4.5vw,46px);border:1px solid rgba(255,255,255,.48);border-radius:14px;background:rgba(255,255,255,.63);box-shadow:0 28px 90px rgba(0,0,0,.22);text-align:center;backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px)}
+.painters-panel-copy{width:100%;max-width:660px;text-align:center}
+.painters-panel-copy h2{margin-inline:auto;font-size:clamp(28px,3.4vw,40px);letter-spacing:-.045em}
+.painters-panel-copy>p{color:#57564f;font-size:13px;line-height:1.65}
+.painter-reward{max-width:470px;margin:23px auto;padding:20px 24px;border:1px solid rgba(242,107,50,.22);border-radius:8px;background:rgba(255,255,255,.46);text-align:center}
+.painter-reward-label{margin-bottom:10px}
+.painter-reward strong{font-size:clamp(30px,4vw,42px)}
+.painter-reward p{margin-top:9px}
+.painters-form{width:100%;max-width:640px;text-align:left}
+@media(max-width:760px){
+ .painters-heading{padding-top:32px}
+ .painters-heading h1{font-size:clamp(43px,12vw,62px)}
+ .painters-panel{gap:22px;margin:12px 0 0;padding:24px 18px}
+ .painters-panel-copy h2{font-size:30px}
+ .painters-form{grid-template-columns:1fr}
+ .painter-reward{padding:17px}
+}
