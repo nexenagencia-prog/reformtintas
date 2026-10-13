@@ -21,6 +21,7 @@
         <a href="#comprar">Produtos</a>
         <a href="#pintores" data-open-painters>Acesso para pintores</a>
         <a href="#colecoes">Materiais</a>
+        <a class="painter-shop-cta" href="#loja-pintor" data-open-painter-shop>Loja do Pintor <span aria-hidden="true">↗</span></a>
         <a class="nav-cta" href="#contato">Fale com um atendente <span aria-hidden="true">↗</span></a>
       </nav>
     </header>
@@ -176,7 +177,7 @@
     <section class="painters-view" id="pintores" hidden>
       <div class="materials-view-topbar">
         <button class="materials-back" type="button" data-close-painters><span aria-hidden="true">←</span> Voltar ao site</button>
-        <a class="materials-view-brand" href="#topo" data-close-painters aria-label="Reform, início"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-logo.png" alt="" /><span>REFORM.</span></a>
+        <a class="materials-view-brand" href="#topo" data-close-painters aria-label="Reforme, início"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-logo.png" alt="" /></a>
         <span class="materials-view-label">PROGRAMA PROFISSIONAL</span>
       </div>
       <div class="materials-view-heading painters-heading">
@@ -184,7 +185,7 @@
         <p>Condições especiais e descontos em tintas, seladores e acessórios para valorizar o seu trabalho.</p>
       </div>
       <section class="painters-panel">
-        <div class="painters-panel-copy"><p class="eyebrow"><span class="eyebrow-line"></span>Programa profissional Reform</p><h2>Vantagens para quem pinta.</h2><p>Condições especiais e descontos em tintas, seladores e acessórios.</p><div class="painter-reward"><span class="painter-reward-label">A CADA R$ 2.000 EM COMPRAS DE TINTAS</span><strong>1 lata de tinta grátis</strong><p>para pintores cadastrados.</p></div><p>Cadastre-se para conhecer as condições do programa profissional.</p></div>
+        <div class="painters-panel-copy"><p class="eyebrow">Programa Profissional Reforme</p><h2>Vantagens para quem pinta.</h2><p>Condições especiais e descontos em tintas, seladores e acessórios.</p><div class="painter-reward"><p>A cada <b>R$ 2.000 em compras de tintas</b>, você ganha</p><strong>1 lata de tinta grátis</strong><p>para pintores cadastrados.</p></div><p>Cadastre-se para conhecer as condições do programa profissional.</p></div>
         <form id="painter-form" class="painters-form">
           <div class="painter-field"><label for="painter-name">Nome completo</label><input id="painter-name" name="Nome" autocomplete="name" required placeholder="Seu nome"></div>
           <div class="painter-field"><label for="painter-whatsapp">WhatsApp</label><input id="painter-whatsapp" name="WhatsApp" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(00) 00000-0000"></div>
@@ -201,7 +202,7 @@
     <section class="materials-view" id="catalogo" aria-labelledby="materials-title" hidden>
       <div class="materials-view-topbar">
         <button class="materials-back" type="button" data-close-materials><span aria-hidden="true">←</span> Voltar ao site</button>
-        <a class="materials-view-brand" href="#topo" aria-label="Reforme, voltar ao início"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-logo.png" alt="" /><span>REFORM.</span></a>
+        <a class="materials-view-brand" href="#topo" aria-label="Reforme, voltar ao início"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-logo.png" alt="" /></a>
         <span class="materials-view-label">CATÁLOGO DE TINTAS</span>
       </div>
       <div class="materials-view-heading">
@@ -232,6 +233,32 @@
         </div>
         <p class="shop-footnote">Produtos, imagens e preços de referência da Reforme. Valores e disponibilidade podem mudar conforme a região e o estoque. Consulte as condições atualizadas com a equipe Reforme.</p>
       
+    </section>
+    <section class="painter-shop-view" id="loja-pintor" hidden>
+      <div class="materials-view-topbar painter-shop-topbar">
+        <button class="materials-back" type="button" data-close-painter-shop><span aria-hidden="true">←</span> Voltar ao site</button>
+        <a class="materials-view-brand" href="#topo" data-close-painter-shop aria-label="Reforme, início"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reform./main/assets/reforme-logo.png" alt="" /></a>
+        <span class="materials-view-label">ÁREA EXCLUSIVA DO PINTOR</span>
+      </div>
+      <div class="painter-shop-layout">
+        <div class="painter-shop-copy">
+          <p class="section-kicker"><span>LOJA DO PINTOR</span><span class="kicker-rule"></span></p>
+          <h1>Uma loja<br />do seu <em>jeito.</em></h1>
+          <p>Acesse condições especiais em tintas e acessórios para o seu trabalho.</p>
+          <div class="painter-shop-perk"><span>VANTAGEM DO PROGRAMA</span><strong>R$ 2.000</strong><p>em compras de tintas: ganhe 1 lata grátis, para pintores cadastrados.</p></div>
+        </div>
+        <div class="painter-login-card">
+          <div class="painter-login-heading"><span class="painter-login-icon" aria-hidden="true">R.</span><div><span>ACESSO PROFISSIONAL</span><h2>Entrar na loja</h2></div></div>
+          <form id="painter-login-form" class="painter-login-form">
+            <label for="painter-login-email">E-mail<input id="painter-login-email" name="email" type="email" autocomplete="username" placeholder="voce@email.com" required></label>
+            <label for="painter-login-password">Senha<input id="painter-login-password" name="password" type="password" autocomplete="current-password" placeholder="Sua senha" required></label>
+            <button class="button button-orange" type="submit">Entrar na Loja do Pintor <span aria-hidden="true">↗</span></button>
+          </form>
+          <p class="painter-login-status" id="painter-login-status" role="status" aria-live="polite">O acesso é liberado após a aprovação do cadastro.</p>
+          <a class="painter-login-help" href="https://wa.me/?text=Ol%C3%A1%2C%20Reforme!%20Sou%20pintor%20cadastrado%20e%20quero%20ativar%20meu%20acesso%20%C3%A0%20Loja%20do%20Pintor." target="_blank" rel="noopener noreferrer">Precisa do seu acesso? Fale com a equipe <span aria-hidden="true">↗</span></a>
+          <p class="painter-login-setup">A área de login e os preços exclusivos serão ativados após a conexão do sistema de cadastro e vendas.</p>
+        </div>
+      </div>
     </section>
     <script src="/script.js"></script>
   </body>
