@@ -19,6 +19,7 @@
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
       <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
         <a href="#comprar">Produtos</a>
+        <a href="#catalogo" data-open-materials data-product-filter="tintas">Tintas</a>
         <a href="#pintores" data-open-painters>Programa para pintores</a>
         <a href="#colecoes">Materiais</a>
         <a class="painter-shop-cta" href="#loja-pintor" data-open-painter-shop>Loja do Pintor <span aria-hidden="true">↗</span></a>
@@ -206,26 +207,18 @@
         <span class="materials-view-label">CATÁLOGO DE TINTAS</span>
       </div>
       <div class="materials-view-heading">
-        <div><p class="section-kicker"><span>TINTAS PARA CADA ETAPA</span><span class="kicker-rule"></span></p><h1 id="materials-title">Tudo para a<br /><em>sua pintura.</em></h1></div>
-        <p>Busque por tinta, marca ou medida na seleção de tintas, seladores e acessórios.</p>
+        <div><p class="section-kicker"><span>TINTAS PARA CADA ETAPA</span><span class="kicker-rule"></span></p><h1 id="materials-title">Tudo para sua<br /><em>pintura.</em></h1></div>
+        <p>Encontre tintas e acessórios para preparar, pintar e renovar seus ambientes.</p>
       </div>
-<div class="shop-catalog">
-          <aside class="shop-sidebar" aria-label="Lista de tintas e soluções">
-            <p class="shop-sidebar-title">Produtos</p>
-            <div class="shop-tabs" role="tablist" aria-label="Categorias de produtos">
-              <button class="shop-tab is-active" id="tab-todos" type="button" role="tab" aria-selected="true" aria-controls="product-grid" data-product-filter="tintas">Todos <span>50</span></button>
-              <button class="shop-tab" id="tab-tintas" type="button" role="tab" aria-selected="false" aria-controls="product-grid" data-product-filter="tintas">Tintas, seladores e acessórios <span>50</span></button>
-            </div>
-            <p class="shop-sidebar-note">1 categoria<br />50 produtos selecionados</p>
-          </aside>
-          <div class="shop-main">
-            <div class="shop-tools">
-              <label class="shop-search"><span class="sr-only">Buscar tinta, selador ou acessório</span><input id="product-search" type="search" placeholder="Buscar produto, marca ou medida" autocomplete="off" /><span aria-hidden="true">⌕</span></label>
-              <span class="shop-result-count" id="product-count">210 produtos</span>
-            </div>
-            <div class="product-grid" id="product-grid" role="tabpanel" aria-live="polite"></div>
+      <div class="shop-catalog">
+        <div class="shop-main">
+          <div class="shop-tools">
+            <div class="shop-intro"><strong>Catálogo de Tintas</strong><span>Produtos selecionados para cada etapa da sua pintura.</span></div>
+            <span class="shop-result-count" id="product-count">50 produtos</span>
           </div>
+          <div class="product-grid" id="product-grid" aria-live="polite"></div>
         </div>
+      </div>
         <p class="shop-empty" hidden>Nenhum produto nesta seleção. Tente outro termo ou <a href="#contato">fale com a equipe</a>.</p>
         <div class="shop-cart" id="lista-de-compras" hidden aria-live="polite">
           <div><strong class="cart-count">0 produtos na lista</strong><span class="cart-total">Subtotal estimado: R$ 0,00</span></div>
