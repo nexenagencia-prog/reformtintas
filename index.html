@@ -254,6 +254,11 @@
             <label for="painter-login-password">Senha<input id="painter-login-password" name="password" type="password" autocomplete="current-password" placeholder="Sua senha" required></label>
             <button class="button button-orange" type="submit">Entrar na Loja do Pintor <span aria-hidden="true">↗</span></button>
           </form>
+          <button class="painter-password-recovery" id="painter-forgot-password" type="button">Esqueci minha senha</button>
+          <form id="painter-recovery-form" class="painter-login-form painter-recovery-form" hidden>
+            <label for="painter-new-password">Nova senha<input id="painter-new-password" name="new-password" type="password" autocomplete="new-password" minlength="6" placeholder="Digite a nova senha" required></label>
+            <button class="button button-orange" type="submit">Salvar nova senha</button>
+          </form>
           <p class="painter-login-status" id="painter-login-status" role="status" aria-live="polite">O acesso é liberado após a aprovação do cadastro.</p>
           <a class="painter-login-help" href="https://wa.me/?text=Ol%C3%A1%2C%20Reforme!%20Sou%20pintor%20cadastrado%20e%20quero%20ativar%20meu%20acesso%20%C3%A0%20Loja%20do%20Pintor." target="_blank" rel="noopener noreferrer">Precisa do seu acesso? Fale com a equipe <span aria-hidden="true">↗</span></a>
           <p class="painter-login-setup">Entre com seu acesso aprovado para consultar a seleção de tintas e pedir sua condição especial.</p>
