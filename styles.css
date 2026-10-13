@@ -1085,3 +1085,9 @@ h1,h2,h3,p{margin-top:0}
  .painters-view .materials-view-brand{display:none}
  .painters-shop-button{padding:10px 11px;font-size:9px}
 }
+
+/* Alinha o logo ao início do texto e dá mais presença à fotografia da hero */
+@media(min-width:1051px){.site-header{padding-left:max(11vw,48px)}}
+.hero-image{background-image:url('/hero-pintores.webp')!important;background-size:cover!important}
+.hero-overlay{background:linear-gradient(90deg,rgba(15,15,13,.52) 0%,rgba(15,15,13,.28) 42%,rgba(15,15,13,.08) 78%,rgba(15,15,13,.10) 100%),linear-gradient(0deg,rgba(15,15,13,.24),transparent 48%)!important}
+@media(max-width:640px){.hero-overlay{background:linear-gradient(180deg,rgba(15,15,13,.28) 0%,rgba(15,15,13,.10) 44%,rgba(15,15,13,.12) 70%,rgba(15,15,13,.45) 100%)!important}}
