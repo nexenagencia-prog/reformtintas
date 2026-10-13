@@ -1173,3 +1173,12 @@ h1,h2,h3,p{margin-top:0}
  }
  .hero-installment strong{color:var(--orange);font-weight:700}
 }
+
+
+/* Logo ampliado na barra da Loja do Pintor */
+.painter-shop-topbar{min-height:126px}
+.painter-shop-topbar .materials-view-brand img{width:148px;height:104px;object-fit:contain}
+@media(max-width:760px){
+ .painter-shop-topbar{min-height:96px}
+ .painter-shop-topbar .materials-view-brand img{width:112px;height:78px}
+}
