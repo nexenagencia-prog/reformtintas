@@ -1182,3 +1182,42 @@ h1,h2,h3,p{margin-top:0}
  .painter-shop-topbar{min-height:96px}
  .painter-shop-topbar .materials-view-brand img{width:112px;height:78px}
 }
+
+
+/* Hero: destaque maior no parcelamento e textos contidos nos cards */
+@media(min-width:641px){
+ .hero-installment{
+  bottom:clamp(225px,27vh,280px)!important;
+  font-size:clamp(23px,2.15vw,31px)!important;
+  line-height:1.14!important;
+  letter-spacing:-.04em!important;
+ }
+ .hero-material-cards{
+  right:max(5vw,28px);bottom:78px;left:auto;
+  width:min(650px,calc(100% - 2 * max(5vw,28px)));
+  gap:8px
+ }
+ .hero-material-card{
+  box-sizing:border-box;width:auto;min-width:0;max-width:220px;min-height:88px;
+  flex:1 1 0;padding:10px;align-items:flex-start;gap:8px
+ }
+ .hero-material-card img{width:40px;height:40px;flex:0 0 40px}
+ .hero-material-card>span{min-width:0;overflow:hidden}
+ .hero-material-card small{
+  display:block;max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis
+ }
+ .hero-material-card strong{
+  display:-webkit-box;overflow:hidden;white-space:normal;
+  -webkit-box-orient:vertical;-webkit-line-clamp:3;
+  overflow-wrap:anywhere;line-height:1.22
+ }
+ .hero-material-card em{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+ .hero-material-card>b{flex:0 0 auto}
+}
+@media(max-width:640px){
+ .hero-material-card>span{min-width:0;max-width:100%;overflow:hidden}
+ .hero-material-card strong,.hero-material-card em{
+  display:block;max-width:100%;overflow:hidden;white-space:normal;
+  overflow-wrap:anywhere;line-height:1.15
+ }
+}
