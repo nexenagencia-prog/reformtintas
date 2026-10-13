@@ -1091,3 +1091,56 @@ h1,h2,h3,p{margin-top:0}
 .hero-image{background-image:url('/hero-pintores.webp')!important;background-size:cover!important}
 .hero-overlay{background:linear-gradient(90deg,rgba(15,15,13,.52) 0%,rgba(15,15,13,.28) 42%,rgba(15,15,13,.08) 78%,rgba(15,15,13,.10) 100%),linear-gradient(0deg,rgba(15,15,13,.24),transparent 48%)!important}
 @media(max-width:640px){.hero-overlay{background:linear-gradient(180deg,rgba(15,15,13,.28) 0%,rgba(15,15,13,.10) 44%,rgba(15,15,13,.12) 70%,rgba(15,15,13,.45) 100%)!important}}
+
+/* Hero com camada de vidro, degradê diagonal e menu translúcido */
+.site-header{background:rgba(13,14,13,.42);backdrop-filter:blur(16px) saturate(1.18);-webkit-backdrop-filter:blur(16px) saturate(1.18)}
+.hero-overlay{background:linear-gradient(42deg,rgba(8,10,9,.52) 0%,rgba(8,10,9,.32) 34%,rgba(8,10,9,0) 69%),linear-gradient(90deg,rgba(10,11,10,.25) 0%,rgba(10,11,10,.08) 43%,rgba(10,11,10,0) 78%),linear-gradient(0deg,rgba(10,11,10,.18),transparent 46%)!important}
+@media(min-width:641px){
+ .hero-title-group{position:relative;display:block;width:fit-content;max-width:100%;isolation:isolate}
+ .hero-title-group:before{position:absolute;z-index:-1;content:"";inset:-42px -55px -28px -36px;border:1px solid rgba(255,255,255,.10);border-radius:20px;background:linear-gradient(100deg,rgba(13,15,14,.58) 0%,rgba(13,15,14,.36) 55%,rgba(13,15,14,.10) 82%,transparent 100%);box-shadow:0 20px 64px rgba(0,0,0,.12);backdrop-filter:blur(18px) saturate(1.15);-webkit-backdrop-filter:blur(18px) saturate(1.15);mask-image:linear-gradient(180deg,transparent 0%,#000 16%,#000 82%,transparent 100%);-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 16%,#000 82%,transparent 100%)}
+ .hero-installment{position:absolute;z-index:5;right:clamp(36px,5vw,72px);bottom:clamp(124px,15vh,170px);width:auto;max-width:250px;margin:0;padding:17px 20px;border:1px solid rgba(255,255,255,.22);border-radius:12px;background:rgba(12,14,13,.48);box-shadow:0 14px 44px rgba(0,0,0,.18);backdrop-filter:blur(16px) saturate(1.1);-webkit-backdrop-filter:blur(16px) saturate(1.1);line-height:1.5;text-align:left}
+}
+@media(max-width:640px){
+ .hero-overlay{background:linear-gradient(40deg,rgba(8,10,9,.42) 0%,rgba(8,10,9,.20) 34%,rgba(8,10,9,0) 72%),linear-gradient(180deg,rgba(15,15,13,.16) 0%,rgba(15,15,13,.06) 48%,rgba(15,15,13,.42) 100%)!important}
+ .hero-title-group{position:absolute;isolation:isolate}
+ .hero-title-group:before{position:absolute;z-index:-1;content:"";inset:-14px -12px -18px;border:1px solid rgba(255,255,255,.10);border-radius:15px;background:linear-gradient(100deg,rgba(13,15,14,.44),rgba(13,15,14,.18) 78%,transparent);backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px);mask-image:linear-gradient(180deg,transparent 0%,#000 15%,#000 78%,transparent 100%);-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 15%,#000 78%,transparent 100%)}
+ .hero-installment{border:0;border-radius:0;background:none;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+}
+
+/* Loja profissional após autenticação */
+.painter-shop-layout[hidden],.painter-member-area[hidden]{display:none!important}
+.painter-member-area{width:min(1080px,100%);margin:0 auto;padding:46px 0 20px}
+.painter-member-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:25px}
+.painter-member-heading .section-kicker{color:#ffad83}
+.painter-member-heading h2{margin:0;font-family:Manrope,sans-serif;font-size:clamp(40px,6vw,66px);font-weight:400;letter-spacing:-.065em;line-height:.96}
+.painter-member-heading>div>p:last-child{margin:13px 0 0;color:rgba(255,255,255,.72);font-size:13px;line-height:1.65}
+.painter-sign-out{padding:11px 13px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.07);color:#fff;font:inherit;font-size:10px;font-weight:700;cursor:pointer}
+.painter-member-reward{margin:0 0 21px;padding:19px 22px;border:1px solid rgba(242,107,50,.38);border-radius:8px;background:rgba(22,18,15,.48);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.painter-member-reward span{display:block;margin-bottom:6px;color:#ffad83;font-size:8px;font-weight:700;letter-spacing:.16em}
+.painter-member-reward strong{display:block;font-family:Manrope,sans-serif;font-size:clamp(20px,3vw,30px);font-weight:500;letter-spacing:-.04em}
+.painter-member-reward p{margin:5px 0 0;color:rgba(255,255,255,.7);font-size:11px}
+.painter-member-search{display:grid;gap:8px;max-width:390px;margin:0 0 17px;color:rgba(255,255,255,.76);font-size:10px;font-weight:600}
+.painter-member-search input{height:42px;padding:0 12px;border:1px solid rgba(255,255,255,.25);border-radius:4px;background:rgba(255,255,255,.09);color:#fff;font:inherit;font-size:12px}
+.painter-member-search input::placeholder{color:rgba(255,255,255,.48)}
+.painter-member-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.painter-member-grid[data-empty="true"]:after{grid-column:1/-1;content:"Nenhum produto encontrado. Tente outra busca.";padding:24px 0;color:rgba(255,255,255,.72);font-size:12px}
+.painter-member-card{overflow:hidden;padding:0 0 15px;border:1px solid rgba(255,255,255,.16);border-radius:8px;background:rgba(248,247,242,.97);color:var(--ink)}
+.painter-member-photo{display:grid;height:clamp(145px,18vw,220px);place-items:center;background:#fff}
+.painter-member-photo img{width:100%;height:100%;padding:12px;object-fit:contain}
+.painter-member-tag{margin:13px 13px 7px;color:#a54d29;font-size:7px;font-weight:700;letter-spacing:.1em}
+.painter-member-card h3{min-height:36px;margin:0 13px 8px;font-size:12px;font-weight:600;line-height:1.45}
+.painter-member-price{margin:0 13px 12px;color:#716f68;font-size:10px}
+.painter-member-quote{display:flex;align-items:center;justify-content:center;min-height:38px;margin:0 13px;padding:0 10px;background:var(--orange);color:#fff;font-size:8px;font-weight:700;letter-spacing:.04em;text-align:center;text-transform:uppercase}
+.painter-member-footnote{margin:18px 0 0;color:rgba(255,255,255,.56);font-size:9px;line-height:1.6}
+.painter-login-form button:disabled{opacity:.65;cursor:wait}
+@media(max-width:800px){.painter-member-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){
+ .painter-member-area{padding-top:32px}
+ .painter-member-heading{align-items:flex-start;flex-direction:column}
+ .painter-member-heading h2{font-size:42px}
+ .painter-member-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .painter-member-photo{height:clamp(135px,42vw,190px)}
+ .painter-member-card h3{font-size:11px}
+ .painter-member-tag{font-size:6px}
+ .painter-member-quote{font-size:7px}
+}
