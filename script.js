@@ -28,6 +28,9 @@ const painterLoginForm = document.querySelector('#painter-login-form');
 const painterLoginStatus = document.querySelector('#painter-login-status');
 const painterLoginButton = painterLoginForm?.querySelector('button[type="submit"]');
 const painterPasswordField = document.querySelector('#painter-login-password');
+const painterForgotPassword = document.querySelector('#painter-forgot-password');
+const painterRecoveryForm = document.querySelector('#painter-recovery-form');
+const painterNewPasswordField = document.querySelector('#painter-new-password');
 const painterSupabase = window.supabase?.createClient(
   'https://wichmcppgerbpxbpinwn.supabase.co',
   'sb_publishable_A8JjZnMWbncG__dt5rqRMA_PP5yb2Fl',
@@ -302,7 +305,65 @@ function showPainterMember(user) {
 function showPainterLogin() {
   if (painterShopLayout) painterShopLayout.hidden = false;
   if (painterMemberArea) painterMemberArea.hidden = true;
+  if (painterLoginForm) painterLoginForm.hidden = false;
+  if (painterForgotPassword) painterForgotPassword.hidden = false;
+  if (painterRecoveryForm) painterRecoveryForm.hidden = true;
 }
+function showPainterPasswordRecovery() {
+  window.history.replaceState({view:'painter-shop'}, '', '/#loja-pintor');
+  syncMaterialsView();
+  if (painterShopLayout) painterShopLayout.hidden = false;
+  if (painterMemberArea) painterMemberArea.hidden = true;
+  if (painterLoginForm) painterLoginForm.hidden = true;
+  if (painterForgotPassword) painterForgotPassword.hidden = true;
+  if (painterRecoveryForm) painterRecoveryForm.hidden = false;
+  if (painterLoginStatus) painterLoginStatus.textContent = 'Escolha uma nova senha para sua conta.';
+}
+
+painterForgotPassword?.addEventListener('click', async () => {
+  const emailField = document.querySelector('#painter-login-email');
+  if (!emailField?.reportValidity()) return;
+  if (!painterSupabase) {
+    if (painterLoginStatus) painterLoginStatus.textContent = 'Não foi possível carregar a recuperação agora. Atualize a página e tente novamente.';
+    return;
+  }
+  painterForgotPassword.disabled = true;
+  if (painterLoginStatus) painterLoginStatus.textContent = 'Enviando o link de recuperação…';
+  try {
+    const {error} = await painterSupabase.auth.resetPasswordForEmail(emailField.value.trim(), {
+      redirectTo: 'https://reformtintas.vercel.app/#loja-pintor'
+    });
+    if (error) throw error;
+    if (painterLoginStatus) painterLoginStatus.textContent = 'Se houver uma conta com esse e-mail, enviaremos um link de recuperação. Confira sua caixa de entrada e spam.';
+  } catch {
+    if (painterLoginStatus) painterLoginStatus.textContent = 'Não foi possível enviar o link agora. Confira o e-mail e tente novamente.';
+  } finally {
+    painterForgotPassword.disabled = false;
+  }
+});
+painterRecoveryForm?.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  if (!event.currentTarget.reportValidity()) return;
+  if (!painterSupabase) {
+    if (painterLoginStatus) painterLoginStatus.textContent = 'Não foi possível carregar o acesso agora. Atualize a página e tente novamente.';
+    return;
+  }
+  const submitButton = painterRecoveryForm.querySelector('button[type="submit"]');
+  if (submitButton) submitButton.disabled = true;
+  if (painterLoginStatus) painterLoginStatus.textContent = 'Salvando sua nova senha…';
+  try {
+    const {error} = await painterSupabase.auth.updateUser({password:painterNewPasswordField?.value});
+    if (error) throw error;
+    if (painterNewPasswordField) painterNewPasswordField.value = '';
+    await painterSupabase.auth.signOut();
+    showPainterLogin();
+    if (painterLoginStatus) painterLoginStatus.textContent = 'Senha atualizada. Entre com seu e-mail e a nova senha.';
+  } catch {
+    if (painterLoginStatus) painterLoginStatus.textContent = 'Não foi possível atualizar a senha. Reabra o link do e-mail e tente novamente.';
+  } finally {
+    if (submitButton) submitButton.disabled = false;
+  }
+});
 
 painterLoginForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -337,7 +398,11 @@ if (painterSupabase) {
   painterSupabase.auth.getSession().then(({data}) => {
     if (data.session?.user) showPainterMember(data.session.user);
   });
-  painterSupabase.auth.onAuthStateChange((_event,session) => {
+  painterSupabase.auth.onAuthStateChange((event,session) => {
+    if (event === 'PASSWORD_RECOVERY') {
+      showPainterPasswordRecovery();
+      return;
+    }
     if (session?.user) showPainterMember(session.user);
     else showPainterLogin();
   });
