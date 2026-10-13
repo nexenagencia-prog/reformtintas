@@ -118,36 +118,35 @@ function renderProduct(item) {
   imageLink.append(image);
   photo.append(imageLink);
   photo.append(makeElement('span', 'product-category', categoryNames[item.category] || 'MATERIAL'));
-  const visit = makeElement('a', 'product-visit', 'Consultar com a Reforme ↗');
+
+  const info = makeElement('div', 'product-info');
+  info.append(makeElement('p', 'product-brand', 'REFORM / ' + (categoryNames[item.category] || 'MATERIAL')));
+  info.append(makeElement('h3', '', item.name));
+  const price = makeElement('div', 'product-price');
+  price.append(makeElement('strong', '', money(item.price)));
+  info.append(price);
+
+  const actions = makeElement('div', 'product-actions');
+  const visit = makeElement('a', 'product-visit', 'Consultar produto');
   visit.href = inquiryUrl;
   visit.target = '_blank';
   visit.rel = 'noopener noreferrer';
-  photo.append(visit);
   const add = makeElement('button', 'product-add', 'Adicionar à lista ');
   add.type = 'button';
   add.setAttribute('aria-pressed', 'false');
   add.dataset.product = item.name;
   add.dataset.price = String(item.price / 100);
   add.append(makeElement('span', '', '+'));
-  photo.append(add);
-  card.append(photo);
-  const info = makeElement('div', 'product-info');
-  info.append(makeElement('p', 'product-brand', 'REFORME / ' + (categoryNames[item.category] || 'MATERIAL')));
-  const title = makeElement('h3', '', item.name);
-  info.append(title);
-  const price = makeElement('div', 'product-price');
-  price.append(makeElement('strong', '', money(item.price)));
-  info.append(price);
-  card.append(info);
+  actions.append(visit, add);
+  info.append(actions);
+  card.append(photo, info);
   return card;
 }
 function filterProducts() {
-  const query = (productSearch?.value || '').trim().toLocaleLowerCase('pt-BR');
   let visible = 0;
   productCards.forEach((card) => {
     const categoryMatch = activeCategory === 'todos' || card.dataset.category === activeCategory;
-    const searchMatch = !query || card.textContent.toLocaleLowerCase('pt-BR').includes(query);
-    card.hidden = !(categoryMatch && searchMatch);
+    card.hidden = !categoryMatch;
     if (!card.hidden) visible += 1;
   });
   shopTabs.forEach((tab) => {
@@ -162,7 +161,6 @@ shopTabs.forEach((tab) => tab.addEventListener('click', () => {
   activeCategory = tab.dataset.productFilter;
   filterProducts();
 }));
-productSearch?.addEventListener('input', filterProducts);
 document.addEventListener('click', (event) => {
   const open = event.target.closest('[data-open-materials]');
   if (open) {
