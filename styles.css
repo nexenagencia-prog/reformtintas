@@ -1230,3 +1230,7 @@ h1,h2,h3,p{margin-top:0}
  border:0;background:transparent;color:#ffad83;font:inherit;font-size:11px;text-decoration:underline;text-underline-offset:3px;cursor:pointer
 }
 .painter-password-recovery:disabled{opacity:.6;cursor:wait}
+
+
+/* Centraliza a identificação do Programa Profissional Reform */
+.painters-panel-copy>.eyebrow{text-align:center}
