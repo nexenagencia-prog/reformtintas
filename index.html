@@ -256,10 +256,21 @@
           </form>
           <p class="painter-login-status" id="painter-login-status" role="status" aria-live="polite">O acesso é liberado após a aprovação do cadastro.</p>
           <a class="painter-login-help" href="https://wa.me/?text=Ol%C3%A1%2C%20Reforme!%20Sou%20pintor%20cadastrado%20e%20quero%20ativar%20meu%20acesso%20%C3%A0%20Loja%20do%20Pintor." target="_blank" rel="noopener noreferrer">Precisa do seu acesso? Fale com a equipe <span aria-hidden="true">↗</span></a>
-          <p class="painter-login-setup">A área de login e os preços exclusivos serão ativados após a conexão do sistema de cadastro e vendas.</p>
+          <p class="painter-login-setup">Entre com seu acesso aprovado para consultar a seleção de tintas e pedir sua condição especial.</p>
         </div>
       </div>
+      <section class="painter-member-area" id="painter-member-area" hidden aria-labelledby="painter-member-title">
+        <div class="painter-member-heading">
+          <div><p class="section-kicker"><span>ÁREA DO PINTOR CADASTRADO</span><span class="kicker-rule"></span></p><h2 id="painter-member-title">Sua loja profissional.</h2><p>Consulte tintas e acessórios e peça sua condição especial diretamente à equipe.</p></div>
+          <button class="painter-sign-out" id="painter-sign-out" type="button">Sair da conta ↗</button>
+        </div>
+        <div class="painter-member-reward"><span>VANTAGEM DO PROGRAMA</span><strong>A cada R$ 2.000 em compras de tintas</strong><p>Você ganha 1 lata de tinta grátis, para pintores cadastrados.</p></div>
+        <label class="painter-member-search">Buscar produtos<input id="painter-member-search" type="search" placeholder="Tinta, marca ou medida"></label>
+        <div class="painter-member-grid" id="painter-member-grid" aria-live="polite"></div>
+        <p class="painter-member-footnote">Os preços especiais, disponibilidade e condições são confirmados pela equipe Reforme antes do pedido.</p>
+      </section>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2"></script>
     <script src="/script.js"></script>
   </body>
 </html>
