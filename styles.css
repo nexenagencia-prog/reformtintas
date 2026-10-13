@@ -994,3 +994,81 @@ h1,h2,h3,p{margin-top:0}
 .painters-view{background-attachment:fixed;background-position:88% center}
 .painter-reward{background:rgba(255,255,255,.38)}
 @media(max-width:760px){.painters-view{background-attachment:scroll;background-position:90% center}}
+
+/* Cabeçalho responsivo e acesso à Loja do Pintor */
+@media(min-width:1051px){
+ .site-header{padding-right:clamp(28px,5vw,72px);padding-left:clamp(28px,5vw,72px)}
+ .brand{width:clamp(112px,10vw,136px);flex:0 0 auto}
+ .main-nav{gap:clamp(12px,1.45vw,20px);font-size:clamp(10px,.86vw,12px);white-space:nowrap}
+ .nav-cta{gap:10px;padding:10px 11px;font-size:9px;letter-spacing:.06em}
+ .painter-shop-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid rgba(242,107,50,.75);background:var(--orange);color:#fff;font-size:9px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;transition:background .2s,border-color .2s}
+ .painter-shop-cta:hover{background:var(--orange-dark);border-color:var(--orange-dark)}
+}
+@media(max-width:1050px) and (min-width:641px){
+ .site-header{height:70px;padding-inline:28px}
+ .menu-toggle{width:42px;height:42px;display:flex;flex-direction:column;justify-content:center;gap:6px;align-items:center;border:1px solid rgba(255,255,255,.35);background:rgba(10,10,9,.2);color:#fff;cursor:pointer}
+ .menu-toggle span{width:18px;height:1px;background:#fff;transition:transform .2s}
+ .menu-toggle[aria-expanded="true"] span:first-child{transform:translateY(3.5px) rotate(45deg)}
+ .menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+ .main-nav{position:absolute;top:70px;left:0;right:0;display:none;flex-direction:column;align-items:stretch;gap:0;padding:12px 28px 22px;background:rgba(18,18,16,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.18)}
+ .main-nav.is-open{display:flex}
+ .main-nav>a:not(.nav-cta){padding:15px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+ .main-nav .painter-shop-cta{justify-content:center;margin-top:15px;padding:13px;border:1px solid var(--orange);background:var(--orange);color:#fff;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+ .nav-cta{justify-content:space-between;margin-top:10px}
+}
+
+/* O card profissional permanece translúcido e deixa o pintor aparecer ao fundo */
+.painters-view{background-image:linear-gradient(180deg,rgba(7,8,7,.30),rgba(7,8,7,.44)),url('/hero-pintores-casa.webp');background-position:84% center;background-size:cover}
+.painters-panel{border-color:rgba(255,255,255,.24);background:rgba(15,17,16,.50);box-shadow:0 28px 90px rgba(0,0,0,.30);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);color:#fff}
+.painters-panel-copy h2{color:#fff}
+.painters-panel-copy>p{color:rgba(255,255,255,.82)}
+.painters-panel-copy>p:last-child{color:rgba(255,255,255,.72)}
+.painter-reward{border-color:rgba(242,107,50,.44);background:rgba(37,25,19,.58)}
+.painter-reward>p{color:rgba(255,255,255,.82)}
+.painter-reward-label{color:#ffad83}
+.painter-reward strong{color:#fff}
+.painter-reward b{color:#ffad83}
+.painters-view .painter-note{border:1px solid rgba(255,255,255,.18);background:rgba(10,12,11,.50);color:rgba(255,255,255,.75)}
+
+.painter-shop-view[hidden]{display:none!important}
+.painter-shop-view{position:relative;isolation:isolate;min-height:100vh;padding:0 max(6vw,28px) 70px;overflow:hidden;background:#171715;color:#fff}
+.painter-shop-view:before{position:absolute;z-index:-1;inset:0;content:"";background:linear-gradient(90deg,rgba(12,13,12,.92) 0%,rgba(12,13,12,.79) 46%,rgba(12,13,12,.37) 100%),url('/hero-pintores-casa.webp') 82% center/cover no-repeat}
+.painter-shop-topbar{margin-inline:calc(max(6vw,28px) * -1);padding-inline:max(6vw,28px);border-color:rgba(255,255,255,.16);background:rgba(13,15,14,.42)}
+.painter-shop-view .materials-back,.painter-shop-view .materials-view-brand{color:#fff}
+.painter-shop-view .materials-view-label{color:rgba(255,255,255,.68)}
+.painter-shop-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(350px,460px);align-items:center;gap:clamp(40px,8vw,130px);width:min(1080px,100%);min-height:calc(100vh - 140px);margin:0 auto}
+.painter-shop-copy{max-width:520px}
+.painter-shop-copy .section-kicker{color:#ff9a6b}
+.painter-shop-copy h1{margin:0;font-family:Manrope,sans-serif;font-size:clamp(60px,8vw,112px);font-weight:400;line-height:.88;letter-spacing:-.075em}
+.painter-shop-copy h1 em{color:var(--orange);font-style:normal}
+.painter-shop-copy>p:not(.section-kicker){max-width:390px;margin:24px 0 0;color:rgba(255,255,255,.75);font-size:15px;line-height:1.7}
+.painter-shop-perk{max-width:370px;margin-top:42px;padding:20px 22px;border-left:2px solid var(--orange);background:rgba(17,18,17,.40)}
+.painter-shop-perk span,.painter-login-heading>div>span{display:block;color:#ffad83;font-size:9px;font-weight:700;letter-spacing:.16em}
+.painter-shop-perk strong{display:block;margin:9px 0 3px;font-family:Manrope,sans-serif;font-size:40px;font-weight:500;letter-spacing:-.06em}
+.painter-shop-perk p{max-width:280px;margin:0;color:rgba(255,255,255,.76);font-size:12px;line-height:1.6}
+.painter-login-card{padding:clamp(24px,3vw,36px);border:1px solid rgba(255,255,255,.23);border-radius:15px;background:rgba(18,20,19,.63);box-shadow:0 25px 90px rgba(0,0,0,.32);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+.painter-login-heading{display:flex;align-items:center;gap:14px;margin-bottom:27px}
+.painter-login-icon{display:grid;width:45px;height:45px;place-items:center;border:1px solid rgba(255,255,255,.22);border-radius:50%;color:#ff9a6b;font-family:Manrope,sans-serif;font-size:19px;font-weight:700}
+.painter-login-heading h2{margin:5px 0 0;font-family:Manrope,sans-serif;font-size:27px;font-weight:400;letter-spacing:-.05em}
+.painter-login-form{display:grid;gap:15px}
+.painter-login-form label{display:grid;gap:8px;color:rgba(255,255,255,.83);font-size:11px;font-weight:600}
+.painter-login-form input{width:100%;height:48px;padding:0 14px;border:1px solid rgba(255,255,255,.20);border-radius:4px;background:rgba(255,255,255,.08);color:#fff;font:inherit;font-size:12px}
+.painter-login-form input::placeholder{color:rgba(255,255,255,.48)}
+.painter-login-form input:focus{outline:2px solid rgba(242,107,50,.38);border-color:var(--orange)}
+.painter-login-form .button{justify-content:center;width:100%;min-height:50px;margin-top:6px;border:0;cursor:pointer}
+.painter-login-status{margin:17px 0 0;color:rgba(255,255,255,.67);font-size:10px;line-height:1.6}
+.painter-login-help{display:block;margin-top:16px;color:#ffad83;font-size:11px;line-height:1.6}
+.painter-login-help span{margin-left:4px}
+.painter-login-setup{margin:18px 0 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.48);font-size:9px;line-height:1.6}
+@media(max-width:760px){
+ .painters-view{background-attachment:scroll;background-position:90% center}
+ .painters-panel{background:rgba(15,17,16,.57)}
+ .painter-shop-view{padding:0 20px 45px}
+ .painter-shop-topbar{margin-inline:-20px;padding-inline:20px}
+ .painter-shop-layout{grid-template-columns:1fr;gap:28px;min-height:auto;padding:44px 0 0}
+ .painter-shop-copy h1{font-size:clamp(58px,15vw,88px)}
+ .painter-shop-copy>p:not(.section-kicker){margin-top:17px;font-size:13px}
+ .painter-shop-perk{margin-top:22px;padding:15px 18px}
+ .painter-login-card{padding:23px 19px}
+ .painter-shop-view:before{background:linear-gradient(180deg,rgba(12,13,12,.76),rgba(12,13,12,.90)),url('/hero-pintores-casa.webp') 78% center/cover no-repeat}
+}
