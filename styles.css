@@ -1518,3 +1518,14 @@ h1,h2,h3,p{margin-top:0}
 @media(max-width:640px){
  .contact h2{font-size:clamp(31px,9vw,55px)}
 }
+
+
+/* Mostra a foto completa da bandeja e do rolo no card de acessórios */
+.category-tools{background:#151512}
+.category-tools .category-photo{
+ display:block;opacity:1;background:transparent;mix-blend-mode:normal;
+ object-fit:cover;object-position:center;filter:none
+}
+.category-tools:before{
+ background:linear-gradient(180deg,rgba(10,10,9,.28) 0%,rgba(10,10,9,.10) 36%,rgba(10,10,9,.74) 100%)
+}
