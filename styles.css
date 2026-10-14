@@ -1665,3 +1665,69 @@ h1,h2,h3,p{margin-top:0}
 /* Alinha a frase inferior da hero com a margem do título */
 .hero-bottom-tagline{left:max(11vw,48px)!important}
 @media(max-width:900px) and (min-width:641px){.hero-bottom-tagline{left:8vw!important}}
+
+/* Guia interativo: camadas certas para cada tipo de parede */
+.wall-guide{background:#f1efe8;color:var(--ink)}
+.wall-guide-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:36px;margin-bottom:42px}
+.wall-guide-heading h2{margin:0;font-family:'Manrope','DM Sans',sans-serif;font-size:clamp(42px,5.4vw,72px);font-weight:400;letter-spacing:-.065em;line-height:.98}
+.wall-guide-heading h2 em{font-style:normal;color:var(--orange)}
+.wall-guide-heading>div .section-kicker{margin-bottom:24px}
+.wall-guide-heading>p{max-width:390px;margin:0 0 5px;color:#67665f;font-size:14px;line-height:1.7}
+.wall-guide-layout{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(340px,.92fr);gap:18px;align-items:stretch}
+.wall-guide-visual{min-width:0;padding:clamp(22px,3.2vw,38px);border-radius:24px;background:#171714;color:#fff;box-shadow:0 18px 45px rgba(22,20,16,.14)}
+.wall-guide-selector-label{margin-bottom:13px;color:rgba(255,255,255,.58);font-size:9px;font-weight:700;letter-spacing:.15em}
+.wall-surface-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:24px}
+.wall-surface-option{min-height:42px;padding:9px 12px;border:1px solid rgba(255,255,255,.14);border-radius:9px;background:rgba(255,255,255,.035);color:rgba(255,255,255,.78);font:600 10px 'DM Sans',sans-serif;text-align:left;cursor:pointer;transition:border-color .2s,background .2s,color .2s}
+.wall-surface-option:hover{border-color:rgba(242,107,50,.7);color:#fff}
+.wall-surface-option.is-active,.wall-surface-option[aria-pressed=true]{border-color:var(--orange);background:rgba(242,107,50,.15);color:#fff}
+.wall-guide-diagram{padding:18px 16px 14px;border:1px solid rgba(255,255,255,.1);border-radius:17px;background:linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.018))}
+.wall-guide-diagram-caption{display:flex;justify-content:space-between;gap:10px;margin:0 2px 10px;color:rgba(255,255,255,.42);font-size:7px;font-weight:700;letter-spacing:.14em}
+.wall-layer-stack{display:grid;gap:6px}
+.wall-layer-button{position:relative;display:grid;grid-template-columns:47px minmax(0,1fr) 22px;align-items:center;gap:12px;width:100%;min-height:58px;padding:7px 12px;border:1px solid rgba(255,255,255,.08);border-radius:11px;background:rgba(255,255,255,.035);color:#fff;text-align:left;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.wall-layer-button:hover{transform:translateX(3px);border-color:rgba(255,255,255,.3)}
+.wall-layer-button.is-active,.wall-layer-button[aria-pressed=true]{border-color:rgba(242,107,50,.9);background:rgba(242,107,50,.13)}
+.wall-layer-swatch{position:relative;display:block;width:44px;height:40px;overflow:hidden;border-radius:7px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.1)}
+.wall-layer-swatch-paint{background:linear-gradient(135deg,#e87942,#a94125)}
+.wall-layer-swatch-putty{background:linear-gradient(135deg,#eee1c9,#cab899)}
+.wall-layer-swatch-primer{background:linear-gradient(135deg,#d7e2df,#7e9c99)}
+.wall-layer-swatch-wall{background:repeating-linear-gradient(0deg,transparent 0 16px,rgba(48,42,34,.22) 16px 18px),repeating-linear-gradient(90deg,#a99d8a 0 26px,#8e8373 26px 28px)}
+.wall-layer-copy{display:grid;gap:4px}
+.wall-layer-copy strong{font-size:11px;font-weight:700;letter-spacing:-.01em}
+.wall-layer-copy small{color:rgba(255,255,255,.53);font-size:9px}
+.wall-layer-arrow{justify-self:end;color:rgba(255,255,255,.45);font-size:15px}
+.wall-layer-button.is-active .wall-layer-arrow{color:var(--orange)}
+.wall-guide-hint{margin:14px 0 0;color:rgba(255,255,255,.48);font-size:9px;line-height:1.5}
+.wall-guide-recommendation{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:clamp(24px,3.3vw,42px);border:1px solid rgba(21,21,18,.09);border-radius:24px;background:#fff;color:var(--ink);box-shadow:0 18px 45px rgba(22,20,16,.08)}
+.wall-guide-recommendation-top{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;margin:0 0 40px;color:#86847b;font-size:8px;font-weight:700;letter-spacing:.13em}
+.wall-guide-recommendation-top b{display:block;margin-top:7px;color:var(--orange-dark);font-size:9px;letter-spacing:.08em}
+.wall-guide-recommendation-top>span:last-child{white-space:nowrap}
+.wall-guide-recommendation h3{margin:0 0 13px;font-family:'Manrope','DM Sans',sans-serif;font-size:clamp(25px,3vw,39px);font-weight:500;letter-spacing:-.055em;line-height:1.04}
+.wall-guide-recommendation>p:not(.wall-guide-note){margin:0;color:#6c6b64;font-size:13px;line-height:1.75}
+.wall-guide-brands-wrap{width:100%;margin-top:28px}
+.wall-guide-brands-wrap>span{color:#89877f;font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.wall-guide-brands{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
+.wall-guide-brands span{padding:8px 11px;border:1px solid rgba(21,21,18,.1);border-radius:999px;background:#f7f5f0;color:#35342f;font-size:10px;font-weight:700}
+.wall-guide-note{margin:24px 0 24px;padding:13px 14px;border-left:2px solid var(--orange);background:#f7f5f0;color:#6d6b64;font-size:10px;line-height:1.6}
+.wall-guide-cta{margin-top:auto;min-height:48px;gap:18px;border-radius:5px;font-size:9px}
+@media(max-width:900px){
+ .wall-guide-heading{align-items:flex-start;flex-direction:column;gap:18px;margin-bottom:28px}
+ .wall-guide-heading>p{max-width:560px}
+ .wall-guide-layout{grid-template-columns:1fr;gap:12px}
+ .wall-guide-recommendation{min-height:390px}
+}
+@media(max-width:640px){
+ .wall-guide.section-pad{padding:76px 20px}
+ .wall-guide-heading h2{font-size:clamp(38px,10vw,56px)}
+ .wall-guide-heading>p{font-size:12px}
+ .wall-guide-visual,.wall-guide-recommendation{padding:20px;border-radius:18px}
+ .wall-surface-option{min-height:42px;padding:8px;font-size:9px}
+ .wall-guide-diagram{padding:14px 10px 11px}
+ .wall-layer-button{grid-template-columns:42px minmax(0,1fr) 18px;gap:9px;min-height:56px;padding:7px 9px}
+ .wall-layer-swatch{width:40px;height:38px}
+ .wall-layer-copy strong{font-size:10px}
+ .wall-layer-copy small{font-size:8px}
+ .wall-guide-recommendation-top{margin-bottom:27px}
+ .wall-guide-recommendation h3{font-size:clamp(25px,7vw,34px)}
+ .wall-guide-recommendation>p:not(.wall-guide-note){font-size:12px}
+ .wall-guide-cta{width:100%;gap:10px;font-size:8px}
+}

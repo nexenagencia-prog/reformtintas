@@ -70,6 +70,7 @@
         <div class="shop-more-wrap"><a class="button button-dark" href="#catalogo" data-open-materials>Ver catálogo completo <span aria-hidden="true">↗</span></a></div>
       </section>
 
+
       <section class="collection-feature section-pad" id="colecoes" aria-labelledby="collection-title">
         <div class="collection-heading reveal">
           <div><div class="section-kicker"><span>03 / CATEGORIAS DE PINTURA</span></div><h2 id="collection-title">Encontre os produtos<br /><em>certos para pintar.</em></h2></div>
@@ -85,6 +86,56 @@
         </div>
       </section>
 
+      <section class="wall-guide section-pad" id="guia-de-parede" aria-labelledby="wall-guide-title">
+        <div class="wall-guide-heading reveal">
+          <div>
+            <div class="section-kicker"><span>07 / GUIA DE PINTURA</span></div>
+            <h2 id="wall-guide-title">Fundo, massa e tinta.<br /><em>Na ordem certa.</em></h2>
+          </div>
+          <p>Escolha a condição da parede e toque em cada camada para ver o que usar na preparação e no acabamento.</p>
+        </div>
+        <div class="wall-guide-layout">
+          <div class="wall-guide-visual reveal">
+            <div class="wall-guide-selector-label">QUAL É A SUA PAREDE?</div>
+            <div class="wall-surface-tabs" role="group" aria-label="Escolha o tipo de parede">
+              <button class="wall-surface-option is-active" type="button" data-wall-surface="reboco" aria-pressed="true">Reboco novo</button>
+              <button class="wall-surface-option" type="button" data-wall-surface="pintada" aria-pressed="false">Já pintada</button>
+              <button class="wall-surface-option" type="button" data-wall-surface="gesso" aria-pressed="false">Gesso ou drywall</button>
+              <button class="wall-surface-option" type="button" data-wall-surface="fissuras" aria-pressed="false">Fachada com fissuras</button>
+            </div>
+            <div class="wall-guide-diagram" aria-label="Diagrama interativo das camadas da parede">
+              <div class="wall-guide-diagram-caption"><span>CAMADAS DA PAREDE</span><span>TOQUE PARA EXPLORAR</span></div>
+              <div class="wall-layer-stack">
+                <button class="wall-layer-button" type="button" data-wall-layer="tinta" aria-pressed="false">
+                  <span class="wall-layer-swatch wall-layer-swatch-paint" aria-hidden="true"></span>
+                  <span class="wall-layer-copy"><strong>04 · Tinta</strong><small>Acabamento e proteção</small></span><span class="wall-layer-arrow" aria-hidden="true">↗</span>
+                </button>
+                <button class="wall-layer-button" type="button" data-wall-layer="massa" aria-pressed="false">
+                  <span class="wall-layer-swatch wall-layer-swatch-putty" aria-hidden="true"></span>
+                  <span class="wall-layer-copy"><strong>03 · Massa</strong><small>Correção e nivelamento</small></span><span class="wall-layer-arrow" aria-hidden="true">↗</span>
+                </button>
+                <button class="wall-layer-button is-active" type="button" data-wall-layer="fundo" aria-pressed="true">
+                  <span class="wall-layer-swatch wall-layer-swatch-primer" aria-hidden="true"></span>
+                  <span class="wall-layer-copy"><strong>02 · Fundo ou selador</strong><small>Preparação da superfície</small></span><span class="wall-layer-arrow" aria-hidden="true">↗</span>
+                </button>
+                <button class="wall-layer-button" type="button" data-wall-layer="base" aria-pressed="false">
+                  <span class="wall-layer-swatch wall-layer-swatch-wall" aria-hidden="true"></span>
+                  <span class="wall-layer-copy"><strong>01 · Parede</strong><small>Reboco, pintura ou gesso</small></span><span class="wall-layer-arrow" aria-hidden="true">↗</span>
+                </button>
+              </div>
+            </div>
+            <p class="wall-guide-hint">A recomendação muda conforme a parede selecionada.</p>
+          </div>
+          <div class="wall-guide-recommendation reveal" aria-live="polite">
+            <div class="wall-guide-recommendation-top"><span>INDICAÇÃO PARA <b id="wall-guide-surface-name">REBOCO NOVO</b></span><span id="wall-guide-step-count">02 / 04</span></div>
+            <h3 id="wall-guide-product-title">Fundo preparador ou selador acrílico</h3>
+            <p id="wall-guide-product-description">Em reboco novo e poroso, o selador ajuda a uniformizar a absorção. Se a parede soltar pó, use fundo preparador compatível.</p>
+            <div class="wall-guide-brands-wrap"><span>Marcas para consultar</span><div class="wall-guide-brands" id="wall-guide-brands"><span>Coral</span><span>Suvinil</span><span>Renner</span></div></div>
+            <p class="wall-guide-note" id="wall-guide-note">Confira a condição da superfície e siga as instruções do fabricante para cada produto.</p>
+            <a class="button button-dark wall-guide-cta" href="#catalogo" data-open-materials data-product-filter="tintas">Ver produtos no catálogo <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
       <section class="card-promo" aria-labelledby="card-promo-title">
         <img class="card-promo-photo" src="/reforme-cartao-compra.webp" alt="Cliente comprando tintas pelo celular e segurando um cartão bancário fictício" loading="lazy" />
         <div class="card-promo-shade"></div>
