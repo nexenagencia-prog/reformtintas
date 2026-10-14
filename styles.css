@@ -1569,3 +1569,6 @@ h1,h2,h3,p{margin-top:0}
   background:linear-gradient(90deg,rgba(14,18,25,.58),rgba(20,20,24,.16)),linear-gradient(0deg,rgba(17,18,24,.38),transparent 65%),radial-gradient(ellipse at center,transparent 30%,rgba(14,19,29,.22) 100%)
  }
 }
+
+/* Ajusta o enquadramento da foto da hero para preservar os capacetes */
+.hero-image{transform:translateY(3%) scale(1.02)!important;transform-origin:center center!important}
