@@ -1675,12 +1675,13 @@ h1,h2,h3,p{margin-top:0}
 .wall-guide-heading h2{margin:0;font-family:Georgia,'Times New Roman',serif;font-size:clamp(42px,5vw,70px);font-weight:700;letter-spacing:-.045em;line-height:1.04}
 .wall-guide-heading h2 em{color:#ed741f;font-weight:700}
 .wall-guide-products{display:grid;grid-template-columns:minmax(190px,1fr) minmax(430px,3.1fr) minmax(190px,1fr);gap:clamp(14px,2vw,30px);align-items:center;max-width:1660px;margin:0 auto}
-.wall-guide-scene{position:relative;grid-column:2;grid-row:1;min-width:0;width:100%;max-width:760px;margin:0 auto}
-.wall-guide-scene>img{display:block;width:100%;height:auto}
+.wall-guide-scene{grid-column:2;grid-row:1;min-width:0;width:100%;max-width:760px;margin:0 auto}
+.wall-guide-art{position:relative;width:100%}
+.wall-guide-art>img{display:block;width:100%;height:auto}
 .wall-guide-hotspot{position:absolute;left:var(--x);top:var(--y);z-index:2;width:23px;height:23px;transform:translate(-50%,-50%);border:0;border-radius:50%;background:#fff;box-shadow:0 1px 8px rgba(18,18,18,.16);cursor:pointer;transition:transform .18s,background .18s,box-shadow .18s}
 .wall-guide-hotspot:hover,.wall-guide-hotspot:focus-visible{transform:translate(-50%,-50%) scale(1.25);outline:2px solid #ed741f;outline-offset:2px}
 .wall-guide-hotspot.is-active{background:#ed741f;box-shadow:0 0 0 5px rgba(237,116,31,.2),0 2px 9px rgba(18,18,18,.2)}
-.wall-guide-live{position:absolute;z-index:3;left:50%;bottom:3%;width:min(78%,420px);transform:translateX(-50%);padding:12px 16px;border:1px solid rgba(20,23,43,.08);border-radius:15px;background:rgba(255,255,255,.94);box-shadow:0 12px 34px rgba(30,28,24,.1);text-align:center;backdrop-filter:blur(8px)}
+.wall-guide-live{position:relative;z-index:3;width:min(78%,420px);margin:0 auto;padding:12px 16px;border:1px solid rgba(20,23,43,.08);border-radius:15px;background:rgba(255,255,255,.94);box-shadow:0 12px 34px rgba(30,28,24,.1);text-align:center;backdrop-filter:blur(8px)}
 .wall-guide-live>span{display:block;color:#ed741f;font-size:8px;font-weight:800;letter-spacing:.14em}
 .wall-guide-live strong{display:block;margin-top:4px;font-size:14px;letter-spacing:-.02em}
 .wall-guide-live p{margin:3px 0 7px;color:#74736f;font-size:10px;line-height:1.4}
@@ -1716,7 +1717,7 @@ h1,h2,h3,p{margin-top:0}
  .wall-guide-product p{font-size:9px;margin:4px 0}
  .wall-guide-product a{font-size:9px}
  .wall-guide-hotspot{width:19px;height:19px}
- .wall-guide-live{bottom:2%;width:76%;padding:8px 10px;border-radius:11px}
+ .wall-guide-live{width:76%;padding:8px 10px;border-radius:11px}
  .wall-guide-live>span{font-size:7px}
  .wall-guide-live strong{font-size:11px}
  .wall-guide-live p{font-size:8px;margin:2px 0 5px}
