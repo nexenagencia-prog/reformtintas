@@ -1430,3 +1430,20 @@ h1,h2,h3,p{margin-top:0}
  #product-grid .product-price strong{font-size:20px}
  #product-grid .product-add{font-size:9px}
 }
+
+
+/* Realça a equipe e mantém o degradê escuro nas bordas e na base */
+.hero-image{filter:saturate(1.12) brightness(1.06)}
+.hero-overlay{
+ background:
+  linear-gradient(90deg,rgba(15,15,13,.58) 0%,rgba(15,15,13,.46) 27%,rgba(15,15,13,.12) 52%,rgba(15,15,13,.10) 74%,rgba(15,15,13,.28) 100%),
+  linear-gradient(138deg,rgba(10,11,9,.22) 0%,transparent 42%,rgba(10,11,9,.24) 100%),
+  linear-gradient(0deg,rgba(10,11,9,.30) 0%,transparent 46%)!important
+}
+@media(max-width:640px){
+ .hero-overlay{
+  background:
+   linear-gradient(180deg,rgba(15,15,13,.46) 0%,rgba(15,15,13,.18) 32%,rgba(15,15,13,.08) 56%,rgba(15,15,13,.28) 78%,rgba(15,15,13,.66) 100%),
+   linear-gradient(90deg,rgba(10,11,9,.22) 0%,transparent 72%)!important
+ }
+}
