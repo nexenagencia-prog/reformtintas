@@ -443,95 +443,40 @@ if (painterSupabase) {
   });
 }
 
-/* Seletor de camadas: orientação inicial por tipo de superfície */
+/* Pontos interativos das camadas e recomendação do produto */
 (() => {
   const section = document.querySelector('#guia-de-parede');
   if (!section) return;
-  const profiles = {
-    reboco: {
-      label: 'REBOCO NOVO',
-      note: 'A parede deve estar firme, seca e sem pó. Respeite a cura indicada antes de pintar.',
-      layers: {
-        base: {title:'Reboco novo e firme',description:'Remova poeira e resíduos. Confira se a superfície está seca e pronta para receber o sistema de pintura.',brands:[]},
-        fundo: {title:'Fundo preparador ou selador',description:'Para reboco novo e poroso, consulte um selador acrílico. Se a parede soltar pó, o fundo preparador é o indicado.',brands:['Coral','Suvinil','Renner']},
-        massa: {title:'Massa corrida ou massa acrílica',description:'Use massa corrida em ambientes internos secos. Para áreas externas ou úmidas, escolha massa acrílica.',brands:['Coral','Killing','Renner']},
-        tinta: {title:'Tinta acrílica premium',description:'Escolha o acabamento conforme o ambiente e o nível de lavabilidade desejado. Em área externa, use produto indicado para exposição ao tempo.',brands:['Coral','Suvinil','Killing','Renner']}
-      }
-    },
-    pintada: {
-      label: 'PAREDE JÁ PINTADA',
-      note: 'Se houver descascamento, umidade ou pó, resolva a causa e prepare a superfície antes da nova pintura.',
-      layers: {
-        base: {title:'Pintura antiga firme',description:'Limpe a parede e lixe áreas brilhantes ou descascadas. Retire toda parte solta antes de aplicar outro produto.',brands:[]},
-        fundo: {title:'Fundo preparador, se necessário',description:'Em parede firme e bem aderida, normalmente não é preciso fundo. Use fundo preparador se a superfície estiver soltando pó ou esfarelando.',brands:['Coral','Suvinil','Renner']},
-        massa: {title:'Massa para corrigir imperfeições',description:'Aplique apenas onde precisar nivelar. Massa corrida serve para interior seco; massa acrílica, para exterior ou áreas úmidas.',brands:['Coral','Killing','Renner']},
-        tinta: {title:'Tinta acrílica premium',description:'Depois de corrigir e lixar, finalize com tinta compatível com o ambiente e com a pintura já existente.',brands:['Coral','Suvinil','Killing','Renner']}
-      }
-    },
-    gesso: {
-      label: 'GESSO OU DRYWALL',
-      note: 'Use produtos indicados para gesso e drywall. Consulte a embalagem para conferir compatibilidade entre fundo e acabamento.',
-      layers: {
-        base: {title:'Gesso ou drywall',description:'Confira se as juntas estão tratadas e se a superfície está limpa, seca e sem pó antes da pintura.',brands:[]},
-        fundo: {title:'Fundo para gesso',description:'O fundo específico ajuda a uniformizar a absorção do gesso e prepara a superfície para a massa e a tinta.',brands:['Coral','Suvinil','Renner']},
-        massa: {title:'Massa para juntas e correções',description:'Use massa indicada para juntas de drywall ou para gesso, conforme a etapa. Lixe suavemente após a secagem.',brands:['Coral','Killing','Renner']},
-        tinta: {title:'Tinta acrílica premium',description:'A tinta acrílica para interior oferece acabamento uniforme em gesso e drywall preparados corretamente.',brands:['Coral','Suvinil','Killing','Renner']}
-      }
-    },
-    fissuras: {
-      label: 'FACHADA COM FISSURAS',
-      note: 'Infiltrações e trincas estruturais precisam de avaliação e correção da causa antes de qualquer pintura.',
-      layers: {
-        base: {title:'Avalie a fissura e a umidade',description:'Identifique se é uma fissura superficial e verifique sinais de infiltração. Trincas maiores precisam de avaliação profissional.',brands:[]},
-        fundo: {title:'Fundo compatível com a fachada',description:'Use fundo preparador em base pulverulenta ou fundo emborrachado quando o sistema escolhido indicar essa etapa.',brands:['Coral','Suvinil','Renner']},
-        massa: {title:'Massa acrílica ou reparo flexível',description:'Para exterior, escolha produto próprio para fachada e compatível com a fissura. Corrija a causa antes de cobrir o defeito.',brands:['Coral','Killing','Renner']},
-        tinta: {title:'Tinta emborrachada ou acrílica',description:'A tinta emborrachada pode ajudar em microfissuras superficiais quando indicada pelo fabricante. Para outras paredes externas, use acrílica premium.',brands:['Coral','Suvinil','Renner']}
-      }
-    }
+  const recommendations = {
+    'fundo-gesso': {title:'Fundo para gesso',copy:'Para gesso e drywall, aplique um fundo indicado para esse tipo de superfície antes da pintura.',brands:['Suvinil','Renner']},
+    'massa': {title:'Massa corrida',copy:'Use para nivelar paredes internas secas e deixar a superfície lisa antes do acabamento.',brands:['Renner','Killing']},
+    'tinta-emborrachada': {title:'Tinta emborrachada',copy:'Indicada para fachadas e superfícies externas, seguindo a preparação e as instruções do fabricante.',brands:['Coral','Suvinil','Renner']},
+    'fundo-preparador': {title:'Fundo preparador geral',copy:'Indicado para parede bruta, reboco novo ou superfície que esteja soltando partículas.',brands:['Coral','Suvinil','Killing','Renner']},
+    'fundo-emborrachado': {title:'Fundo emborrachado',copy:'Considere em sistemas compatíveis para fachadas com fissuras superficiais ou movimentação.',brands:['Coral','Suvinil','Renner']},
+    'tinta-premium': {title:'Tinta acrílica premium',copy:'Acabamento para paredes internas ou externas; escolha a versão apropriada para o ambiente.',brands:['Coral','Suvinil','Killing','Renner']}
   };
-  const layerOrder = ['base','fundo','massa','tinta'];
-  const layerButtons = [...section.querySelectorAll('[data-wall-layer]')];
-  const surfaceButtons = [...section.querySelectorAll('[data-wall-surface]')];
-  const surfaceName = section.querySelector('#wall-guide-surface-name');
-  const count = section.querySelector('#wall-guide-step-count');
-  const title = section.querySelector('#wall-guide-product-title');
-  const description = section.querySelector('#wall-guide-product-description');
+  const points = [...section.querySelectorAll('[data-wall-product]')];
+  const cards = [...section.querySelectorAll('[data-wall-product-card]')];
+  const title = section.querySelector('#wall-guide-selected-title');
+  const copy = section.querySelector('#wall-guide-selected-copy');
   const brands = section.querySelector('#wall-guide-brands');
-  const note = section.querySelector('#wall-guide-note');
-  let activeSurface = 'reboco';
-  let activeLayer = 'fundo';
-  function renderGuide() {
-    const profile = profiles[activeSurface];
-    const item = profile.layers[activeLayer];
-    surfaceButtons.forEach((button) => {
-      const active = button.dataset.wallSurface === activeSurface;
-      button.classList.toggle('is-active', active);
-      button.setAttribute('aria-pressed', String(active));
+  function selectProduct(id) {
+    const item = recommendations[id];
+    if (!item) return;
+    points.forEach((point) => {
+      const active = point.dataset.wallProduct === id;
+      point.classList.toggle('is-active', active);
+      point.setAttribute('aria-pressed', String(active));
     });
-    layerButtons.forEach((button) => {
-      const active = button.dataset.wallLayer === activeLayer;
-      button.classList.toggle('is-active', active);
-      button.setAttribute('aria-pressed', String(active));
-    });
-    surfaceName.textContent = profile.label;
-    count.textContent = String(layerOrder.indexOf(activeLayer) + 1).padStart(2,'0') + ' / 04';
+    cards.forEach((card) => card.classList.toggle('is-active', card.dataset.wallProductCard === id));
     title.textContent = item.title;
-    description.textContent = item.description;
-    note.textContent = profile.note;
+    copy.textContent = item.copy;
     brands.replaceChildren(...item.brands.map((brand) => {
       const tag = document.createElement('span');
       tag.textContent = brand;
       return tag;
     }));
-    brands.parentElement.hidden = item.brands.length === 0;
   }
-  surfaceButtons.forEach((button) => button.addEventListener('click', () => {
-    activeSurface = button.dataset.wallSurface;
-    renderGuide();
-  }));
-  layerButtons.forEach((button) => button.addEventListener('click', () => {
-    activeLayer = button.dataset.wallLayer;
-    renderGuide();
-  }));
-  renderGuide();
+  points.forEach((point) => point.addEventListener('click', () => selectProduct(point.dataset.wallProduct)));
+  selectProduct('fundo-preparador');
 })();

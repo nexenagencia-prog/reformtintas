@@ -87,55 +87,38 @@
       </section>
 
       <section class="wall-guide section-pad" id="guia-de-parede" aria-labelledby="wall-guide-title">
-        <div class="wall-guide-heading reveal">
-          <div>
-            <div class="section-kicker"><span>07 / GUIA DE PINTURA</span></div>
-            <h2 id="wall-guide-title">Fundo, massa e tinta.<br /><em>Na ordem certa.</em></h2>
-          </div>
-          <p>Escolha a condição da parede e toque em cada camada para ver o que usar na preparação e no acabamento.</p>
-        </div>
-        <div class="wall-guide-layout">
-          <div class="wall-guide-visual reveal">
-            <div class="wall-guide-selector-label">QUAL É A SUA PAREDE?</div>
-            <div class="wall-surface-tabs" role="group" aria-label="Escolha o tipo de parede">
-              <button class="wall-surface-option is-active" type="button" data-wall-surface="reboco" aria-pressed="true">Reboco novo</button>
-              <button class="wall-surface-option" type="button" data-wall-surface="pintada" aria-pressed="false">Já pintada</button>
-              <button class="wall-surface-option" type="button" data-wall-surface="gesso" aria-pressed="false">Gesso ou drywall</button>
-              <button class="wall-surface-option" type="button" data-wall-surface="fissuras" aria-pressed="false">Fachada com fissuras</button>
-            </div>
-            <div class="wall-guide-diagram" aria-label="Diagrama interativo das camadas da parede">
-              <div class="wall-guide-diagram-caption"><span>CAMADAS DA PAREDE</span><span>TOQUE PARA EXPLORAR</span></div>
-              <div class="wall-layer-stack">
-                <button class="wall-layer-button" type="button" data-wall-layer="tinta" aria-pressed="false">
-                  <span class="wall-layer-swatch wall-layer-swatch-paint" aria-hidden="true"></span>
-                  <span class="wall-layer-copy"><strong>04 · Tinta</strong><small>Acabamento e proteção</small></span><span class="wall-layer-arrow" aria-hidden="true">↗</span>
-                </button>
-                <button class="wall-layer-button" type="button" data-wall-layer="massa" aria-pressed="false">
-                  <span class="wall-layer-swatch wall-layer-swatch-putty" aria-hidden="true"></span>
-                  <span class="wall-layer-copy"><strong>03 · Massa</strong><small>Correção e nivelamento</small></span><span class="wall-layer-arrow" aria-hidden="true">↗</span>
-                </button>
-                <button class="wall-layer-button is-active" type="button" data-wall-layer="fundo" aria-pressed="true">
-                  <span class="wall-layer-swatch wall-layer-swatch-primer" aria-hidden="true"></span>
-                  <span class="wall-layer-copy"><strong>02 · Fundo ou selador</strong><small>Preparação da superfície</small></span><span class="wall-layer-arrow" aria-hidden="true">↗</span>
-                </button>
-                <button class="wall-layer-button" type="button" data-wall-layer="base" aria-pressed="false">
-                  <span class="wall-layer-swatch wall-layer-swatch-wall" aria-hidden="true"></span>
-                  <span class="wall-layer-copy"><strong>01 · Parede</strong><small>Reboco, pintura ou gesso</small></span><span class="wall-layer-arrow" aria-hidden="true">↗</span>
-                </button>
-              </div>
-            </div>
-            <p class="wall-guide-hint">A recomendação muda conforme a parede selecionada.</p>
-          </div>
-          <div class="wall-guide-recommendation reveal" aria-live="polite">
-            <div class="wall-guide-recommendation-top"><span>INDICAÇÃO PARA <b id="wall-guide-surface-name">REBOCO NOVO</b></span><span id="wall-guide-step-count">02 / 04</span></div>
-            <h3 id="wall-guide-product-title">Fundo preparador ou selador acrílico</h3>
-            <p id="wall-guide-product-description">Em reboco novo e poroso, o selador ajuda a uniformizar a absorção. Se a parede soltar pó, use fundo preparador compatível.</p>
-            <div class="wall-guide-brands-wrap"><span>Marcas para consultar</span><div class="wall-guide-brands" id="wall-guide-brands"><span>Coral</span><span>Suvinil</span><span>Renner</span></div></div>
-            <p class="wall-guide-note" id="wall-guide-note">Confira a condição da superfície e siga as instruções do fabricante para cada produto.</p>
-            <a class="button button-dark wall-guide-cta" href="#catalogo" data-open-materials data-product-filter="tintas">Ver produtos no catálogo <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-      </section>
+  <div class="wall-guide-heading reveal">
+    <div class="wall-guide-kicker"><span></span> O QUE FABRICAMOS</div>
+    <h2 id="wall-guide-title">Tinta, fundo, massa e selador.<br /><em>E qual usar em cada parede.</em></h2>
+  </div>
+  <div class="wall-guide-products">
+    <div class="wall-guide-scene">
+      <img src="/wall-layers.webp" alt="Parede aberta em seis camadas, da base ao acabamento" />
+      <button class="wall-guide-hotspot" type="button" style="--x:56.4%;--y:17%" data-wall-product="fundo-preparador" aria-label="Ver indicação de fundo preparador geral"></button>
+      <button class="wall-guide-hotspot" type="button" style="--x:22%;--y:28%" data-wall-product="fundo-gesso" aria-label="Ver indicação de fundo para gesso"></button>
+      <button class="wall-guide-hotspot" type="button" style="--x:58.6%;--y:49%" data-wall-product="fundo-emborrachado" aria-label="Ver indicação de fundo emborrachado"></button>
+      <button class="wall-guide-hotspot" type="button" style="--x:22%;--y:57%" data-wall-product="massa" aria-label="Ver indicação de massa corrida"></button>
+      <button class="wall-guide-hotspot" type="button" style="--x:58.6%;--y:79%" data-wall-product="tinta-premium" aria-label="Ver indicação de tinta acrílica premium"></button>
+      <button class="wall-guide-hotspot" type="button" style="--x:23%;--y:87%" data-wall-product="tinta-emborrachada" aria-label="Ver indicação de tinta emborrachada"></button>
+      <div class="wall-guide-live" aria-live="polite">
+        <span>CAMADA SELECIONADA</span>
+        <strong id="wall-guide-selected-title">Fundo preparador geral</strong>
+        <p id="wall-guide-selected-copy">Indicado para parede bruta ou reboco novo, conforme a condição da superfície.</p>
+        <div class="wall-guide-brands" id="wall-guide-brands"><span>Coral</span><span>Suvinil</span><span>Killing</span><span>Renner</span></div>
+      </div>
+    </div>
+    <div class="wall-guide-product-column wall-guide-left">
+      <article class="wall-guide-product" data-wall-product-card="fundo-gesso"><img src="https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/6/0/604dcf38_1259438_1.jpg" alt="Produto para gesso e drywall" loading="lazy" /><h3>Fundo para gesso</h3><p>Gesso e drywall</p><a href="#catalogo" data-open-materials data-product-filter="tintas">Ver na loja <span aria-hidden="true">→</span></a></article>
+<article class="wall-guide-product" data-wall-product-card="massa"><img src="https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/f/a/faeb19bb_1770940_1.jpg" alt="Massa corrida Renner" loading="lazy" /><h3>Massa corrida</h3><p>Parede lisa</p><a href="#catalogo" data-open-materials data-product-filter="tintas">Ver na loja <span aria-hidden="true">→</span></a></article>
+<article class="wall-guide-product" data-wall-product-card="tinta-emborrachada"><img src="https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/8/8/88c61fc8_2084176_1_1.jpg" alt="Tinta emborrachada Hydronorth" loading="lazy" /><h3>Tinta emborrachada</h3><p>Proteção contra microfissuras</p><a href="#catalogo" data-open-materials data-product-filter="tintas">Ver na loja <span aria-hidden="true">→</span></a></article>
+    </div>
+    <div class="wall-guide-product-column wall-guide-right">
+      <article class="wall-guide-product" data-wall-product-card="fundo-preparador"><img src="https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/4/d/4dc09cdd_2123783_1_1.jpg" alt="Selador acrílico Renner" loading="lazy" /><h3>Fundo preparador geral</h3><p>Parede bruta ou reboco novo</p><a href="#catalogo" data-open-materials data-product-filter="tintas">Ver na loja <span aria-hidden="true">→</span></a></article>
+<article class="wall-guide-product" data-wall-product-card="fundo-emborrachado"><img src="https://www.cassol.com.br/media/catalog/product/cache/bbf09ac06680f22ee61c72c4cb1defae/8/8/88c61fc8_2084176_1_1.jpg" alt="Produto emborrachado Hydronorth" loading="lazy" /><h3>Fundo emborrachado</h3><p>Fissuras ou movimentação</p><a href="#catalogo" data-open-materials data-product-filter="tintas">Ver na loja <span aria-hidden="true">→</span></a></article>
+<article class="wall-guide-product" data-wall-product-card="tinta-premium"><img src="https://raw.githubusercontent.com/nexenagencia-prog/reformtintas/main/assets/paint-terracotta.webp" alt="Tinta Coral para acabamento" loading="lazy" /><h3>Tinta acrílica premium</h3><p>Acabamento padrão</p><a href="#catalogo" data-open-materials data-product-filter="tintas">Ver na loja <span aria-hidden="true">→</span></a></article>
+    </div>
+  </div>
+</section>
       <section class="card-promo" aria-labelledby="card-promo-title">
         <img class="card-promo-photo" src="/reforme-cartao-compra.webp" alt="Cliente comprando tintas pelo celular e segurando um cartão bancário fictício" loading="lazy" />
         <div class="card-promo-shade"></div>
