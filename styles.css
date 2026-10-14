@@ -1447,3 +1447,63 @@ h1,h2,h3,p{margin-top:0}
    linear-gradient(90deg,rgba(10,11,9,.22) 0%,transparent 72%)!important
  }
 }
+
+
+/* Galeria de inspiração para a próxima pintura */
+.contact.section-pad{padding-block:clamp(76px,9vw,126px)}
+.contact{
+ display:grid;grid-template-columns:minmax(280px,.78fr) minmax(0,1.22fr);
+ align-items:center;gap:clamp(34px,6vw,88px);
+ max-width:none
+}
+.contact-inner{width:100%;max-width:540px;margin:0}
+.contact-mark{margin:0 0 30px}
+.contact .eyebrow{justify-content:flex-start}
+.contact h2{font-size:clamp(48px,5.5vw,78px);line-height:.98}
+.contact-inner>p:not(.eyebrow){max-width:410px;margin:0 0 25px;font-size:14px;line-height:1.75}
+.contact .button{min-width:0}
+.contact-note{margin-top:27px;text-align:left}
+.painting-gallery{
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;width:100%;
+}
+.painting-gallery-card{
+ position:relative;overflow:hidden;min-width:0;aspect-ratio:1.13;margin:0;
+ border:1px solid rgba(21,21,18,.08);border-radius:12px;background:#d8d3ca;
+ box-shadow:0 10px 25px rgba(32,28,21,.11);isolation:isolate
+}
+.painting-gallery-card::after{
+ position:absolute;inset:32% 0 0;z-index:1;content:"";
+ background:linear-gradient(180deg,transparent,rgba(14,15,13,.72))
+}
+.painting-gallery-card img{
+ display:block;width:100%;height:100%;object-fit:cover;object-position:center;
+ transition:transform .45s cubic-bezier(.2,.7,.2,1)
+}
+.painting-gallery-card:hover img{transform:scale(1.055)}
+.painting-gallery-card figcaption{
+ position:absolute;right:10px;bottom:10px;left:10px;z-index:2;
+ color:#fff;font-family:'Manrope','DM Sans',sans-serif;font-size:clamp(10px,.9vw,13px);
+ font-weight:600;letter-spacing:-.015em;line-height:1.25
+}
+.category-tools .category-photo,.category-cement .category-photo,.category-finishes .category-photo{object-position:center}
+@media(max-width:900px){
+ .contact.section-pad{padding-block:70px 78px}
+ .contact{grid-template-columns:minmax(230px,.75fr) minmax(0,1.25fr);gap:28px}
+ .painting-gallery{gap:8px}
+ .painting-gallery-card{border-radius:9px}
+ .contact h2{font-size:clamp(42px,6vw,62px)}
+ .contact .button{padding-inline:15px;font-size:10px}
+}
+@media(max-width:640px){
+ .contact{grid-template-columns:1fr;gap:32px}
+ .contact-inner{max-width:560px;margin:0 auto;text-align:center}
+ .contact-mark{margin:0 auto 26px}
+ .contact .eyebrow{justify-content:center}
+ .contact h2{font-size:clamp(44px,12vw,62px)}
+ .contact-inner>p:not(.eyebrow){margin:0 auto 23px;font-size:13px}
+ .contact .button{min-height:48px;padding-inline:18px;font-size:10px}
+ .contact-note{margin-top:22px;text-align:center}
+ .painting-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .painting-gallery-card{aspect-ratio:1.17;border-radius:10px}
+ .painting-gallery-card figcaption{right:9px;bottom:9px;left:9px;font-size:11px}
+}
