@@ -1551,3 +1551,21 @@ h1,h2,h3,p{margin-top:0}
  .coast-shade{background:linear-gradient(90deg,rgba(20,19,17,.60),rgba(20,19,17,.16)),linear-gradient(0deg,rgba(17,15,13,.34),transparent 65%)}
  .coast-copy .eyebrow{margin-bottom:15px;font-size:9px}.coast-copy h2{font-size:clamp(40px,10vw,58px)}.coast-copy>p:not(.eyebrow){font-size:13px}
 }
+
+
+/* Cores mais presentes nas fotos da galeria */
+.painting-gallery-card img{filter:saturate(1.58) contrast(1.12) brightness(1.02)}
+.painting-gallery-card:hover img{filter:saturate(1.72) contrast(1.14) brightness(1.03)}
+
+/* Tratamento cinematográfico para o amanhecer na praia */
+.coast-photo{filter:saturate(1.36) contrast(1.14) brightness(.9)}
+.coast-shade{
+ background:linear-gradient(90deg,rgba(14,18,25,.74),rgba(20,20,24,.48) 38%,rgba(16,20,27,.08) 78%,rgba(15,19,28,.06)),linear-gradient(0deg,rgba(17,18,24,.34),transparent 58%),radial-gradient(ellipse at 62% 48%,transparent 28%,rgba(14,19,29,.32) 100%)
+}
+@media(max-width:640px){
+ .painting-gallery-card img{filter:saturate(1.5) contrast(1.1) brightness(1.02)}
+ .coast-photo{filter:saturate(1.3) contrast(1.1) brightness(.92)}
+ .coast-shade{
+  background:linear-gradient(90deg,rgba(14,18,25,.58),rgba(20,20,24,.16)),linear-gradient(0deg,rgba(17,18,24,.38),transparent 65%),radial-gradient(ellipse at center,transparent 30%,rgba(14,19,29,.22) 100%)
+ }
+}
