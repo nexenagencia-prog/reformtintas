@@ -1507,3 +1507,14 @@ h1,h2,h3,p{margin-top:0}
  .painting-gallery-card{aspect-ratio:1.17;border-radius:10px}
  .painting-gallery-card figcaption{right:9px;bottom:9px;left:9px;font-size:11px}
 }
+
+
+/* Mantém o título final em duas linhas em telas largas e pequenas */
+.contact h2{font-size:clamp(42px,4.1vw,58px);line-height:1.02}
+.contact-title-line{display:block;white-space:nowrap}
+@media(max-width:900px) and (min-width:641px){
+ .contact h2{font-size:clamp(35px,4.5vw,52px)}
+}
+@media(max-width:640px){
+ .contact h2{font-size:clamp(31px,9vw,55px)}
+}
