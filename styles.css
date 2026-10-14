@@ -1629,3 +1629,35 @@ h1,h2,h3,p{margin-top:0}
  .painting-gallery-card{aspect-ratio:1.05}
  .coast-copy h2{font-size:clamp(36px,9vw,54px)}
 }
+
+/* Correções solicitadas: alinhamento da hero, frase inferior e chamada do cartão */
+.hero-bottom-tagline{
+  position:absolute!important;z-index:6;top:auto!important;right:auto!important;
+  bottom:31px!important;left:max(6vw,28px)!important;inset-block-start:auto!important;
+  max-width:520px;margin:0!important;color:var(--orange)!important;
+  font-size:clamp(14px,1.15vw,17px)!important;font-weight:600;
+  letter-spacing:0!important;line-height:1.35;text-align:left!important;text-transform:none!important
+}
+.hero .eyebrow{
+  color:#f58a5a!important;justify-content:flex-start;
+  margin-left:clamp(16px,2vw,28px)!important;text-align:left
+}
+.card-promo-copy{max-width:min(680px,54vw)}
+.card-promo-copy h2{
+  max-width:none;font-size:clamp(22px,2.6vw,38px)!important;
+  line-height:1.08;letter-spacing:-.065em
+}
+.card-promo-copy h2 span{white-space:nowrap}
+@media(max-width:900px){
+  .card-promo-copy{max-width:52%}
+  .card-promo-copy h2{font-size:clamp(22px,3vw,31px)!important}
+}
+@media(max-width:640px){
+  .hero .eyebrow{margin-left:0!important;justify-content:center;text-align:center}
+  .hero-bottom-tagline{
+    bottom:25px!important;left:22px!important;right:22px!important;
+    max-width:none;font-size:12px!important;text-align:center!important
+  }
+  .card-promo-copy{max-width:none}
+  .card-promo-copy h2{font-size:clamp(18px,5.6vw,34px)!important}
+}
