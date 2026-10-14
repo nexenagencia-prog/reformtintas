@@ -1571,4 +1571,4 @@ h1,h2,h3,p{margin-top:0}
 }
 
 /* Ajusta o enquadramento da foto da hero para preservar os capacetes */
-.hero-image{transform:translateY(3%) scale(1.02)!important;transform-origin:center center!important}
+.hero-image{transform:translateY(7%) scale(1.02)!important;transform-origin:center center!important}
