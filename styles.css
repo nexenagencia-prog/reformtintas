@@ -1661,3 +1661,7 @@ h1,h2,h3,p{margin-top:0}
   .card-promo-copy{width:100%;max-width:none;padding-inline:16px}
   .card-promo-copy h2{font-size:clamp(15px,5vw,31px)!important}
 }
+
+/* Alinha a frase inferior da hero com a margem do título */
+.hero-bottom-tagline{left:max(11vw,48px)!important}
+@media(max-width:900px) and (min-width:641px){.hero-bottom-tagline{left:8vw!important}}
