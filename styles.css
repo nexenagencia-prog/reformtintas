@@ -1607,3 +1607,25 @@ h1,h2,h3,p{margin-top:0}
  .site-footer .instagram-link{grid-column:1/-1;grid-row:3;justify-self:start}
  .site-footer small{grid-column:1/-1;grid-row:4}
 }
+
+
+/* Ajustes finais de alinhamento e conteúdo */
+.hero-title-group{display:flex;flex-direction:column;align-items:flex-start}
+.hero .eyebrow{justify-content:flex-start;margin:0 0 18px;color:#fff!important;text-align:left}
+.hero-bottom-tagline{position:static!important;inset:auto!important;max-width:480px;margin:18px 0 0;color:var(--orange)!important;font-size:clamp(12px,1.1vw,16px);font-weight:600;letter-spacing:-.01em;line-height:1.35;text-align:inherit;text-transform:none}
+.painting-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.painting-gallery-card{aspect-ratio:1.2}
+.painting-gallery-card img{object-fit:cover!important;padding:0!important;mix-blend-mode:normal!important;filter:saturate(1.35) contrast(1.06)}
+.painting-gallery-card:hover img{filter:saturate(1.45) contrast(1.08)}
+.store-copy h2{font-size:clamp(38px,4.3vw,62px);line-height:1.02}
+.store-copy h2 span,.store-copy h2 em{white-space:nowrap}
+.coast-copy h2{max-width:900px}
+@media(max-width:640px){
+ .hero-title-group{align-items:center;text-align:center}
+ .hero-title-group .eyebrow{display:flex!important;justify-content:center;max-width:100%;margin:0 auto 13px;font-size:7px;letter-spacing:.08em;text-align:center;white-space:nowrap}
+ .hero-bottom-tagline{max-width:300px;margin:14px auto 0;font-size:10px;text-align:center}
+ .store-copy h2{font-size:clamp(32px,8.8vw,53px)}
+ .painting-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .painting-gallery-card{aspect-ratio:1.05}
+ .coast-copy h2{font-size:clamp(36px,9vw,54px)}
+}
